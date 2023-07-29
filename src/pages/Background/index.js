@@ -14,5 +14,6 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
       : 'from the extension'
   );
 
+  console.log('Received', request);
   if (request.greeting === 'hello') sendResponse({ farewell: text });
 });

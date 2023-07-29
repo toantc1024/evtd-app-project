@@ -1,0 +1,4286 @@
+[
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "sentence",
+            "marker",
+            "pause",
+            "resume"
+        ],
+        "lang": "en-US",
+        "remote": false,
+        "voiceName": "Microsoft David - English (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "sentence",
+            "marker",
+            "pause",
+            "resume"
+        ],
+        "lang": "en-AU",
+        "remote": false,
+        "voiceName": "Microsoft James - English (Australia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "sentence",
+            "marker",
+            "pause",
+            "resume"
+        ],
+        "lang": "en-AU",
+        "remote": false,
+        "voiceName": "Microsoft Catherine - English (Australia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "sentence",
+            "marker",
+            "pause",
+            "resume"
+        ],
+        "lang": "en-US",
+        "remote": false,
+        "voiceName": "Microsoft Mark - English (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "sentence",
+            "marker",
+            "pause",
+            "resume"
+        ],
+        "lang": "en-US",
+        "remote": false,
+        "voiceName": "Microsoft Zira - English (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "af-ZA",
+        "remote": true,
+        "voiceName": "Microsoft Adri Online (Natural) - Afrikaans (South Africa)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "af-ZA",
+        "remote": true,
+        "voiceName": "Microsoft Willem Online (Natural) - Afrikaans (South Africa)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sq-AL",
+        "remote": true,
+        "voiceName": "Microsoft Anila Online (Natural) - Albanian (Albania)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sq-AL",
+        "remote": true,
+        "voiceName": "Microsoft Ilir Online (Natural) - Albanian (Albania)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "am-ET",
+        "remote": true,
+        "voiceName": "Microsoft Ameha Online (Natural) - Amharic (Ethiopia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "am-ET",
+        "remote": true,
+        "voiceName": "Microsoft Mekdes Online (Natural) - Amharic (Ethiopia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-DZ",
+        "remote": true,
+        "voiceName": "Microsoft Amina Online (Natural) - Arabic (Algeria)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-DZ",
+        "remote": true,
+        "voiceName": "Microsoft Ismael Online (Natural) - Arabic (Algeria)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-BH",
+        "remote": true,
+        "voiceName": "Microsoft Ali Online (Natural) - Arabic (Bahrain)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-BH",
+        "remote": true,
+        "voiceName": "Microsoft Laila Online (Natural) - Arabic (Bahrain)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-EG",
+        "remote": true,
+        "voiceName": "Microsoft Salma Online (Natural) - Arabic (Egypt)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-EG",
+        "remote": true,
+        "voiceName": "Microsoft Shakir Online (Natural) - Arabic (Egypt)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-IQ",
+        "remote": true,
+        "voiceName": "Microsoft Bassel Online (Natural) - Arabic (Iraq)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-IQ",
+        "remote": true,
+        "voiceName": "Microsoft Rana Online (Natural) - Arabic (Iraq)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-JO",
+        "remote": true,
+        "voiceName": "Microsoft Sana Online (Natural) - Arabic (Jordan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-JO",
+        "remote": true,
+        "voiceName": "Microsoft Taim Online (Natural) - Arabic (Jordan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-KW",
+        "remote": true,
+        "voiceName": "Microsoft Fahed Online (Natural) - Arabic (Kuwait)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-KW",
+        "remote": true,
+        "voiceName": "Microsoft Noura Online (Natural) - Arabic (Kuwait)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-LB",
+        "remote": true,
+        "voiceName": "Microsoft Layla Online (Natural) - Arabic (Lebanon)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-LB",
+        "remote": true,
+        "voiceName": "Microsoft Rami Online (Natural) - Arabic (Lebanon)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-LY",
+        "remote": true,
+        "voiceName": "Microsoft Iman Online (Natural) - Arabic (Libya)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-LY",
+        "remote": true,
+        "voiceName": "Microsoft Omar Online (Natural) - Arabic (Libya)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-MA",
+        "remote": true,
+        "voiceName": "Microsoft Jamal Online (Natural) - Arabic (Morocco)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-MA",
+        "remote": true,
+        "voiceName": "Microsoft Mouna Online (Natural) - Arabic (Morocco)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-OM",
+        "remote": true,
+        "voiceName": "Microsoft Abdullah Online (Natural) - Arabic (Oman)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-OM",
+        "remote": true,
+        "voiceName": "Microsoft Aysha Online (Natural) - Arabic (Oman)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-QA",
+        "remote": true,
+        "voiceName": "Microsoft Amal Online (Natural) - Arabic (Qatar)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-QA",
+        "remote": true,
+        "voiceName": "Microsoft Moaz Online (Natural) - Arabic (Qatar)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-SA",
+        "remote": true,
+        "voiceName": "Microsoft Hamed Online (Natural) - Arabic (Saudi Arabia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-SA",
+        "remote": true,
+        "voiceName": "Microsoft Zariyah Online (Natural) - Arabic (Saudi Arabia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-SY",
+        "remote": true,
+        "voiceName": "Microsoft Amany Online (Natural) - Arabic (Syria)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-SY",
+        "remote": true,
+        "voiceName": "Microsoft Laith Online (Natural) - Arabic (Syria)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-TN",
+        "remote": true,
+        "voiceName": "Microsoft Hedi Online (Natural) - Arabic (Tunisia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-TN",
+        "remote": true,
+        "voiceName": "Microsoft Reem Online (Natural) - Arabic (Tunisia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-AE",
+        "remote": true,
+        "voiceName": "Microsoft Fatima Online (Natural) - Arabic (United Arab Emirates)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-AE",
+        "remote": true,
+        "voiceName": "Microsoft Hamdan Online (Natural) - Arabic (United Arab Emirates)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-YE",
+        "remote": true,
+        "voiceName": "Microsoft Maryam Online (Natural) - Arabic (Yemen)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ar-YE",
+        "remote": true,
+        "voiceName": "Microsoft Saleh Online (Natural) - Arabic (Yemen)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "az-AZ",
+        "remote": true,
+        "voiceName": "Microsoft Babek Online (Natural) - Azerbaijani (Azerbaijan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "az-AZ",
+        "remote": true,
+        "voiceName": "Microsoft Banu Online (Natural) - Azerbaijani (Azerbaijan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "bn-BD",
+        "remote": true,
+        "voiceName": "Microsoft Nabanita Online (Natural) - Bangla (Bangladesh)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "bn-BD",
+        "remote": true,
+        "voiceName": "Microsoft Pradeep Online (Natural) - Bangla (Bangladesh)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "bn-IN",
+        "remote": true,
+        "voiceName": "Microsoft Bashkar Online (Natural) - Bangla (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "bn-IN",
+        "remote": true,
+        "voiceName": "Microsoft Tanishaa Online (Natural) - Bengali (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "bs-BA",
+        "remote": true,
+        "voiceName": "Microsoft Goran Online (Natural) - Bosnian (Bosnia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "bs-BA",
+        "remote": true,
+        "voiceName": "Microsoft Vesna Online (Natural) - Bosnian (Bosnia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "bg-BG",
+        "remote": true,
+        "voiceName": "Microsoft Borislav Online (Natural) - Bulgarian (Bulgaria)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "bg-BG",
+        "remote": true,
+        "voiceName": "Microsoft Kalina Online (Natural) - Bulgarian (Bulgaria)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "my-MM",
+        "remote": true,
+        "voiceName": "Microsoft Nilar Online (Natural) - Burmese (Myanmar)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "my-MM",
+        "remote": true,
+        "voiceName": "Microsoft Thiha Online (Natural) - Burmese (Myanmar)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ca-ES",
+        "remote": true,
+        "voiceName": "Microsoft Enric Online (Natural) - Catalan (Spain)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ca-ES",
+        "remote": true,
+        "voiceName": "Microsoft Joana Online (Natural) - Catalan (Spain)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-HK",
+        "remote": true,
+        "voiceName": "Microsoft HiuGaai Online (Natural) - Chinese (Cantonese Traditional)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-HK",
+        "remote": true,
+        "voiceName": "Microsoft HiuMaan Online (Natural) - Chinese (Hong Kong)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-HK",
+        "remote": true,
+        "voiceName": "Microsoft WanLung Online (Natural) - Chinese (Hong Kong)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-CN",
+        "remote": true,
+        "voiceName": "Microsoft Xiaoxiao Online (Natural) - Chinese (Mainland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-CN",
+        "remote": true,
+        "voiceName": "Microsoft Xiaoyi Online (Natural) - Chinese (Mainland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-CN",
+        "remote": true,
+        "voiceName": "Microsoft Yunjian Online (Natural) - Chinese (Mainland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-CN",
+        "remote": true,
+        "voiceName": "Microsoft Yunxi Online (Natural) - Chinese (Mainland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-CN",
+        "remote": true,
+        "voiceName": "Microsoft Yunxia Online (Natural) - Chinese (Mainland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-CN",
+        "remote": true,
+        "voiceName": "Microsoft Yunyang Online (Natural) - Chinese (Mainland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-CN-liaoning",
+        "remote": true,
+        "voiceName": "Microsoft Xiaobei Online (Natural) - Chinese (Northeastern Mandarin)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-TW",
+        "remote": true,
+        "voiceName": "Microsoft HsiaoChen Online (Natural) - Chinese (Taiwan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-TW",
+        "remote": true,
+        "voiceName": "Microsoft YunJhe Online (Natural) - Chinese (Taiwan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-TW",
+        "remote": true,
+        "voiceName": "Microsoft HsiaoYu Online (Natural) - Chinese (Taiwanese Mandarin)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zh-CN-shaanxi",
+        "remote": true,
+        "voiceName": "Microsoft Xiaoni Online (Natural) - Chinese (Zhongyuan Mandarin Shaanxi)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "hr-HR",
+        "remote": true,
+        "voiceName": "Microsoft Gabrijela Online (Natural) - Croatian (Croatia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "hr-HR",
+        "remote": true,
+        "voiceName": "Microsoft Srecko Online (Natural) - Croatian (Croatia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "cs-CZ",
+        "remote": true,
+        "voiceName": "Microsoft Antonin Online (Natural) - Czech (Czech)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "cs-CZ",
+        "remote": true,
+        "voiceName": "Microsoft Vlasta Online (Natural) - Czech (Czech)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "da-DK",
+        "remote": true,
+        "voiceName": "Microsoft Christel Online (Natural) - Danish (Denmark)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "da-DK",
+        "remote": true,
+        "voiceName": "Microsoft Jeppe Online (Natural) - Danish (Denmark)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "nl-BE",
+        "remote": true,
+        "voiceName": "Microsoft Arnaud Online (Natural) - Dutch (Belgium)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "nl-BE",
+        "remote": true,
+        "voiceName": "Microsoft Dena Online (Natural) - Dutch (Belgium)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "nl-NL",
+        "remote": true,
+        "voiceName": "Microsoft Colette Online (Natural) - Dutch (Netherlands)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "nl-NL",
+        "remote": true,
+        "voiceName": "Microsoft Fenna Online (Natural) - Dutch (Netherlands)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "nl-NL",
+        "remote": true,
+        "voiceName": "Microsoft Maarten Online (Natural) - Dutch (Netherlands)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-AU",
+        "remote": true,
+        "voiceName": "Microsoft Natasha Online (Natural) - English (Australia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-AU",
+        "remote": true,
+        "voiceName": "Microsoft William Online (Natural) - English (Australia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-CA",
+        "remote": true,
+        "voiceName": "Microsoft Clara Online (Natural) - English (Canada)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-CA",
+        "remote": true,
+        "voiceName": "Microsoft Liam Online (Natural) - English (Canada)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-HK",
+        "remote": true,
+        "voiceName": "Microsoft Sam Online (Natural) - English (Hongkong)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-HK",
+        "remote": true,
+        "voiceName": "Microsoft Yan Online (Natural) - English (Hongkong)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-IN",
+        "remote": true,
+        "voiceName": "Microsoft Neerja Online (Natural) - English (India) (Preview)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-IN",
+        "remote": true,
+        "voiceName": "Microsoft Neerja Online (Natural) - English (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-IN",
+        "remote": true,
+        "voiceName": "Microsoft Prabhat Online (Natural) - English (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-IE",
+        "remote": true,
+        "voiceName": "Microsoft Connor Online (Natural) - English (Ireland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-IE",
+        "remote": true,
+        "voiceName": "Microsoft Emily Online (Natural) - English (Ireland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-KE",
+        "remote": true,
+        "voiceName": "Microsoft Asilia Online (Natural) - English (Kenya)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-KE",
+        "remote": true,
+        "voiceName": "Microsoft Chilemba Online (Natural) - English (Kenya)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-NZ",
+        "remote": true,
+        "voiceName": "Microsoft Mitchell Online (Natural) - English (New Zealand)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-NZ",
+        "remote": true,
+        "voiceName": "Microsoft Molly Online (Natural) - English (New Zealand)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-NG",
+        "remote": true,
+        "voiceName": "Microsoft Abeo Online (Natural) - English (Nigeria)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-NG",
+        "remote": true,
+        "voiceName": "Microsoft Ezinne Online (Natural) - English (Nigeria)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-PH",
+        "remote": true,
+        "voiceName": "Microsoft James Online (Natural) - English (Philippines)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-PH",
+        "remote": true,
+        "voiceName": "Microsoft Rosa Online (Natural) - English (Philippines)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-SG",
+        "remote": true,
+        "voiceName": "Microsoft Luna Online (Natural) - English (Singapore)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-SG",
+        "remote": true,
+        "voiceName": "Microsoft Wayne Online (Natural) - English (Singapore)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-ZA",
+        "remote": true,
+        "voiceName": "Microsoft Leah Online (Natural) - English (South Africa)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-ZA",
+        "remote": true,
+        "voiceName": "Microsoft Luke Online (Natural) - English (South Africa)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-TZ",
+        "remote": true,
+        "voiceName": "Microsoft Elimu Online (Natural) - English (Tanzania)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-TZ",
+        "remote": true,
+        "voiceName": "Microsoft Imani Online (Natural) - English (Tanzania)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-GB",
+        "remote": true,
+        "voiceName": "Microsoft Libby Online (Natural) - English (United Kingdom)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-GB",
+        "remote": true,
+        "voiceName": "Microsoft Maisie Online (Natural) - English (United Kingdom)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-GB",
+        "remote": true,
+        "voiceName": "Microsoft Ryan Online (Natural) - English (United Kingdom)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-GB",
+        "remote": true,
+        "voiceName": "Microsoft Sonia Online (Natural) - English (United Kingdom)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-GB",
+        "remote": true,
+        "voiceName": "Microsoft Thomas Online (Natural) - English (United Kingdom)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-US",
+        "remote": true,
+        "voiceName": "Microsoft Aria Online (Natural) - English (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-US",
+        "remote": true,
+        "voiceName": "Microsoft Ana Online (Natural) - English (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-US",
+        "remote": true,
+        "voiceName": "Microsoft Christopher Online (Natural) - English (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-US",
+        "remote": true,
+        "voiceName": "Microsoft Eric Online (Natural) - English (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-US",
+        "remote": true,
+        "voiceName": "Microsoft Guy Online (Natural) - English (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-US",
+        "remote": true,
+        "voiceName": "Microsoft Jenny Online (Natural) - English (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-US",
+        "remote": true,
+        "voiceName": "Microsoft Michelle Online (Natural) - English (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-US",
+        "remote": true,
+        "voiceName": "Microsoft Roger Online (Natural) - English (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "en-US",
+        "remote": true,
+        "voiceName": "Microsoft Steffan Online (Natural) - English (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "et-EE",
+        "remote": true,
+        "voiceName": "Microsoft Anu Online (Natural) - Estonian (Estonia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "et-EE",
+        "remote": true,
+        "voiceName": "Microsoft Kert Online (Natural) - Estonian (Estonia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fil-PH",
+        "remote": true,
+        "voiceName": "Microsoft Angelo Online (Natural) - Filipino (Philippines)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fil-PH",
+        "remote": true,
+        "voiceName": "Microsoft Blessica Online (Natural) - Filipino (Philippines)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fi-FI",
+        "remote": true,
+        "voiceName": "Microsoft Harri Online (Natural) - Finnish (Finland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fi-FI",
+        "remote": true,
+        "voiceName": "Microsoft Noora Online (Natural) - Finnish (Finland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fr-BE",
+        "remote": true,
+        "voiceName": "Microsoft Charline Online (Natural) - French (Belgium)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fr-BE",
+        "remote": true,
+        "voiceName": "Microsoft Gerard Online (Natural) - French (Belgium)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fr-CA",
+        "remote": true,
+        "voiceName": "Microsoft Antoine Online (Natural) - French (Canada)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fr-CA",
+        "remote": true,
+        "voiceName": "Microsoft Jean Online (Natural) - French (Canada)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fr-CA",
+        "remote": true,
+        "voiceName": "Microsoft Sylvie Online (Natural) - French (Canada)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fr-FR",
+        "remote": true,
+        "voiceName": "Microsoft Denise Online (Natural) - French (France)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fr-FR",
+        "remote": true,
+        "voiceName": "Microsoft Eloise Online (Natural) - French (France)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fr-FR",
+        "remote": true,
+        "voiceName": "Microsoft Henri Online (Natural) - French (France)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fr-CH",
+        "remote": true,
+        "voiceName": "Microsoft Ariane Online (Natural) - French (Switzerland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fr-CH",
+        "remote": true,
+        "voiceName": "Microsoft Fabrice Online (Natural) - French (Switzerland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "gl-ES",
+        "remote": true,
+        "voiceName": "Microsoft Roi Online (Natural) - Galician (Spain)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "gl-ES",
+        "remote": true,
+        "voiceName": "Microsoft Sabela Online (Natural) - Galician (Spain)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ka-GE",
+        "remote": true,
+        "voiceName": "Microsoft Eka Online (Natural) - Georgian (Georgia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ka-GE",
+        "remote": true,
+        "voiceName": "Microsoft Giorgi Online (Natural) - Georgian (Georgia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "de-AT",
+        "remote": true,
+        "voiceName": "Microsoft Ingrid Online (Natural) - German (Austria)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "de-AT",
+        "remote": true,
+        "voiceName": "Microsoft Jonas Online (Natural) - German (Austria)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "de-DE",
+        "remote": true,
+        "voiceName": "Microsoft Amala Online (Natural) - German (Germany)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "de-DE",
+        "remote": true,
+        "voiceName": "Microsoft Conrad Online (Natural) - German (Germany)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "de-DE",
+        "remote": true,
+        "voiceName": "Microsoft Katja Online (Natural) - German (Germany)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "de-DE",
+        "remote": true,
+        "voiceName": "Microsoft Killian Online (Natural) - German (Germany)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "de-CH",
+        "remote": true,
+        "voiceName": "Microsoft Jan Online (Natural) - German (Switzerland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "de-CH",
+        "remote": true,
+        "voiceName": "Microsoft Leni Online (Natural) - German (Switzerland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "el-GR",
+        "remote": true,
+        "voiceName": "Microsoft Athina Online (Natural) - Greek (Greece)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "el-GR",
+        "remote": true,
+        "voiceName": "Microsoft Nestoras Online (Natural) - Greek (Greece)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "gu-IN",
+        "remote": true,
+        "voiceName": "Microsoft Dhwani Online (Natural) - Gujarati (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "gu-IN",
+        "remote": true,
+        "voiceName": "Microsoft Niranjan Online (Natural) - Gujarati (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "he-IL",
+        "remote": true,
+        "voiceName": "Microsoft Avri Online (Natural) - Hebrew (Israel)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "he-IL",
+        "remote": true,
+        "voiceName": "Microsoft Hila Online (Natural) - Hebrew (Israel)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "hi-IN",
+        "remote": true,
+        "voiceName": "Microsoft Madhur Online (Natural) - Hindi (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "hi-IN",
+        "remote": true,
+        "voiceName": "Microsoft Swara Online (Natural) - Hindi (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "hu-HU",
+        "remote": true,
+        "voiceName": "Microsoft Noemi Online (Natural) - Hungarian (Hungary)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "hu-HU",
+        "remote": true,
+        "voiceName": "Microsoft Tamas Online (Natural) - Hungarian (Hungary)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "is-IS",
+        "remote": true,
+        "voiceName": "Microsoft Gudrun Online (Natural) - Icelandic (Iceland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "is-IS",
+        "remote": true,
+        "voiceName": "Microsoft Gunnar Online (Natural) - Icelandic (Iceland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "id-ID",
+        "remote": true,
+        "voiceName": "Microsoft Ardi Online (Natural) - Indonesian (Indonesia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "id-ID",
+        "remote": true,
+        "voiceName": "Microsoft Gadis Online (Natural) - Indonesian (Indonesia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ga-IE",
+        "remote": true,
+        "voiceName": "Microsoft Colm Online (Natural) - Irish (Ireland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ga-IE",
+        "remote": true,
+        "voiceName": "Microsoft Orla Online (Natural) - Irish (Ireland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "it-IT",
+        "remote": true,
+        "voiceName": "Microsoft Diego Online (Natural) - Italian (Italy)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "it-IT",
+        "remote": true,
+        "voiceName": "Microsoft Elsa Online (Natural) - Italian (Italy)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "it-IT",
+        "remote": true,
+        "voiceName": "Microsoft Isabella Online (Natural) - Italian (Italy)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ja-JP",
+        "remote": true,
+        "voiceName": "Microsoft Keita Online (Natural) - Japanese (Japan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ja-JP",
+        "remote": true,
+        "voiceName": "Microsoft Nanami Online (Natural) - Japanese (Japan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "jv-ID",
+        "remote": true,
+        "voiceName": "Microsoft Dimas Online (Natural) - Javanese (Indonesia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "jv-ID",
+        "remote": true,
+        "voiceName": "Microsoft Siti Online (Natural) - Javanese (Indonesia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "kn-IN",
+        "remote": true,
+        "voiceName": "Microsoft Gagan Online (Natural) - Kannada (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "kn-IN",
+        "remote": true,
+        "voiceName": "Microsoft Sapna Online (Natural) - Kannada (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "kk-KZ",
+        "remote": true,
+        "voiceName": "Microsoft Aigul Online (Natural) - Kazakh (Kazakhstan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "kk-KZ",
+        "remote": true,
+        "voiceName": "Microsoft Daulet Online (Natural) - Kazakh (Kazakhstan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "km-KH",
+        "remote": true,
+        "voiceName": "Microsoft Piseth Online (Natural) - Khmer (Cambodia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "km-KH",
+        "remote": true,
+        "voiceName": "Microsoft Sreymom Online (Natural) - Khmer (Cambodia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ko-KR",
+        "remote": true,
+        "voiceName": "Microsoft InJoon Online (Natural) - Korean (Korea)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ko-KR",
+        "remote": true,
+        "voiceName": "Microsoft SunHi Online (Natural) - Korean (Korea)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "lo-LA",
+        "remote": true,
+        "voiceName": "Microsoft Chanthavong Online (Natural) - Lao (Laos)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "lo-LA",
+        "remote": true,
+        "voiceName": "Microsoft Keomany Online (Natural) - Lao (Laos)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "lv-LV",
+        "remote": true,
+        "voiceName": "Microsoft Everita Online (Natural) - Latvian (Latvia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "lv-LV",
+        "remote": true,
+        "voiceName": "Microsoft Nils Online (Natural) - Latvian (Latvia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "lt-LT",
+        "remote": true,
+        "voiceName": "Microsoft Leonas Online (Natural) - Lithuanian (Lithuania)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "lt-LT",
+        "remote": true,
+        "voiceName": "Microsoft Ona Online (Natural) - Lithuanian (Lithuania)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "mk-MK",
+        "remote": true,
+        "voiceName": "Microsoft Aleksandar Online (Natural) - Macedonian (Republic of North Macedonia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "mk-MK",
+        "remote": true,
+        "voiceName": "Microsoft Marija Online (Natural) - Macedonian (Republic of North Macedonia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ms-MY",
+        "remote": true,
+        "voiceName": "Microsoft Osman Online (Natural) - Malay (Malaysia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ms-MY",
+        "remote": true,
+        "voiceName": "Microsoft Yasmin Online (Natural) - Malay (Malaysia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ml-IN",
+        "remote": true,
+        "voiceName": "Microsoft Midhun Online (Natural) - Malayalam (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ml-IN",
+        "remote": true,
+        "voiceName": "Microsoft Sobhana Online (Natural) - Malayalam (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "mt-MT",
+        "remote": true,
+        "voiceName": "Microsoft Grace Online (Natural) - Maltese (Malta)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "mt-MT",
+        "remote": true,
+        "voiceName": "Microsoft Joseph Online (Natural) - Maltese (Malta)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "mr-IN",
+        "remote": true,
+        "voiceName": "Microsoft Aarohi Online (Natural) - Marathi (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "mr-IN",
+        "remote": true,
+        "voiceName": "Microsoft Manohar Online (Natural) - Marathi (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "mn-MN",
+        "remote": true,
+        "voiceName": "Microsoft Bataa Online (Natural) - Mongolian (Mongolia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "mn-MN",
+        "remote": true,
+        "voiceName": "Microsoft Yesui Online (Natural) - Mongolian (Mongolia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ne-NP",
+        "remote": true,
+        "voiceName": "Microsoft Hemkala Online (Natural) - Nepali (Nepal)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ne-NP",
+        "remote": true,
+        "voiceName": "Microsoft Sagar Online (Natural) - Nepali (Nepal)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "nb-NO",
+        "remote": true,
+        "voiceName": "Microsoft Finn Online (Natural) - Norwegian (Bokmål Norway)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "nb-NO",
+        "remote": true,
+        "voiceName": "Microsoft Pernille Online (Natural) - Norwegian (Bokmål, Norway)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ps-AF",
+        "remote": true,
+        "voiceName": "Microsoft GulNawaz Online (Natural) - Pashto (Afghanistan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ps-AF",
+        "remote": true,
+        "voiceName": "Microsoft Latifa Online (Natural) - Pashto (Afghanistan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fa-IR",
+        "remote": true,
+        "voiceName": "Microsoft Dilara Online (Natural) - Persian (Iran)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "fa-IR",
+        "remote": true,
+        "voiceName": "Microsoft Farid Online (Natural) - Persian (Iran)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "pl-PL",
+        "remote": true,
+        "voiceName": "Microsoft Marek Online (Natural) - Polish (Poland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "pl-PL",
+        "remote": true,
+        "voiceName": "Microsoft Zofia Online (Natural) - Polish (Poland)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "pt-BR",
+        "remote": true,
+        "voiceName": "Microsoft Antonio Online (Natural) - Portuguese (Brazil)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "pt-BR",
+        "remote": true,
+        "voiceName": "Microsoft Francisca Online (Natural) - Portuguese (Brazil)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "pt-PT",
+        "remote": true,
+        "voiceName": "Microsoft Duarte Online (Natural) - Portuguese (Portugal)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "pt-PT",
+        "remote": true,
+        "voiceName": "Microsoft Raquel Online (Natural) - Portuguese (Portugal)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ro-RO",
+        "remote": true,
+        "voiceName": "Microsoft Alina Online (Natural) - Romanian (Romania)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ro-RO",
+        "remote": true,
+        "voiceName": "Microsoft Emil Online (Natural) - Romanian (Romania)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ru-RU",
+        "remote": true,
+        "voiceName": "Microsoft Dmitry Online (Natural) - Russian (Russia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ru-RU",
+        "remote": true,
+        "voiceName": "Microsoft Svetlana Online (Natural) - Russian (Russia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sr-RS",
+        "remote": true,
+        "voiceName": "Microsoft Nicholas Online (Natural) - Serbian (Serbia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sr-RS",
+        "remote": true,
+        "voiceName": "Microsoft Sophie Online (Natural) - Serbian (Serbia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "si-LK",
+        "remote": true,
+        "voiceName": "Microsoft Sameera Online (Natural) - Sinhala (Sri Lanka)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "si-LK",
+        "remote": true,
+        "voiceName": "Microsoft Thilini Online (Natural) - Sinhala (Sri Lanka)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sk-SK",
+        "remote": true,
+        "voiceName": "Microsoft Lukas Online (Natural) - Slovak (Slovakia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sk-SK",
+        "remote": true,
+        "voiceName": "Microsoft Viktoria Online (Natural) - Slovak (Slovakia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sl-SI",
+        "remote": true,
+        "voiceName": "Microsoft Petra Online (Natural) - Slovenian (Slovenia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sl-SI",
+        "remote": true,
+        "voiceName": "Microsoft Rok Online (Natural) - Slovenian (Slovenia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "so-SO",
+        "remote": true,
+        "voiceName": "Microsoft Muuse Online (Natural) - Somali (Somalia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "so-SO",
+        "remote": true,
+        "voiceName": "Microsoft Ubax Online (Natural) - Somali (Somalia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-AR",
+        "remote": true,
+        "voiceName": "Microsoft Elena Online (Natural) - Spanish (Argentina)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-AR",
+        "remote": true,
+        "voiceName": "Microsoft Tomas Online (Natural) - Spanish (Argentina)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-BO",
+        "remote": true,
+        "voiceName": "Microsoft Marcelo Online (Natural) - Spanish (Bolivia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-BO",
+        "remote": true,
+        "voiceName": "Microsoft Sofia Online (Natural) - Spanish (Bolivia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-CL",
+        "remote": true,
+        "voiceName": "Microsoft Catalina Online (Natural) - Spanish (Chile)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-CL",
+        "remote": true,
+        "voiceName": "Microsoft Lorenzo Online (Natural) - Spanish (Chile)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-CO",
+        "remote": true,
+        "voiceName": "Microsoft Gonzalo Online (Natural) - Spanish (Colombia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-CO",
+        "remote": true,
+        "voiceName": "Microsoft Salome Online (Natural) - Spanish (Colombia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-CR",
+        "remote": true,
+        "voiceName": "Microsoft Juan Online (Natural) - Spanish (Costa Rica)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-CR",
+        "remote": true,
+        "voiceName": "Microsoft Maria Online (Natural) - Spanish (Costa Rica)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-CU",
+        "remote": true,
+        "voiceName": "Microsoft Belkys Online (Natural) - Spanish (Cuba)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-CU",
+        "remote": true,
+        "voiceName": "Microsoft Manuel Online (Natural) - Spanish (Cuba)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-DO",
+        "remote": true,
+        "voiceName": "Microsoft Emilio Online (Natural) - Spanish (Dominican Republic)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-DO",
+        "remote": true,
+        "voiceName": "Microsoft Ramona Online (Natural) - Spanish (Dominican Republic)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-EC",
+        "remote": true,
+        "voiceName": "Microsoft Andrea Online (Natural) - Spanish (Ecuador)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-EC",
+        "remote": true,
+        "voiceName": "Microsoft Luis Online (Natural) - Spanish (Ecuador)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-SV",
+        "remote": true,
+        "voiceName": "Microsoft Lorena Online (Natural) - Spanish (El Salvador)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-SV",
+        "remote": true,
+        "voiceName": "Microsoft Rodrigo Online (Natural) - Spanish (El Salvador)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-GQ",
+        "remote": true,
+        "voiceName": "Microsoft Javier Online (Natural) - Spanish (Equatorial Guinea)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-GQ",
+        "remote": true,
+        "voiceName": "Microsoft Teresa Online (Natural) - Spanish (Equatorial Guinea)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-GT",
+        "remote": true,
+        "voiceName": "Microsoft Andres Online (Natural) - Spanish (Guatemala)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-GT",
+        "remote": true,
+        "voiceName": "Microsoft Marta Online (Natural) - Spanish (Guatemala)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-HN",
+        "remote": true,
+        "voiceName": "Microsoft Carlos Online (Natural) - Spanish (Honduras)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-HN",
+        "remote": true,
+        "voiceName": "Microsoft Karla Online (Natural) - Spanish (Honduras)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-MX",
+        "remote": true,
+        "voiceName": "Microsoft Dalia Online (Natural) - Spanish (Mexico)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-MX",
+        "remote": true,
+        "voiceName": "Microsoft Jorge Online (Natural) - Spanish (Mexico)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-NI",
+        "remote": true,
+        "voiceName": "Microsoft Federico Online (Natural) - Spanish (Nicaragua)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-NI",
+        "remote": true,
+        "voiceName": "Microsoft Yolanda Online (Natural) - Spanish (Nicaragua)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-PA",
+        "remote": true,
+        "voiceName": "Microsoft Margarita Online (Natural) - Spanish (Panama)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-PA",
+        "remote": true,
+        "voiceName": "Microsoft Roberto Online (Natural) - Spanish (Panama)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-PY",
+        "remote": true,
+        "voiceName": "Microsoft Mario Online (Natural) - Spanish (Paraguay)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-PY",
+        "remote": true,
+        "voiceName": "Microsoft Tania Online (Natural) - Spanish (Paraguay)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-PE",
+        "remote": true,
+        "voiceName": "Microsoft Alex Online (Natural) - Spanish (Peru)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-PE",
+        "remote": true,
+        "voiceName": "Microsoft Camila Online (Natural) - Spanish (Peru)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-PR",
+        "remote": true,
+        "voiceName": "Microsoft Karina Online (Natural) - Spanish (Puerto Rico)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-PR",
+        "remote": true,
+        "voiceName": "Microsoft Victor Online (Natural) - Spanish (Puerto Rico)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-ES",
+        "remote": true,
+        "voiceName": "Microsoft Alvaro Online (Natural) - Spanish (Spain)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-ES",
+        "remote": true,
+        "voiceName": "Microsoft Elvira Online (Natural) - Spanish (Spain)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-US",
+        "remote": true,
+        "voiceName": "Microsoft Alonso Online (Natural) - Spanish (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-US",
+        "remote": true,
+        "voiceName": "Microsoft Paloma Online (Natural) - Spanish (United States)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-UY",
+        "remote": true,
+        "voiceName": "Microsoft Mateo Online (Natural) - Spanish (Uruguay)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-UY",
+        "remote": true,
+        "voiceName": "Microsoft Valentina Online (Natural) - Spanish (Uruguay)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-VE",
+        "remote": true,
+        "voiceName": "Microsoft Paola Online (Natural) - Spanish (Venezuela)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "es-VE",
+        "remote": true,
+        "voiceName": "Microsoft Sebastian Online (Natural) - Spanish (Venezuela)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "su-ID",
+        "remote": true,
+        "voiceName": "Microsoft Jajang Online (Natural) - Sundanese (Indonesia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "su-ID",
+        "remote": true,
+        "voiceName": "Microsoft Tuti Online (Natural) - Sundanese (Indonesia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sw-KE",
+        "remote": true,
+        "voiceName": "Microsoft Rafiki Online (Natural) - Swahili (Kenya)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sw-KE",
+        "remote": true,
+        "voiceName": "Microsoft Zuri Online (Natural) - Swahili (Kenya)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sw-TZ",
+        "remote": true,
+        "voiceName": "Microsoft Daudi Online (Natural) - Swahili (Tanzania)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sw-TZ",
+        "remote": true,
+        "voiceName": "Microsoft Rehema Online (Natural) - Swahili (Tanzania)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sv-SE",
+        "remote": true,
+        "voiceName": "Microsoft Mattias Online (Natural) - Swedish (Sweden)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "sv-SE",
+        "remote": true,
+        "voiceName": "Microsoft Sofie Online (Natural) - Swedish (Sweden)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ta-IN",
+        "remote": true,
+        "voiceName": "Microsoft Pallavi Online (Natural) - Tamil (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ta-IN",
+        "remote": true,
+        "voiceName": "Microsoft Valluvar Online (Natural) - Tamil (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ta-MY",
+        "remote": true,
+        "voiceName": "Microsoft Kani Online (Natural) - Tamil (Malaysia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ta-MY",
+        "remote": true,
+        "voiceName": "Microsoft Surya Online (Natural) - Tamil (Malaysia)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ta-SG",
+        "remote": true,
+        "voiceName": "Microsoft Anbu Online (Natural) - Tamil (Singapore)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ta-SG",
+        "remote": true,
+        "voiceName": "Microsoft Venba Online (Natural) - Tamil (Singapore)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ta-LK",
+        "remote": true,
+        "voiceName": "Microsoft Kumar Online (Natural) - Tamil (Sri Lanka)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ta-LK",
+        "remote": true,
+        "voiceName": "Microsoft Saranya Online (Natural) - Tamil (Sri Lanka)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "te-IN",
+        "remote": true,
+        "voiceName": "Microsoft Mohan Online (Natural) - Telugu (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "te-IN",
+        "remote": true,
+        "voiceName": "Microsoft Shruti Online (Natural) - Telugu (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "th-TH",
+        "remote": true,
+        "voiceName": "Microsoft Niwat Online (Natural) - Thai (Thailand)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "th-TH",
+        "remote": true,
+        "voiceName": "Microsoft Premwadee Online (Natural) - Thai (Thailand)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "tr-TR",
+        "remote": true,
+        "voiceName": "Microsoft Ahmet Online (Natural) - Turkish (Turkey)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "tr-TR",
+        "remote": true,
+        "voiceName": "Microsoft Emel Online (Natural) - Turkish (Turkey)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "uk-UA",
+        "remote": true,
+        "voiceName": "Microsoft Ostap Online (Natural) - Ukrainian (Ukraine)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "uk-UA",
+        "remote": true,
+        "voiceName": "Microsoft Polina Online (Natural) - Ukrainian (Ukraine)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ur-IN",
+        "remote": true,
+        "voiceName": "Microsoft Gul Online (Natural) - Urdu (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ur-IN",
+        "remote": true,
+        "voiceName": "Microsoft Salman Online (Natural) - Urdu (India)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ur-PK",
+        "remote": true,
+        "voiceName": "Microsoft Asad Online (Natural) - Urdu (Pakistan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "ur-PK",
+        "remote": true,
+        "voiceName": "Microsoft Uzma Online (Natural) - Urdu (Pakistan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "uz-UZ",
+        "remote": true,
+        "voiceName": "Microsoft Madina Online (Natural) - Uzbek (Uzbekistan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "uz-UZ",
+        "remote": true,
+        "voiceName": "Microsoft Sardor Online (Natural) - Uzbek (Uzbekistan)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "vi-VN",
+        "remote": true,
+        "voiceName": "Microsoft HoaiMy Online (Natural) - Vietnamese (Vietnam)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "vi-VN",
+        "remote": true,
+        "voiceName": "Microsoft NamMinh Online (Natural) - Vietnamese (Vietnam)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "cy-GB",
+        "remote": true,
+        "voiceName": "Microsoft Aled Online (Natural) - Welsh (United Kingdom)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "cy-GB",
+        "remote": true,
+        "voiceName": "Microsoft Nia Online (Natural) - Welsh (United Kingdom)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zu-ZA",
+        "remote": true,
+        "voiceName": "Microsoft Thando Online (Natural) - Zulu (South Africa)"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "word",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "jdiccldimpdaibmpdkjnbmckianbfold",
+        "lang": "zu-ZA",
+        "remote": true,
+        "voiceName": "Microsoft Themba Online (Natural) - Zulu (South Africa)"
+    }
+]

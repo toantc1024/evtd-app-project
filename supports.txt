@@ -1,0 +1,251 @@
+Chrome Support
+[
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "de-DE",
+        "remote": true,
+        "voiceName": "Google Deutsch"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "en-US",
+        "remote": true,
+        "voiceName": "Google US English"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "en-GB",
+        "remote": true,
+        "voiceName": "Google UK English Female"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "en-GB",
+        "remote": true,
+        "voiceName": "Google UK English Male"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "es-ES",
+        "remote": true,
+        "voiceName": "Google español"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "es-US",
+        "remote": true,
+        "voiceName": "Google español de Estados Unidos"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "fr-FR",
+        "remote": true,
+        "voiceName": "Google français"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "hi-IN",
+        "remote": true,
+        "voiceName": "Google हिन्दी"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "id-ID",
+        "remote": true,
+        "voiceName": "Google Bahasa Indonesia"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "it-IT",
+        "remote": true,
+        "voiceName": "Google italiano"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "ja-JP",
+        "remote": true,
+        "voiceName": "Google 日本語"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "ko-KR",
+        "remote": true,
+        "voiceName": "Google 한국의"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "nl-NL",
+        "remote": true,
+        "voiceName": "Google Nederlands"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "pl-PL",
+        "remote": true,
+        "voiceName": "Google polski"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "pt-BR",
+        "remote": true,
+        "voiceName": "Google português do Brasil"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "ru-RU",
+        "remote": true,
+        "voiceName": "Google русский"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "zh-CN",
+        "remote": true,
+        "voiceName": "Google 普通话（中国大陆）"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "zh-HK",
+        "remote": true,
+        "voiceName": "Google 粤語（香港）"
+    },
+    {
+        "eventTypes": [
+            "start",
+            "end",
+            "interrupted",
+            "cancelled",
+            "error"
+        ],
+        "extensionId": "neajdppkdcdipfabeoofebfddakdcjhd",
+        "lang": "zh-TW",
+        "remote": true,
+        "voiceName": "Google 國語（臺灣）"
+    }
+]
+Edge Support
