@@ -1,7 +1,6 @@
-import React from 'react';
-
+import React, { Fragment } from 'react';
 const Popup = () => {
-  return <div className="text-red">Popupx</div>;
+  return <Fragment></Fragment>;
 };
 
 export default Popup;

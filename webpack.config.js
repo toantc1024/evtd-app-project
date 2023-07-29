@@ -8,6 +8,8 @@ var webpack = require('webpack'),
 var { CleanWebpackPlugin } = require('clean-webpack-plugin');
 var ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 var ReactRefreshTypeScript = require('react-refresh-typescript');
+const tailwindcss = require('tailwindcss');
+const autoprefixer = require('autoprefixer');
 
 const ASSET_PATH = process.env.ASSET_PATH || '/';
 
@@ -72,6 +74,15 @@ var options = {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                ident: 'postcss',
+                plugins: [tailwindcss, autoprefixer],
+              },
             },
           },
         ],
@@ -141,7 +152,7 @@ var options = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'src/manifest.json',
+          from: 'src/static/manifest.json',
           to: path.join(__dirname, 'build'),
           force: true,
           transform: function (content, path) {
