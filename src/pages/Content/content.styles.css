@@ -1,14 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap');
-
+#evtd-pretranslate *,
 #evtd-translate-button *,
 #evtd-result-panel * {
-  font-family: 'Noto Sans', 'Segoe UI', sans-serif;
+  font-family: 'Noto Sans', 'Segoe UI', sans-serif !important;
+  font-size: 15px !important;
 }
 :root {
-  --image-size: 32px;
+  --image-size: 32px !important;
   --top-layer: 2147483647;
   --tab-border: 1px solid rgb(182 182 182 / 15%);
   --panel-background: white;
+}
+
+#evtd-pretranslate {
+  display: none;
+  position: fixed !important;
+  height: var(--image-size);
+  width: auto;
+  min-width: '64px';
+  font-family: 'Noto Sans', 'Segoe UI', sans-serif !important;
+  background: white;
+  box-shadow: 0px 0px 2px 2px #ddd !important;
+  border-radius: 15px !important;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  font-size: 15px !important;
+  font-weight: 600;
+  z-index: 2147483647 !important;
+  color: #3e3e3e;
+  justify-content: center;
+  align-items: center;
 }
 
 #evtd-translate-button {
@@ -39,37 +60,37 @@
 
 #evtd-result-panel {
   color: black !important;
-  min-height: 100px;
+  min-height: 100px !important;
   border: 1px solid rgb(182 182 182 / 15%);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
-  max-height: 400px;
+  max-height: 400px !important;
   height: auto;
   overflow: auto;
-  width: 300px;
+  width: 300px !important;
   position: fixed;
   display: none;
-  padding: 0px;
+  padding: 0px !important;
   flex-flow: column;
   justify-content: stretch;
   /* background: var(--panel-background); */
-  border-radius: 10px;
+  border-radius: 10px !important;
   background: rgb(243 244 250);
 }
 #evtd-result-panel > .EVTD-POPUP-CONTENT,
 #evtd-result-panel > #evtd-loader {
   height: 100%;
   width: 100%;
-  min-width: 300px;
-  min-height: 250px;
-  max-height: 400px;
+  min-width: 300px !important;
+  min-height: 250px !important;
+  max-height: 400px !important;
   overflow: auto;
   /* Bottom and right shadow */
 }
 
 #evtd-loader {
   background-color: #d7d7d7;
-  height: 300px;
-  width: 300px;
+  height: 300px !important;
+  width: 300px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,11 +99,11 @@
 .EVTD-POPUP-HEADER {
   cursor: move;
   border-bottom: var(--tab-border);
-  border-radius: 0px;
+  border-radius: 0px !important;
   background-color: var(--header-background);
   color: white !important;
-  padding: 5px;
-  font-size: 12px;
+  padding: 5px !important;
+  font-size: 12px !important;
   font-weight: bold;
   display: flex;
   justify-content: flex-end;
@@ -101,7 +122,7 @@
 }
 .EVTD-POPUP-HEADER-TOOL {
   display: flex;
-  gap: 3px;
+  gap: 3px !important;
 }
 
 .EVTD-POPUP-HEADER-TOOL > button {
@@ -147,7 +168,7 @@
 #evtd-result-panel *::-webkit-scrollbar,
 #evtd-result-panel body::-webkit-scrollbar {
   cursor: pointer;
-  width: 8px; /* width of the entire scrollbar */
+  width: 8px !important; /* width of the entire scrollbar */
 }
 
 #evtd-result-panel *::-webkit-scrollbar-track,
@@ -161,7 +182,7 @@
 #evtd-result-panel body::-webkit-scrollbar-thumb {
   cursor: pointer;
   background-color: rgb(141, 141, 141); /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
+  border-radius: 20px !important; /* roundness of the scroll thumb */
 }
 
 #evtd-result-panel *::-webkit-scrollbar-thumb:hover {
@@ -173,37 +194,37 @@
 .evtd-section.dictionary,
 .evtd-section.meaning,
 .evtd-section.phonetic {
-  border-radius: 7px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 7px !important;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
   background: white;
-  margin: 5px;
-  /* margin-top: 0px; */
-  padding: 5px;
+  margin: 5px !important;
+  /* margin-top: 0px!important; */
+  padding: 5px !important;
   display: flex;
   flex-direction: column;
   & .tools {
     display: flex;
-    gap: 5px;
+    gap: 5px !important;
     align-items: center;
     justify-content: flex-start;
     & > .source-text {
       width: 100%;
-      border-radius: 7px;
-      font-size: 15px;
-      height: 30px;
+      border-radius: 7px !important;
+      font-size: 15px !important;
+      height: 30px !important;
       display: flex;
       align-items: center;
       border: var(--tab-border);
       background: rgb(181 181 181 / 10%);
-      padding-left: 5px;
+      padding-left: 5px !important;
     }
     & button {
       border: var(--tab-border);
       background: white;
-      width: 30px;
-      border-radius: 7px;
-      font-size: 25px;
-      height: 30px;
+      width: 30px !important;
+      border-radius: 7px !important;
+      font-size: 25px !important;
+      height: 30px !important;
       display: flex;
       color: gray;
       &:hover {
@@ -219,7 +240,7 @@
 }
 
 #evtd-phonetic-source-text {
-  padding: 5px;
+  padding: 5px !important;
 }
 
 .evtd-copy.copied {
@@ -233,7 +254,7 @@
     font-weight: 400;
     background: #52c3f821;
     font-style: oblique;
-    border-radius: 5px;
+    border-radius: 5px !important;
   }
   /* & .evtd-dictionary-item-content {
   } */
@@ -243,19 +264,19 @@
   display: flex;
   flex-direction: column;
   /* background: rgb(181 181 181 / 25%); */
-  gap: 5px;
+  gap: 5px !important;
 
   & .evtd-example-item {
     display: flex;
     /* background: white; */
     & .evtd-example-item-title {
       display: flex;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px !important;
+      border-bottom-left-radius: 5px !important;
       color: white;
       background: rgb(14, 215, 192);
-      min-width: 25px;
-      min-height: 35px;
+      min-width: 25px !important;
+      min-height: 35px !important;
       justify-content: center;
       align-items: center;
     }
@@ -263,16 +284,16 @@
       display: flex;
       align-items: center;
       border: var(--tab-border);
-      padding: 5px;
-      border-left: 0px;
+      padding: 5px !important;
+      border-left: 0px !important;
     }
   }
 }
 
 .evtd-title {
-  padding: 5px;
+  padding: 5px !important;
   display: flex;
-  gap: 5px;
+  gap: 5px !important;
   align-items: center;
   justify-content: flex-start;
 }
@@ -297,78 +318,78 @@
 .lds-roller {
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 80px !important;
+  height: 80px !important;
 }
 .lds-roller div {
   animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  transform-origin: 40px 40px;
+  transform-origin: 40px 40px !important;
 }
 .lds-roller div:after {
   content: ' ';
   display: block;
   position: absolute;
-  width: 7px;
-  height: 7px;
+  width: 7px !important;
+  height: 7px !important;
   border-radius: 50%;
   background: #fff;
-  margin: -4px 0 0 -4px;
+  margin: -4px 0 0 -4px !important;
 }
 .lds-roller div:nth-child(1) {
   animation-delay: -0.036s;
 }
 .lds-roller div:nth-child(1):after {
-  top: 63px;
-  left: 63px;
+  top: 63px !important;
+  left: 63px !important;
 }
 .lds-roller div:nth-child(2) {
   animation-delay: -0.072s;
 }
 .lds-roller div:nth-child(2):after {
-  top: 68px;
-  left: 56px;
+  top: 68px !important;
+  left: 56px !important;
 }
 .lds-roller div:nth-child(3) {
   animation-delay: -0.108s;
 }
 .lds-roller div:nth-child(3):after {
-  top: 71px;
-  left: 48px;
+  top: 71px !important;
+  left: 48px !important;
 }
 .lds-roller div:nth-child(4) {
   animation-delay: -0.144s;
 }
 .lds-roller div:nth-child(4):after {
-  top: 72px;
-  left: 40px;
+  top: 72px !important;
+  left: 40px !important;
 }
 .lds-roller div:nth-child(5) {
   animation-delay: -0.18s;
 }
 .lds-roller div:nth-child(5):after {
-  top: 71px;
-  left: 32px;
+  top: 71px !important;
+  left: 32px !important;
 }
 .lds-roller div:nth-child(6) {
   animation-delay: -0.216s;
 }
 .lds-roller div:nth-child(6):after {
-  top: 68px;
-  left: 24px;
+  top: 68px !important;
+  left: 24px !important;
 }
 .lds-roller div:nth-child(7) {
   animation-delay: -0.252s;
 }
 .lds-roller div:nth-child(7):after {
-  top: 63px;
-  left: 17px;
+  top: 63px !important;
+  left: 17px !important;
 }
 .lds-roller div:nth-child(8) {
   animation-delay: -0.288s;
 }
 .lds-roller div:nth-child(8):after {
-  top: 56px;
-  left: 12px;
+  top: 56px !important;
+  left: 12px !important;
 }
 @keyframes lds-roller {
   0% {
