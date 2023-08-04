@@ -1,19 +1,41 @@
-console.log('This is the background page.');
-console.log('Put the background scripts here.');
+import google from '../../libs/translate/google';
 
-// import translator from '../../libs/translator';
+const getAudioFromText = async (text, from) => {
+  try {
+    const sourceAudio = from === 'auto' ? await google.detect({ text }) : from;
+    const audio = await google.audio({ text, from: sourceAudio });
+    return audio;
+  } catch (error) {
+    throw error;
+  }
+};
 
-chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
-  let text = 'Gracias!';
-  //   console.log(translator.google.requestTranslate, 'BGG');
-  //   console.log('BG: ', translator.google.requestTranslate(text, 'auto', 'vi'));
+const getTranslateResult = async (tabId, { text, from, to }, sendResponse) => {
+  try {
+    const sourceLang = (await google.detect({ text })) || 'en';
+    const res = await google.translate({
+      text,
+      from: sourceLang,
+      to,
+    });
 
-  console.log(
-    sender.tab
-      ? 'from a content script:' + sender.tab.url
-      : 'from the extension'
-  );
+    sendResponse({ res });
+  } catch (error) {
+    sendResponse({ error });
+  }
+};
 
-  console.log('Received', request);
-  if (request.greeting === 'hello') sendResponse({ farewell: text });
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.type === 'translate') {
+    getTranslateResult(sender.tab.id, request, sendResponse);
+  } else if (request.type === 'audio') {
+    getAudioFromText(request.text, request.from)
+      .then((audio) => {
+        sendResponse({ audio });
+      })
+      .catch((error) => {
+        sendResponse({ error });
+      });
+  }
+  return true;
 });
