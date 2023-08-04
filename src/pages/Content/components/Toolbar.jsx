@@ -116,6 +116,12 @@ const Toolbar = ({ hideResult, pinResult, unpinResult }) => {
           className={`close`}
           onClick={() => {
             hideResult();
+            if (resultPin) {
+              unpinResult();
+            } else {
+              pinResult();
+            }
+            setResultPin(!resultPin);
           }}
         >
           <HiX />

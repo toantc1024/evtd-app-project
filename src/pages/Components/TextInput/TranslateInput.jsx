@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { HiClipboardCopy, HiVolumeUp, HiStop } from 'react-icons/hi';
+import { languageMap } from '../../Mapping/DisplayLanguage';
 
 const TranslateInput = ({
+  displayLanguage,
   text,
   setText,
   doTranslate,
@@ -30,7 +32,7 @@ const TranslateInput = ({
               }}
               className="w-auto p-2 h-[25px] rounded-lg bg-red-500 flex justify-center items-center text-white hover:bg-red-800"
             >
-              Translate
+              {languageMap[displayLanguage].popup.translate.buttonTranslate}
             </button>
           </div>
           <div className="flex gap-2 justify-between">
@@ -44,9 +46,8 @@ const TranslateInput = ({
               onClick={async () => {
                 setAudioGenerating(true);
                 try {
-                  // let audioURL = getAudioURL();
                   if (!text) {
-                    setAudioGenerating(true);
+                    setAudioGenerating(false);
                     return;
                   }
                   let audioURL = await getAudioURL(text);

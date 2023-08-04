@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { langs } from '../../Mapping/LanguageList';
 import { HiSearch, HiX } from 'react-icons/hi';
+import { langCode } from '../../../libs/translate/google/lang-code';
+import { languageMap } from '../../Mapping/DisplayLanguage';
 const SelectLanguage = ({
+  displayLanguage,
   languageModal,
   setLanguageModal,
   selectMode,
@@ -22,9 +25,8 @@ const SelectLanguage = ({
                       type="search"
                       class="border-[1px] relative m-0 block w-[1px] min-w-0 flex-auto rounded-full mr-2  bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3]"
                       placeholder={
-                        selectMode === 'source'
-                          ? 'Translate from'
-                          : 'Translate to'
+                        languageMap[displayLanguage].popup.selectlang
+                          .placeholder[selectMode]
                       }
                       value={searchText}
                       onChange={(e) => {
@@ -45,7 +47,7 @@ const SelectLanguage = ({
 
                 <div className={`h-full w-full  bg-white`}>
                   <div className="h-[400px] overflow-auto gap-2 mt-4">
-                    {Object.entries(langs)
+                    {Object.entries(displayLanguage === 'vi' ? langs : langCode)
                       .filter(([key, value]) => {
                         return (
                           !(selectMode === 'target' && key === 'auto') &&
