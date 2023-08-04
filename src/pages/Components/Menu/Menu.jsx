@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { HiArrowLeft, HiChevronDown, HiCog, HiGlobeAlt } from 'react-icons/hi';
+import { DropdownComponent } from '../Dropdown/DropdownComponent';
 const MenuModal = ({ menuModal, setMenuModal }) => {
   return (
     <>
       {menuModal ? (
         <>
           <div className="fixed top-0 left-0 w-full h-full bg-white z-50">
-            <div className="flex flex-col h-full justify-between">
+            <div className="flex flex-col h-full justify-start">
               {/* Navbar */}
               <div className="flex justify-between py-2 px-2">
                 <button
@@ -23,10 +24,8 @@ const MenuModal = ({ menuModal, setMenuModal }) => {
                 <section className=" relative h-full w-full flex items-center justify-center flex-col gap-2 px-4 text-lg ">
                   <div className="w-full px-4  ">
                     <div className="p-2 flex gap-2 flex-col">
-                      <button className="bg-gray-200 w-full py-2 p-4 rounded-lg flex items-start">
-                        <span>Display language</span>
-                        <HiGlobeAlt />
-                      </button>
+                      <DropdownComponent />
+
                       <button className="bg-gray-200 w-full py-2  flex p-4 rounded-lg ">
                         <span>Donate</span>
                       </button>

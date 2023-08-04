@@ -4,36 +4,31 @@ import { ImageData, POPUP_CONTENT } from './constants';
 // Recevie message from background.js
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  console.log(
-    sender.tab
-      ? 'from a content script:' + sender.tab.url
-      : 'from the extension',
-    'with request',
-    request
-  );
-
   if (request.type === 'response') {
     let content = document.getElementById('evtd-content');
-    content.style.display = 'none';
+    content.style.display = 'block';
     let loader = document.getElementById('evtd-loader');
     loader.style.display = 'none';
-
-    let text = request.res.result[0];
-    let audio = request.audio;
-    content.innerHTML = `${text}`;
-    content.style.display = 'block';
   }
 });
 
 // Inject the conttentstyle
 let isButtonShown = false;
+let isResultPin = false;
+let pinPositionX = 0,
+  pinPositionY = 0;
 
+let detectedFrom = 'auto';
+let detectTarget = 'vi';
+let isPlayingAudio = false;
 chrome.storage.sync.get(['sourceLang', 'targetLang'], function (e) {
   if (!e.sourceLang) {
     chrome.storage.sync.set({ sourceLang: 'en' });
   }
   if (!e.targetLang) {
     chrome.storage.sync.set({ targetLang: 'vi' });
+  } else {
+    detectTarget = e.targetLang;
   }
 });
 
@@ -49,6 +44,14 @@ const resultPanel = document.createElement('evtd');
 resultPanel.id = 'evtd-result-panel';
 resultPanel.style.display = 'none';
 resultPanel.style.zIndex = topZIndex;
+
+// Create audio tag
+const audioElement = document.createElement('audio');
+audioElement.id = 'evtd-audio-player';
+audioElement.style.display = 'none';
+
+resultPanel.appendChild(audioElement);
+
 document.documentElement.appendChild(resultPanel);
 // Function for resultPanel object
 
@@ -58,10 +61,103 @@ const showResult = () => {
 };
 const hideResult = () => {
   resultPanel.style.display = 'none';
+  audioElement.pause();
+  isPlayingAudio = false;
 };
-builtPanel(resultPanel, hideResult);
-document.addEventListener('mousedown', () => {
+
+// Process pin result
+const pinResult = () => {
+  isResultPin = true;
+  (pinPositionX = resultPanel.style.left),
+    (pinPositionY = resultPanel.style.top);
+};
+
+const unpinResult = () => {
+  isResultPin = false;
+};
+
+const playAudio = (text, type) => {
+  if (isPlayingAudio) {
+    audioElement.pause();
+    isPlayingAudio = false;
+  }
+  return new Promise((resolve, reject) => {
+    let from = detectedFrom;
+    if (type === 'target') {
+      from = detectTarget || 'auto';
+    } else {
+      if (!detectedFrom) {
+        from = 'auto';
+      }
+    }
+
+    chrome.runtime.sendMessage(
+      {
+        type: 'audio',
+        from: from,
+        text: text,
+      },
+      (response) => {
+        if (response.error) {
+          try {
+            // Try synthesis audio
+            // Stop all other speechsynthesis
+            let syth = window.speechSynthesis;
+            syth.cancel();
+            audioElement.pause();
+
+            let from = detectedFrom;
+
+            let sourceLang = '';
+            let voices = syth.getVoices();
+            for (let i = 0; i < voices.length; i++) {
+              if (
+                voices[i].lang === from ||
+                voices[i].lang.indexOf(from) >= 0
+              ) {
+                sourceLang = voices[i].lang;
+                break;
+              }
+            }
+            if (from === 'auto') {
+              sourceLang = 'Google US English';
+            }
+
+            let utter = new SpeechSynthesisUtterance(text);
+            utter.lang = sourceLang;
+            utter.rate = 1;
+            utter.pitch = 1;
+            utter.volume = 1;
+            utter.voiceURI = 'native';
+            utter.onend = function () {
+              isPlayingAudio = false;
+            };
+            utter.onerror = function () {};
+
+            isPlayingAudio = true;
+            syth.speak(utter);
+
+            // Choose language
+          } catch (error) {
+            // Syth error
+          }
+        } else {
+          let audio = response.audio;
+          audioElement.pause();
+          audioElement.src = audio;
+          audioElement.play();
+        }
+      }
+    );
+  });
+};
+builtPanel(resultPanel, hideResult, unpinResult, pinResult, playAudio);
+document.addEventListener('mousedown', (event) => {
   disappearButton();
+  if (!event.target.closest('#evtd-result-panel') && !isResultPin) {
+    hideResult();
+  }
+
   // whether user take a select action
   detectSelect(document, (event) => {
     selectTranslate(event);
@@ -83,7 +179,6 @@ const shouldTranslate = () => {
   // Get current selection
   const selection = window.getSelection();
   const selectedText = selection.toString().trim();
-  console.log({ selectedText });
   if (!selectedText) return false;
   return true;
 };
@@ -103,12 +198,119 @@ function cancelTextSelection() {
   }
 }
 
+const displayResult = (contentElement, response) => {
+  // ProcessError
+  if (response.error) {
+    // Remove loader
+    let loader = document.getElementById('evtd-loader');
+    loader.style.display = 'none';
+    let content = document.getElementById('evtd-content');
+    content.style.display = 'block';
+    return;
+  }
+
+  let data = response.res;
+
+  let transltedText;
+  if (data.result.length > 1) {
+    transltedText = data.result.join('\n');
+  } else {
+    transltedText = data.result[0];
+  }
+
+  let dict = data.dict;
+  let phonetic = data.phonetic;
+  let example = data.example;
+  const phoneticSection = contentElement.querySelector(
+    '.evtd-section.phonetic'
+  );
+
+  if (phonetic) {
+    phoneticSection.style.display = 'flex';
+    phoneticSection.querySelector('#evtd-phonetic-source-text').innerText =
+      data.text;
+    // Create span for phonetic
+
+    phoneticSection.querySelector('#evtd-phonetic-text').innerHTML = '';
+    const phoneticText = document.createElement('evtdphonetic');
+    phoneticText.innerText = phonetic.replace('[', '/').replace(']', '/');
+    phoneticSection
+      .querySelector('#evtd-phonetic-text')
+      .appendChild(phoneticText);
+
+    detectedFrom = data.from;
+    if (data.from) {
+      detectedFrom = data.from;
+    }
+
+    // phoneticSection.querySelector('#evtd-phonetic-text').innerText = phonetic;
+  } else {
+    phoneticSection.style.display = 'none';
+  }
+
+  const meaningSection = contentElement.querySelector('.evtd-section.meaning');
+  if (transltedText) {
+    meaningSection.style.display = 'flex';
+    meaningSection.querySelector('#evtd-meaning-value').innerText =
+      transltedText;
+  } else {
+    meaningSection.style.display = 'none';
+  }
+
+  const dictionarySection = contentElement.querySelector(
+    '.evtd-section.dictionary'
+  );
+
+  if (dict) {
+    dictionarySection.style.display = 'flex';
+    let dictList = dictionarySection.querySelector('#evtd-dictionary-list');
+    dictList.innerHTML = '';
+    dict.forEach((e) => {
+      let dictItem = document.createElement('div');
+      dictItem.className = 'evtd-dictionary-item';
+      let [title, content] = e.split(':');
+
+      dictItem.innerHTML = `
+        <div class="evtd-dictionary-item-title">${title}</div>
+        <div class="evtd-dictionary-item-content">${content}</div>
+      `;
+      dictList.appendChild(dictItem);
+    });
+  } else {
+    dictionarySection.style.display = 'none';
+  }
+
+  const exampleSection = contentElement.querySelector('.evtd-section.example');
+  if (example) {
+    exampleSection.style.display = 'flex';
+    let exampleList = exampleSection.querySelector('#evtd-example-list');
+    exampleList.innerHTML = '';
+    example.forEach((item, index) => {
+      let exampleItem = document.createElement('div');
+      exampleItem.className = 'evtd-example-item';
+
+      exampleItem.innerHTML = `
+        <div class="evtd-example-item-title">${index + 1}</div>
+        <div class="evtd-example-item-content">
+        <span>
+        ${item}
+        </span>
+        </div>
+      `;
+      exampleList.appendChild(exampleItem);
+    });
+  } else {
+    exampleSection.style.display = 'none';
+  }
+};
+
 const translateSubmit = () => {
   let selection = querySelect();
   if (selection.text && selection.text.length > 0) {
     chrome.storage.sync.get(['sourceLang', 'targetLang'], (e) => {
       let sourceLang = e.sourceLang;
       let targetLang = e.targetLang;
+      detectTarget = targetLang;
       let queryText = selection.text;
       // Limit amount of queryText to 100 character
       if (queryText.length > 500) {
@@ -116,7 +318,7 @@ const translateSubmit = () => {
       }
 
       let loader = document.getElementById('evtd-loader');
-      loader.style.display = 'block';
+      loader.style.display = 'flex';
       let content = document.getElementById('evtd-content');
       content.style.display = 'none';
 
@@ -136,22 +338,15 @@ const translateSubmit = () => {
           loader.style.display = 'none';
           let content = document.getElementById('evtd-content');
           content.style.display = 'block';
-          if (response.res.result[0] === undefined) {
-            content.innerHTML = 'No result';
-            return;
-          } else if (response.res.result[0].length > 1) {
-            let text = response.res.result.join(' ');
-            content.innerHTML = text;
-            return;
-          } else {
-            content.innerHTML = response.res.result[0];
-          }
-          console.log('Received', response);
+
+          displayResult(content, response);
         }
       );
 
-      resultPanel.style.top = `${translationButtonIFrame.offsetTop}px`;
-      resultPanel.style.left = `${translationButtonIFrame.offsetLeft}px`;
+      if (!isResultPin) {
+        resultPanel.style.top = `${translationButtonIFrame.offsetTop}px`;
+        resultPanel.style.left = `${translationButtonIFrame.offsetLeft}px`;
+      }
 
       cancelTextSelection();
       disappearButton();
@@ -179,7 +374,6 @@ function querySelect() {
 
 function selectTranslate(event) {
   if (event.targetElement === resultPanel) {
-    console.log('Ooops');
     return;
   }
   if (!shouldTranslate()) return;
@@ -275,7 +469,6 @@ translationButtonIFrame.addEventListener('load', () => {
   );
   Object.assign(translationButtonIFrame.contentDocument.body.style, CleanStyle);
   translationButton.addEventListener('mousedown', buttonClickHandler);
-  alert('init');
   translationButton.addEventListener('contextmenu', (e) => e.preventDefault());
 });
 
@@ -326,11 +519,14 @@ const showButton = (event) => {
   translationButtonIFrame.style.top = `${YPosition}px`;
   translationButtonIFrame.style.left = `${XPosition}px`;
 
-  // record original position of the selection icon and the start mouse scrolling position
-  // originScrollX = scrollingElement[scrollPropertyX];
-  // originScrollY = scrollingElement[scrollPropertyY];
-  // originPositionX = XPosition;
-  // originPositionY = YPosition;
+  // PRETRANSLATE
+  // let selection = window.getSelection();
+  // selection = selection.toString().trim();
+  // if (select.length < 40) {
+  //   console.log('Pretranslate');
+  //   console.log(selection);
+  // }
+
   isButtonShown = true;
 };
 

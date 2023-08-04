@@ -1,23 +1,41 @@
 import google from '../../libs/translate/google';
 
+const getAudioFromText = async (text, from) => {
+  try {
+    const sourceAudio = from === 'auto' ? await google.detect({ text }) : from;
+    const audio = await google.audio({ text, from: sourceAudio });
+    return audio;
+  } catch (error) {
+    throw error;
+  }
+};
+
 const getTranslateResult = async (tabId, { text, from, to }, sendResponse) => {
   try {
-    console.log('Making request with', { text, from, to });
+    const sourceLang = (await google.detect({ text })) || 'en';
     const res = await google.translate({
       text,
-      from,
+      from: sourceLang,
       to,
     });
-    const audio = await google.audio({ text, from });
-    sendResponse({ res, audio });
+
+    sendResponse({ res });
   } catch (error) {
-    console.log({ error });
+    sendResponse({ error });
   }
 };
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'translate') {
     getTranslateResult(sender.tab.id, request, sendResponse);
+  } else if (request.type === 'audio') {
+    getAudioFromText(request.text, request.from)
+      .then((audio) => {
+        sendResponse({ audio });
+      })
+      .catch((error) => {
+        sendResponse({ error });
+      });
   }
   return true;
 });

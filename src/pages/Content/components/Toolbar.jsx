@@ -1,10 +1,10 @@
 import React from 'react';
 import { POPUP_HEADER } from '../constants';
 import { ImageData } from '../assets/image';
-import { HiX, HiOutlinePlus } from 'react-icons/hi';
-import { BsPinAngleFill } from 'react-icons/bs';
+import { HiX, HiStar } from 'react-icons/hi';
+import { BsPinAngleFill, BsPinFill } from 'react-icons/bs';
 
-const Toolbar = ({ hideResult }) => {
+const Toolbar = ({ hideResult, pinResult, unpinResult }) => {
   var SNAP_MARGINS = 5;
   var SNAP_FS_MARGINS = 100;
   var RESIZE_MARGIN_INNER = 5;
@@ -72,7 +72,6 @@ const Toolbar = ({ hideResult }) => {
     lastPosX = e.clientX;
     lastPosY = e.clientY;
     // set the element's new position:
-    // console.log(calc(elmnt, e));
     elmnt.style.top = Math.max(elmnt.offsetTop - newPosY, 0) + 'px';
     elmnt.style.left = Math.max(elmnt.offsetLeft - newPosX, 0) + 'px';
     // console.log(elmnt.offsetTop - newPosY, elmnt.offsetLeft - newPosX);
@@ -85,24 +84,36 @@ const Toolbar = ({ hideResult }) => {
     document.onmousemove = null;
   }
 
+  const [resultPin, setResultPin] = React.useState(false);
+
   return (
     <div className={POPUP_HEADER} id={POPUP_HEADER} onMouseDown={dragMouseDown}>
-      <span>
-        {/* Logo */}
-        <img src={ImageData} alt="logo" />
-      </span>
       <div className={`${POPUP_HEADER}-TOOL`}>
+        {/* Dropdown */}
+
         {/* Save result button */}
-        <button>
-          <HiOutlinePlus />
+        <button className={`save`}>
+          <HiStar />
         </button>
         {/* Expand button */}
         {/* Pin button */}
-        <button>
-          <BsPinAngleFill />
-        </button>{' '}
+        <button
+          onClick={() => {
+            if (resultPin) {
+              unpinResult();
+            } else {
+              pinResult();
+            }
+            setResultPin(!resultPin);
+          }}
+          className={`${resultPin ? 'evtd-pinned' : 'evtd-pin'}`}
+          id="EVTD-POPUP-PIN-RESULT"
+        >
+          {resultPin ? <BsPinFill /> : <BsPinAngleFill />}
+        </button>
         {/* Exit button */}
         <button
+          className={`close`}
           onClick={() => {
             hideResult();
           }}
