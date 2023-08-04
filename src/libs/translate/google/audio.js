@@ -8,7 +8,7 @@ import { langCode } from './lang-code';
 import { LANGUAGE_NOT_SOPPORTED, RESULT_ERROR } from '../../error-codes';
 import { detect } from './detect';
 
-const MAX_TEXT_LENGTH = 200;
+const MAX_TEXT_LENGTH = 500;
 
 export const audio = async ({ text, from = '' }) => {
   if (text.length > MAX_TEXT_LENGTH) {

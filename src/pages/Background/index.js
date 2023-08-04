@@ -1,19 +1,23 @@
-console.log('This is the background page.');
-console.log('Put the background scripts here.');
+import google from '../../libs/translate/google';
 
-// import translator from '../../libs/translator';
+const getTranslateResult = async (tabId, { text, from, to }, sendResponse) => {
+  try {
+    console.log('Making request with', { text, from, to });
+    const res = await google.translate({
+      text,
+      from,
+      to,
+    });
+    const audio = await google.audio({ text, from });
+    sendResponse({ res, audio });
+  } catch (error) {
+    console.log({ error });
+  }
+};
 
-chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
-  let text = 'Gracias!';
-  //   console.log(translator.google.requestTranslate, 'BGG');
-  //   console.log('BG: ', translator.google.requestTranslate(text, 'auto', 'vi'));
-
-  console.log(
-    sender.tab
-      ? 'from a content script:' + sender.tab.url
-      : 'from the extension'
-  );
-
-  console.log('Received', request);
-  if (request.greeting === 'hello') sendResponse({ farewell: text });
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.type === 'translate') {
+    getTranslateResult(sender.tab.id, request, sendResponse);
+  }
+  return true;
 });

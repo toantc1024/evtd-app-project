@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap');
+
+#evtd-translate-button *,
+#evtd-result-panel * {
+  font-family: 'Noto Sans', 'Segoe UI', sans-serif;
+}
+:root {
+  --image-size: 32px;
+  --top-layer: 2147483647;
+  --header-button: rgb(205, 204, 204);
+  --header-background: rgba(150, 150, 150);
+}
+#evtd-translate-button {
+  display: inline-block !important;
+  width: var(--image-size) !important;
+  height: var(--image-size) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: fixed !important;
+  box-shadow: 0px 0px 2px 2px #ddd !important;
+  cursor: pointer !important;
+  border-radius: 50% !important;
+  z-index: 2147483647 !important;
+  box-sizing: content-box !important;
+  overflow: hidden !important;
+  border: none !important;
+  transition: box-shadow 200ms ease-in-out, transform 300ms ease !important;
+  animation: fade-in 300ms ease-in-out !important;
+}
+#evtd-translate-button:hover {
+  box-shadow: 0px 0px 8px 3px #bbb !important;
+  transform: rotate(360deg) !important;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.evtd-app {
+  background: red;
+}
+
+#evtd-result-panel {
+  min-height: 100px;
+  max-height: 400px;
+  height: auto;
+  overflow: auto;
+  width: 230px;
+  position: fixed;
+  display: none;
+  flex-flow: column;
+  justify-content: stretch;
+
+  border-radius: 8px;
+  border: 1px solid dodgerblue;
+}
+#evtd-result-panel > .EVTD-POPUP-CONTENT,
+#evtd-result-panel > #evtd-loader {
+  height: 100%;
+  width: 100%;
+  min-width: 150px;
+  min-height: 150px;
+  /* Bottom and right shadow */
+}
+
+#evtd-loader {
+  background-color: aqua;
+}
+
+.EVTD-POPUP-HEADER {
+  cursor: move;
+  background-color: var(--header-background);
+  color: white;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.EVTD-POPUP-HEADER > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.EVTD-POPUP-HEADER > span img {
+  cursor: pointer !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+.EVTD-POPUP-HEADER-TOOL {
+  display: flex;
+  gap: 3px;
+}
+
+.EVTD-POPUP-HEADER-TOOL > button {
+  width: 24px;
+  height: 24px;
+  background-color: var(--header-button);
+  color: rgb(67, 67, 67);
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  font-size: 15px;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background: #797979;
+    color: white;
+  }
+  transition: all ease-in-out 100ms;
+}
+
+#evtd-result-panel *::-webkit-scrollbar,
+#evtd-result-panel body::-webkit-scrollbar {
+  cursor: pointer;
+  width: 8px; /* width of the entire scrollbar */
+}
+
+#evtd-result-panel *::-webkit-scrollbar-track,
+#evtd-result-panel body::-webkit-scrollbar-track {
+  cursor: pointer;
+
+  background: rgb(209, 209, 209); /* color of the tracking area */
+}
+
+#evtd-result-panel *::-webkit-scrollbar-thumb,
+#evtd-result-panel body::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background-color: rgb(141, 141, 141); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+}
+
+#evtd-result-panel *::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(100, 100, 100); /* color of the scroll thumb */
+}
