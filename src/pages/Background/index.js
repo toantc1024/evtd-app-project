@@ -39,3 +39,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   }
   return true;
 });
+
+function foo() {
+  console.log("I'm defined in background.js");
+}

@@ -45,7 +45,7 @@ var options = {
     popup: path.join(__dirname, 'src', 'pages', 'Popup', 'index.jsx'),
     background: path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
     contentScript: path.join(__dirname, 'src', 'pages', 'Content', 'index.js'),
-    // devtools: path.join(__dirname, 'src', 'pages', 'Devtools', 'index.js'),
+    pomodoro: path.join(__dirname, 'src', 'pages', 'Pomodoro', 'index.jsx'),
     panel: path.join(__dirname, 'src', 'pages', 'Panel', 'index.jsx'),
   },
   chromeExtensionBoilerplate: {
@@ -211,6 +211,12 @@ var options = {
       template: path.join(__dirname, 'src', 'pages', 'Popup', 'index.html'),
       filename: 'popup.html',
       chunks: ['popup'],
+      cache: false,
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'pages', 'Pomodoro', 'index.html'),
+      filename: 'pomodoro.html',
+      chunks: ['pomodoro'],
       cache: false,
     }),
     // new HtmlWebpackPlugin({

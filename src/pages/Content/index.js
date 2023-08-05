@@ -195,6 +195,13 @@ const shouldTranslate = () => {
         )
         .then((res) => {
           console.log(e.targetLang, res);
+          if (res.length === 2) {
+            res = res[1];
+          } else if (res.length > 2) {
+            res = res.join(' ');
+          } else {
+            res = res[0];
+          }
           preTranslate.style.display = 'flex';
           preTranslate.innerText = res;
         });
@@ -555,14 +562,6 @@ const showButton = (event) => {
 
   preTranslate.style.top = `${YPosition}px`;
   preTranslate.style.left = `${XPosition + 40}px`;
-
-  // PRETRANSLATE
-  // let selection = window.getSelection();
-  // selection = selection.toString().trim();
-  // if (select.length < 40) {
-  //   console.log('Pretranslate');
-  //   console.log(selection);
-  // }
 
   isButtonShown = true;
 };

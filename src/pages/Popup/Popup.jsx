@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import TranslateInput from '../Components/TextInput/TranslateInput';
 import SelectLanguage from '../Components/SelectLanguage/SelectLanguage';
 import MenuModal from '../Components/Menu/Menu';
-import { GiTomato } from 'react-icons/gi';
+import Tomato from '../../assets/img/tomato.svg';
 import {
   HiOutlineSwitchHorizontal,
   HiMenu,
@@ -205,8 +205,6 @@ const Popup = () => {
     }
   };
 
-  const [currentApp, setCurrentApp] = useState('translate');
-  const [pomodoro, setPomodoro] = useState(false);
   return (
     <Fragment>
       {/* Modals */}
@@ -254,7 +252,6 @@ const Popup = () => {
                 className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-sky-600 group  transition-bg ease-in-out duration-100 gap-2 px-4 bg-white "
                 onClick={() => {
                   setAppDropdown(false);
-                  setCurrentApp('translate');
                 }}
               >
                 <span className="group-hover:text-white font-bold text-sky-500">
@@ -265,14 +262,37 @@ const Popup = () => {
               <button
                 className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-red-600 group  transition-bg ease-in-out duration-100 gap-2 px-4 bg-white "
                 onClick={() => {
-                  setAppDropdown(false);
-                  setCurrentApp('pomodoro');
+                  chrome.windows.getAll(
+                    { windowTypes: ['popup'] },
+                    function (windows) {
+                      console.log(windows);
+                      if (windows.length) {
+                        chrome.windows.update(windows[0].id, {
+                          focused: true,
+                        });
+                      } else {
+                        var optionsUrl = chrome.runtime.getURL('pomodoro.html');
+                        chrome.windows.create(
+                          {
+                            url: optionsUrl,
+                            type: 'panel',
+                          },
+                          (window) => {
+                            // setCurrentWindowId(window.id);
+                          }
+                        );
+                      }
+                    }
+                  );
                 }}
               >
                 <span className="group-hover:text-white font-bold text-red-500">
                   Pomodoro
                 </span>
-                <GiTomato className="group-hover:text-white text-xl text-red-500" />
+                <img
+                  src={Tomato}
+                  className="group-hover:text-white w-6 h-6 text-red-500"
+                />
               </button>
               <button
                 className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-slate-200  transition-bg ease-in-out duration-100 gap-2 px-4 bg-white"
@@ -298,154 +318,143 @@ const Popup = () => {
       </div>
 
       {/* Language bar */}
-      {currentApp === 'pomodoro' ? (
-        <Pomodoro
-          pomodoro={pomodoro}
-          setPomodoro={(value) => setPomodoro(value)}
-        />
-      ) : (
-        <Fragment>
-          <div className="bg-white px-[10px] py-2 grid grid-cols-3">
-            <div className="flex items-center justify-center">
-              <button
-                className="bg-orange-200 p-2 rounded-2xl px-4 w-full"
-                onClick={() => {
-                  setSelectMode('source');
-                  setLanguageModal(true);
-                }}
-              >
-                {displayLanguage === 'vi'
-                  ? langs[sourceLang]
-                  : langCode[sourceLang]}
-              </button>
-            </div>
+      <div className="bg-white px-[10px] py-2 grid grid-cols-3">
+        <div className="flex items-center justify-center">
+          <button
+            className="bg-orange-200 p-2 rounded-2xl px-4 w-full"
+            onClick={() => {
+              setSelectMode('source');
+              setLanguageModal(true);
+            }}
+          >
+            {displayLanguage === 'vi'
+              ? langs[sourceLang]
+              : langCode[sourceLang]}
+          </button>
+        </div>
 
-            {/* Swap target and source language */}
-            <div className="flex items-center justify-center">
-              <button
-                className="hover:bg-orange-500 flex items-center justify-center bg-orange-400 rounded-full p-2"
-                onClick={() => swapLanguage()}
-              >
-                <HiOutlineSwitchHorizontal className="text-lg text-white" />
-              </button>
-            </div>
-            <div className="flex items-center justify-center">
-              <button
-                className="bg-sky-200 p-2 rounded-2xl px-4 w-full"
-                onClick={() => {
-                  setSelectMode('target');
-                  setLanguageModal(true);
-                }}
-              >
-                {displayLanguage === 'vi'
-                  ? langs[targetLang]
-                  : langCode[targetLang]}
-              </button>
-            </div>
-          </div>
+        {/* Swap target and source language */}
+        <div className="flex items-center justify-center">
+          <button
+            className="hover:bg-orange-500 flex items-center justify-center bg-orange-400 rounded-full p-2"
+            onClick={() => swapLanguage()}
+          >
+            <HiOutlineSwitchHorizontal className="text-lg text-white" />
+          </button>
+        </div>
+        <div className="flex items-center justify-center">
+          <button
+            className="bg-sky-200 p-2 rounded-2xl px-4 w-full"
+            onClick={() => {
+              setSelectMode('target');
+              setLanguageModal(true);
+            }}
+          >
+            {displayLanguage === 'vi'
+              ? langs[targetLang]
+              : langCode[targetLang]}
+          </button>
+        </div>
+      </div>
 
-          {/* Translate Boxes */}
-          <div className="pt-2">
-            <div className="">
-              <TranslateInput
-                displayLanguage={displayLanguage}
-                getAudioURL={generateAudio}
-                sourceLang={sourceLang}
-                text={sourceText}
-                setText={(value) => setSourceText(value)}
-                doTranslate={() => doTranslate()}
-              />
-            </div>
-            <div className="h-[250px] bg-gray-100">
-              {isTranslating ? (
-                isTranslated === false ? (
-                  <div className="w-full h-full flex flex-col gap-2 items-center justify-center text-lg">
-                    <p className="bg-white w-[40px] h-[40px] rounded-full flex items-center justify-center">
-                      <HiTranslate className="text-sky-400" />
-                    </p>
-                    <h1 className="text-gray-600">
-                      {languageMap[displayLanguage].popup.translate.placeHolder}
-                    </h1>
-                  </div>
-                ) : (
-                  <div className="w-full h-full flex flex-col gap-2 items-center justify-center text-lg">
-                    <div class="lds-ellipsis">
-                      <div className="bg-sky-500"></div>
-                      <div className="bg-red-500"></div>
-                      <div className="bg-orange-400"></div>
-                      <div className="bg-sky-500"></div>
-                    </div>
-                  </div>
-                )
-              ) : (
-                <div className="h-full w-full py-2 pb-0 pt-0 flex  flex-col">
-                  <div className="bg-gray-100 py-2 flex gap-2 px-2 mb-1">
-                    <button
-                      className={`${
-                        currentChoice === 'meaning'
-                          ? 'bg-sky-400'
-                          : 'border-[1px]'
-                      } p-2 rounded-lg`}
-                      onClick={() => {
-                        setCurrentChoice('meaning');
-                      }}
-                    >
-                      Meaning
-                    </button>
-                    {example && (
-                      <button
-                        className={`${
-                          currentChoice === 'example'
-                            ? 'bg-orange-400'
-                            : 'border-[1px]'
-                        } p-2 rounded-lg`}
-                        onClick={() => {
-                          setCurrentChoice('example');
-                        }}
-                      >
-                        Example
-                      </button>
-                    )}
-                    {related && (
-                      <button
-                        className={`${
-                          currentChoice === 'related'
-                            ? 'bg-sky-400'
-                            : 'border-[1px]'
-                        } p-2 rounded-lg`}
-                        onClick={() => {
-                          setCurrentChoice('related');
-                        }}
-                      >
-                        Related
-                      </button>
-                    )}
-                  </div>
-                  <div className="p-2 pb-0 pt-0 bg-white w-full h-full max-h-[250px] overflow-auto">
-                    <div className="flex flex-col ">
-                      {isTranslated && currentChoice === 'meaning' ? (
-                        <Meaning
-                          generateAudio={generateAudio}
-                          sourceLang={sourceLang}
-                          text={translatedText}
-                          meaning={meaning}
-                          setMeaning={(value) => setMeaning(value)}
-                          dict={dict}
-                          pronunciation={pronunciation}
-                        />
-                      ) : currentChoice === 'example' ? (
-                        <Example example={example} />
-                      ) : currentChoice === 'related' ? (
-                        <Related related={related} />
-                      ) : null}
-                    </div>
-                  </div>
+      {/* Translate Boxes */}
+      <div className="pt-2">
+        <div className="">
+          <TranslateInput
+            displayLanguage={displayLanguage}
+            getAudioURL={generateAudio}
+            sourceLang={sourceLang}
+            text={sourceText}
+            setText={(value) => setSourceText(value)}
+            doTranslate={() => doTranslate()}
+          />
+        </div>
+        <div className="h-[250px] bg-gray-100">
+          {isTranslating ? (
+            isTranslated === false ? (
+              <div className="w-full h-full flex flex-col gap-2 items-center justify-center text-lg">
+                <p className="bg-white w-[40px] h-[40px] rounded-full flex items-center justify-center">
+                  <HiTranslate className="text-sky-400" />
+                </p>
+                <h1 className="text-gray-600">
+                  {languageMap[displayLanguage].popup.translate.placeHolder}
+                </h1>
+              </div>
+            ) : (
+              <div className="w-full h-full flex flex-col gap-2 items-center justify-center text-lg">
+                <div class="lds-ellipsis">
+                  <div className="bg-sky-500"></div>
+                  <div className="bg-red-500"></div>
+                  <div className="bg-orange-400"></div>
+                  <div className="bg-sky-500"></div>
                 </div>
-              )}
+              </div>
+            )
+          ) : (
+            <div className="h-full w-full py-2 pb-0 pt-0 flex  flex-col">
+              <div className="bg-gray-100 py-2 flex gap-2 px-2 mb-1">
+                <button
+                  className={`${
+                    currentChoice === 'meaning' ? 'bg-sky-400' : 'border-[1px]'
+                  } p-2 rounded-lg`}
+                  onClick={() => {
+                    setCurrentChoice('meaning');
+                  }}
+                >
+                  Meaning
+                </button>
+                {example && (
+                  <button
+                    className={`${
+                      currentChoice === 'example'
+                        ? 'bg-orange-400'
+                        : 'border-[1px]'
+                    } p-2 rounded-lg`}
+                    onClick={() => {
+                      setCurrentChoice('example');
+                    }}
+                  >
+                    Example
+                  </button>
+                )}
+                {related && (
+                  <button
+                    className={`${
+                      currentChoice === 'related'
+                        ? 'bg-sky-400'
+                        : 'border-[1px]'
+                    } p-2 rounded-lg`}
+                    onClick={() => {
+                      setCurrentChoice('related');
+                    }}
+                  >
+                    Related
+                  </button>
+                )}
+              </div>
+              <div className="p-2 pb-0 pt-0 bg-white w-full h-full max-h-[250px] overflow-auto">
+                <div className="flex flex-col ">
+                  {isTranslated && currentChoice === 'meaning' ? (
+                    <Meaning
+                      generateAudio={generateAudio}
+                      sourceLang={sourceLang}
+                      text={translatedText}
+                      meaning={meaning}
+                      setMeaning={(value) => setMeaning(value)}
+                      dict={dict}
+                      pronunciation={pronunciation}
+                    />
+                  ) : currentChoice === 'example' ? (
+                    <Example example={example} />
+                  ) : currentChoice === 'related' ? (
+                    <Related related={related} />
+                  ) : null}
+                </div>
+              </div>
             </div>
-          </div>
-        </Fragment>
-      )}
+          )}
+        </div>
+      </div>
     </Fragment>
   );
 };
