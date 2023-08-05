@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import TranslateInput from '../Components/TextInput/TranslateInput';
 import SelectLanguage from '../Components/SelectLanguage/SelectLanguage';
 import MenuModal from '../Components/Menu/Menu';
-import Tomato from '../../assets/img/tomato.svg';
+import { PiClockCountdownFill } from 'react-icons/pi';
 import {
   HiOutlineSwitchHorizontal,
   HiMenu,
@@ -18,7 +18,6 @@ import Example from './Components/Example';
 import Related from './Components/Related';
 import { languageMap } from '../Mapping/DisplayLanguage';
 import { langCode } from '../../libs/translate/google/lang-code';
-import Pomodoro from '../Components/Pomodoro/Pomodoro';
 const Popup = () => {
   const [menuModal, setMenuModal] = useState(false);
   const [isTranslated, setIsTranslated] = useState(false);
@@ -289,10 +288,7 @@ const Popup = () => {
                 <span className="group-hover:text-white font-bold text-red-500">
                   Pomodoro
                 </span>
-                <img
-                  src={Tomato}
-                  className="group-hover:text-white w-6 h-6 text-red-500"
-                />
+                <PiClockCountdownFill className="group-hover:text-white w-6 h-6 text-red-500" />
               </button>
               <button
                 className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-slate-200  transition-bg ease-in-out duration-100 gap-2 px-4 bg-white"
