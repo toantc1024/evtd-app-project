@@ -27,7 +27,7 @@ const Popup = ({
       {/* Result content */}
       <div className={POPUP_CONTENT}>
         <div id="evtd-loader">
-          <div className="lds-roller">
+          <div class="lds-roller">
             <div></div>
             <div></div>
             <div></div>
@@ -42,10 +42,10 @@ const Popup = ({
           {/* Meaning section */}
           <Phonetic playAudio={playAudio} />
           <Meaning playAudio={playAudio} />
-          <div className="evtd-section dictionary">
-            <div className="evtd-wrapper">
-              <div className="evtd-title">
-                <span className="evtd-icon evtd-bookmark">
+          <div class="evtd-section dictionary">
+            <div class="evtd-wrapper">
+              <div class="evtd-title">
+                <span class="evtd-icon evtd-bookmark">
                   <HiBookmark />
                 </span>
                 <span>Dictionary</span>
@@ -55,10 +55,10 @@ const Popup = ({
           </div>
 
           {/* Example section */}
-          <div className="evtd-section example">
-            <div className="evtd-wrapper">
-              <div className="evtd-title">
-                <span className="evtd-icon evtd-annotation">
+          <div class="evtd-section example">
+            <div class="evtd-wrapper">
+              <div class="evtd-title">
+                <span class="evtd-icon evtd-annotation">
                   <HiAnnotation />
                 </span>
                 <span>Example</span>
