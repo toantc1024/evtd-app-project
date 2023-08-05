@@ -159,8 +159,15 @@
     color: white !important;
   }
 
+  &.save.saved {
+    background: greenyellow !important;
+    color: rgb(44, 44, 44) !important;
+  }
   &.save:hover {
     background: #ffb661 !important;
+  }
+  &.save.saved:hover {
+    background: greenyellow !important;
   }
   transition: all ease-in-out 100ms !important;
 }

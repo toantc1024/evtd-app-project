@@ -276,6 +276,8 @@ const Popup = () => {
                           {
                             url: optionsUrl,
                             type: 'panel',
+                            width: 400,
+                            height: 600,
                           },
                           (window) => {
                             // setCurrentWindowId(window.id);
@@ -390,7 +392,7 @@ const Popup = () => {
               </div>
             ) : (
               <div className="w-full h-full flex flex-col gap-2 items-center justify-center text-lg">
-                <div class="lds-ellipsis">
+                <div className="lds-ellipsis">
                   <div className="bg-sky-500"></div>
                   <div className="bg-red-500"></div>
                   <div className="bg-orange-400"></div>

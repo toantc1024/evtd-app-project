@@ -1,10 +1,8 @@
 import React from 'react';
-import { HISTORY_PAGE, SAVED_WORDS_PAGE } from '../../Panel/constants';
+import { SAVED_WORDS_PAGE } from '../../Panel/constants';
 import { BsBookmarkStarFill } from 'react-icons/bs';
 import { HiDotsVertical } from 'react-icons/hi';
-import { HiOutlineChevronDown } from 'react-icons/hi';
-import { BiHistory } from 'react-icons/bi';
-const Navbar = ({ appDropdown, setAppDropdown, appPage, setAppPage }) => {
+const Navbar = ({ appDropdown, setAppDropdown }) => {
   return (
     <div className="flex justify-between p-4 border-b-[1px] z-30">
       <button className="p-2 border-[1px] rounded-full flex justify-between items-center hover:bg-amber-500 group transition-bg ease-in-out duration-100 gap-2 px-4 bg-white">
@@ -42,19 +40,6 @@ const Navbar = ({ appDropdown, setAppDropdown, appPage, setAppPage }) => {
                 Saved words
               </span>
               <BsBookmarkStarFill className="group-hover:text-white text-xl text-amber-500" />
-            </button>
-
-            <button
-              className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-emerald-600 group  transition-bg ease-in-out duration-100 gap-2 px-4 bg-white "
-              onClick={() => {
-                setAppPage(HISTORY_PAGE);
-                setAppDropdown(false);
-              }}
-            >
-              <span className="group-hover:text-white font-bold text-emerald-500">
-                Lookup hisory
-              </span>
-              <BiHistory className="group-hover:text-white text-xl text-emerald-500" />
             </button>
           </div>
         </div>

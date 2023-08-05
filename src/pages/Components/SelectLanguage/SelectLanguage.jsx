@@ -20,10 +20,10 @@ const SelectLanguage = ({
             <div className="h-full p-2">
               <div className="flex flex-col justify-between py-2 px-2 rounded-lg h-full">
                 <div className="flex justify-between py-2">
-                  <div class="relative  flex w-full flex-wrap items-stretch py-2 ">
+                  <div className="relative  flex w-full flex-wrap items-stretch py-2 ">
                     <input
                       type="search"
-                      class="border-[1px] relative m-0 block w-[1px] min-w-0 flex-auto rounded-full mr-2  bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3]"
+                      className="border-[1px] relative m-0 block w-[1px] min-w-0 flex-auto rounded-full mr-2  bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3]"
                       placeholder={
                         languageMap[displayLanguage].popup.selectlang
                           .placeholder[selectMode]

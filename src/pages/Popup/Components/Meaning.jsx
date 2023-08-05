@@ -67,7 +67,7 @@ const Meaning = ({
               <HiVolumeUp className="text-lg text-white" />
             </button>
             <div className="group relative flex justify-center">
-              <button class="absolute top-[-50px] right-0  opacity-0 transition-all rounded bg-[rgba(50,50,50,0.5)] p-2 text-xs text-white group-hover:opacity-100 ">
+              <button className="absolute top-[-50px] right-0  opacity-0 transition-all rounded bg-[rgba(50,50,50,0.5)] p-2 text-xs text-white group-hover:opacity-100 ">
                 {justCopied ? 'Copied' : 'Copy'}
               </button>
               <button

@@ -31,6 +31,7 @@ let pinPositionX = 0,
 let detectedFrom = 'auto';
 let detectTarget = 'vi';
 let isPlayingAudio = false;
+let currentTranslateResponse = null;
 chrome.storage.sync.get(['sourceLang', 'targetLang'], function (e) {
   if (!e.sourceLang) {
     chrome.storage.sync.set({ sourceLang: 'en' });
@@ -62,6 +63,15 @@ audioElement.style.display = 'none';
 
 resultPanel.appendChild(audioElement);
 
+// Create loader
+const loader = document.createElement('div');
+loader.id = 'evtd-loader';
+loader.style.display = 'none';
+loader.style.zIndex = topZIndex;
+loader.style.position = 'fixed';
+loader.style.top = '0';
+loader.style.left = '0';
+
 document.documentElement.appendChild(resultPanel);
 // Function for resultPanel object
 
@@ -74,6 +84,18 @@ const hideResult = () => {
 
   audioElement.pause();
   isPlayingAudio = false;
+};
+
+const storeToSaved = () => {
+  if (!currentTranslateResponse) return;
+  chrome.storage.sync.get(['saved'], function (e) {
+    let saved = e.saved;
+    if (!saved) {
+      saved = [];
+    }
+    saved.push({ data: currentTranslateResponse, date: new Date().now });
+    chrome.storage.sync.set({ saved: saved });
+  });
 };
 
 // Process pin result
@@ -162,7 +184,14 @@ const playAudio = (text, type) => {
     );
   });
 };
-builtPanel(resultPanel, hideResult, unpinResult, pinResult, playAudio);
+builtPanel(
+  resultPanel,
+  hideResult,
+  unpinResult,
+  pinResult,
+  playAudio,
+  storeToSaved
+);
 document.addEventListener('mousedown', (event) => {
   disappearButton();
   if (!event.target.closest('#evtd-result-panel') && !isResultPin) {
@@ -203,6 +232,9 @@ const shouldTranslate = () => {
         )
         .then((res) => {
           console.log(e.targetLang, res);
+          if (!res[0] || !res) {
+            return;
+          }
           if (res[0].length === 2) {
             res = res[0][0];
           } else if (res[0].length > 2) {
@@ -242,12 +274,18 @@ const displayResult = (contentElement, response) => {
     let content = document.getElementById('evtd-content');
     content.style.display = 'block';
     preTranslate.style.display = 'none';
+    currentTranslateResponse = null;
     return;
   }
+  currentTranslateResponse = response.res;
+  // storeToHistory(response.res);
 
   preTranslate.style.display = 'none';
   let data = response.res;
 
+  if (!data.result) {
+    return;
+  }
   let transltedText;
   if (data.result.length > 1) {
     transltedText = data.result.join('\n');
@@ -308,8 +346,8 @@ const displayResult = (contentElement, response) => {
       let [title, content] = e.split(':');
 
       dictItem.innerHTML = `
-        <div class="evtd-dictionary-item-title">${title}</div>
-        <div class="evtd-dictionary-item-content">${content}</div>
+        <div className="evtd-dictionary-item-title">${title}</div>
+        <div className="evtd-dictionary-item-content">${content}</div>
       `;
       dictList.appendChild(dictItem);
     });
@@ -327,8 +365,8 @@ const displayResult = (contentElement, response) => {
       exampleItem.className = 'evtd-example-item';
 
       exampleItem.innerHTML = `
-        <div class="evtd-example-item-title">${index + 1}</div>
-        <div class="evtd-example-item-content">
+        <div className="evtd-example-item-title">${index + 1}</div>
+        <div className="evtd-example-item-content">
         <span>
         ${item}
         </span>
@@ -343,6 +381,7 @@ const displayResult = (contentElement, response) => {
 
 const translateSubmit = () => {
   let selection = querySelect();
+  currentTranslateResponse = null;
   if (selection.text && selection.text.length > 0) {
     chrome.storage.sync.get(['sourceLang', 'targetLang'], (e) => {
       let sourceLang = e.sourceLang;

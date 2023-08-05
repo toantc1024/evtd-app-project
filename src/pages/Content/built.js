@@ -1,4 +1,3 @@
-import { POPUP_HEADER } from './constants';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import Popup from './Popup';
@@ -7,7 +6,8 @@ export const builtPanel = (
   hideResult,
   unpinResult,
   pinResult,
-  playAudio
+  playAudio,
+  storeToSaved
 ) => {
   const root = createRoot(panel); // createRoot(container!) if you use TypeScript
   root.render(
@@ -16,6 +16,7 @@ export const builtPanel = (
       pinResult={pinResult}
       unpinResult={unpinResult}
       playAudio={playAudio}
+      storeToSaved={storeToSaved}
     />
   );
 };
