@@ -1,5 +1,4 @@
 import React from 'react';
-import { SAVED_WORDS_PAGE } from '../../Panel/constants';
 import { BsBookmarkStarFill } from 'react-icons/bs';
 import { HiDotsVertical } from 'react-icons/hi';
 const Navbar = ({ appDropdown, setAppDropdown }) => {
@@ -32,7 +31,7 @@ const Navbar = ({ appDropdown, setAppDropdown }) => {
             <button
               className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-amber-600 group  transition-bg ease-in-out duration-100 gap-2 px-4 bg-white "
               onClick={() => {
-                setAppPage(SAVED_WORDS_PAGE);
+                // setAppPage(SAVED_WORDS_PAGE);
                 setAppDropdown(false);
               }}
             >

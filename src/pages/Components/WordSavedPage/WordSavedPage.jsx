@@ -36,7 +36,7 @@ const WordSavedPage = () => {
     <>
       {saved && saved.length ? (
         <div className="px-4 py-4 md:py-8 md:px-12 h-full w-full overflow-auto">
-          <div className="flex flex-wrap gap-4 grid grid-col sm:grid-cols-2  lg:grid-cols-4 2xl:grid-cols-6">
+          <div className="flex flex-wrap gap-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 2xl:grid-cols-6">
             {saved.map(({ data, date }, index) => (
               <WordCard
                 key={index}

@@ -346,8 +346,8 @@ const displayResult = (contentElement, response) => {
       let [title, content] = e.split(':');
 
       dictItem.innerHTML = `
-        <div className="evtd-dictionary-item-title">${title}</div>
-        <div className="evtd-dictionary-item-content">${content}</div>
+        <div class="evtd-dictionary-item-title">${title}</div>
+        <div class="evtd-dictionary-item-content">${content}</div>
       `;
       dictList.appendChild(dictItem);
     });
@@ -365,8 +365,8 @@ const displayResult = (contentElement, response) => {
       exampleItem.className = 'evtd-example-item';
 
       exampleItem.innerHTML = `
-        <div className="evtd-example-item-title">${index + 1}</div>
-        <div className="evtd-example-item-content">
+        <div class="evtd-example-item-title">${index + 1}</div>
+        <div class="evtd-example-item-content">
         <span>
         ${item}
         </span>

@@ -5,7 +5,7 @@ import { SAVED_WORDS_PAGE } from './constants';
 import WordSavedPage from '../Components/WordSavedPage/WordSavedPage';
 const Panel = () => {
   const [appDropdown, setAppDropdown] = React.useState(false);
-  const [appPage, setAppPage] = React.useState(SAVED_WORDS_PAGE); // ['saved-words', 'history'
+  // const [appPage, setAppPage] = React.useState(SAVED_WORDS_PAGE); // ['saved-words', 'history'
   return (
     <div className="w-full h-full flex flex-col">
       {/* Navbar */}
