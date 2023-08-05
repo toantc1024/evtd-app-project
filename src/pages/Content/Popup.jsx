@@ -25,7 +25,7 @@ const Popup = ({
       {/* Pin */}
 
       {/* Result content */}
-      <div className={POPUP_CONTENT}>
+      <div class={POPUP_CONTENT}>
         <div id="evtd-loader">
           <div class="lds-roller">
             <div></div>
