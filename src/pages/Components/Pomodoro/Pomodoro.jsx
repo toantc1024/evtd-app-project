@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { HiOutlinePlay, HiPause, HiRefresh } from 'react-icons/hi';
+import { AiOutlinePause } from 'react-icons/ai';
 import Audio from '../../../assets/audio/alarm';
+import { DEFAULT_TITLE, LONG_BREAK, POMODORO, SHORT_BREAK } from './constants';
 
 const formatTime = (time) => {
   let minute = Math.floor(time / 60);
@@ -30,17 +32,31 @@ const Pomodoro = ({ stopPomodoro }) => {
       intervalId = setInterval(() => {
         setTimer((prev) => (prev -= 1));
       }, 1000);
-
       setTimerId(intervalId);
     } else {
+      setPageTitle(DEFAULT_TITLE);
       clearInterval(timerId);
     }
   }, [start]);
+
+  const setPageTitle = (type, value = DEFAULT_TITLE) => {
+    let titleBlock = document.querySelector('title');
+    console.log(titleBlock);
+
+    if (type === DEFAULT_TITLE) {
+      titleBlock.textContent = DEFAULT_TITLE;
+    } else {
+      titleBlock.textContent = `${value}`;
+    }
+  };
 
   useEffect(() => {
     if (timer === 0) {
       clearInterval(timerId);
       document.getElementById('Alarm').play();
+      setPageTitle(DEFAULT_TITLE);
+    } else {
+      setPageTitle(POMODORO, formatTime(timer));
     }
   }, [timer]);
 
@@ -48,19 +64,23 @@ const Pomodoro = ({ stopPomodoro }) => {
     <>
       <div
         className={`${
-          type ? (type === 1 ? 'bg-sky-600' : 'bg-green-600') : 'bg-red-600'
+          type
+            ? type === SHORT_BREAK
+              ? 'bg-sky-600'
+              : 'bg-green-600'
+            : 'bg-red-600'
         } p-t-[50px] left-0 
-             w-full h-[474px] z-10 transition-colors duration-300 rounded-t-3xl flex flex-col justify-between items-center`}
+             w-full h-full  z-10 transition-colors duration-300 rounded-t-3xl flex flex-col justify-between items-center`}
       >
         {/* navbar */}
         <div className="mt-4 flex justify-evenly items-center m-2">
           {/* Pomodoro */}
           <button
             className={`${
-              type === 0 ? 'bg-[rgba(0,0,0,0.3)] font-bold' : ''
+              type === POMODORO ? 'bg-[rgba(0,0,0,0.3)] font-bold' : ''
             } w-[90px] py-1 font-medium text-white rounded-md rounded-tl-3xl`}
             onClick={() => {
-              setType(0);
+              setType(POMODORO);
             }}
           >
             Pomodoro
@@ -68,10 +88,10 @@ const Pomodoro = ({ stopPomodoro }) => {
           {/* Short break */}
           <button
             className={`${
-              type === 1 ? 'bg-[rgba(0,0,0,0.5)] font-bold' : ''
+              type === SHORT_BREAK ? 'bg-[rgba(0,0,0,0.5)] font-bold' : ''
             } w-[90px] py-1 font-medium text-white rounded-md`}
             onClick={() => {
-              setType(1);
+              setType(SHORT_BREAK);
             }}
           >
             Nghỉ ngắn
@@ -79,10 +99,10 @@ const Pomodoro = ({ stopPomodoro }) => {
           {/* Long break */}
           <button
             className={`${
-              type === 2 ? 'bg-[rgba(0,0,0,0.5)] font-bold' : ''
+              type === LONG_BREAK ? 'bg-[rgba(0,0,0,0.5)] font-bold' : ''
             } w-[90px] py-1 font-medium text-white rounded-md rounded-tr-3xl`}
             onClick={() => {
-              setType(2);
+              setType(LONG_BREAK);
             }}
           >
             Nghỉ dài
@@ -97,17 +117,22 @@ const Pomodoro = ({ stopPomodoro }) => {
           {/*Pause Button*/}
           <div className="flex justify-evenly gap-4 items-center w-full">
             <button
-              className=" rounded-full bg-white p-2 duration-150 hover:scale-110 hover:bg-red-300 active:bg-red-400"
+              className=" rounded-full bg-red-500 
+               duration-150 hover:scale-110 hover:bg-red-300 
+              group
+              p-2
+              active:bg-red-400"
               onClick={() => setStart(false)}
             >
-              <HiPause className="text-5xl text-red-500" />
+              <AiOutlinePause className="text-5xl font-bold text-red-900 group-hover:text-white" />
             </button>
             {/*Play Button*/}
             <button
-              className="p-2 rounded-full bg-white duration-150 hover:scale-110 hover:bg-green-300 active:bg-green-400"
+              className="p-2 rounded-full bg-green-500 duration-150
+              group hover:scale-110 hover:bg-green-300 active:bg-green-400"
               onClick={() => setStart(true)}
             >
-              <HiOutlinePlay className="text-5xl text-green-600" />
+              <HiOutlinePlay className="text-5xl text-green-600 group-hover:text-white" />
             </button>
             {/*Refresh Button*/}
             <button

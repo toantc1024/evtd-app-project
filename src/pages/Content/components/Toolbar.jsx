@@ -121,7 +121,7 @@ const Toolbar = ({ hideResult, pinResult, unpinResult }) => {
             } else {
               pinResult();
             }
-            setResultPin(!resultPin);
+            setResultPin(false);
           }}
         >
           <HiX />

@@ -1,5 +1,5 @@
 {
-  "description": "Your best friend for learning new words.",
+  "description": "Your best friend for exploring beauty of languages. Translate, improve focus and more!",
   "version": "3.1.2",
   "manifest_version": 3,
   "name": "EVTD - Browser Dictionary",
@@ -15,10 +15,15 @@
       "all_frames": true
     }
   ],
-  "permissions": ["tts", "ttsEngine", "storage"],
+  "permissions": ["tts", "ttsEngine", "storage", "tabs"],
   "web_accessible_resources": [
     {
-      "resources": ["content.styles.css", "icon-128.png", "icon-34.png"],
+      "resources": [
+        "content.styles.css",
+        "icon-128.png",
+        "icon-34.png",
+        "tomato.png"
+      ],
       "matches": ["<all_urls>", "http://*/*", "https://*/*"]
     }
   ]

@@ -1,6 +1,8 @@
 import google from '../../libs/translate/google';
 import { builtPanel } from './built';
 import { ImageData, POPUP_CONTENT } from './constants';
+import BaseTranslator from '../../libs/translator/index';
+
 // Recevie message from background.js
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -61,6 +63,7 @@ const showResult = () => {
 };
 const hideResult = () => {
   resultPanel.style.display = 'none';
+
   audioElement.pause();
   isPlayingAudio = false;
 };
@@ -180,6 +183,30 @@ const shouldTranslate = () => {
   const selection = window.getSelection();
   const selectedText = selection.toString().trim();
   if (!selectedText) return false;
+  preTranslate.style.display = 'none';
+  if (selectedText.length > 0 && selectedText.length < 50) {
+    // Call pretranslate show
+    chrome.storage.sync.get(['sourceLang', 'targetLang'], function (e) {
+      BaseTranslator.google
+        .requestTranslate(
+          selectedText,
+          e.sourceLang ? e.sourceLang : 'auto',
+          e.targetLang ? e.targetLang : 'vi'
+        )
+        .then((res) => {
+          console.log(e.targetLang, res);
+          if (res.length === 2) {
+            res = res[1];
+          } else if (res.length > 2) {
+            res = res.join(' ');
+          } else {
+            res = res[0];
+          }
+          preTranslate.style.display = 'flex';
+          preTranslate.innerText = res;
+        });
+    });
+  }
   return true;
 };
 
@@ -206,9 +233,11 @@ const displayResult = (contentElement, response) => {
     loader.style.display = 'none';
     let content = document.getElementById('evtd-content');
     content.style.display = 'block';
+    preTranslate.style.display = 'none';
     return;
   }
 
+  preTranslate.style.display = 'none';
   let data = response.res;
 
   let transltedText;
@@ -373,14 +402,18 @@ function querySelect() {
 }
 
 function selectTranslate(event) {
+  preTranslate.style.display = 'none';
+
   if (event.targetElement === resultPanel) {
     return;
   }
   if (!shouldTranslate()) return;
+
   showButton(event);
 }
 
 const disappearButton = () => {
+  preTranslate.style.display = 'none';
   if (isButtonShown) {
     document.documentElement.removeChild(translationButtonIFrame);
     isButtonShown = false;
@@ -421,6 +454,10 @@ const translationButtonIFrame = document.createElement('iframe');
 translationButtonIFrame.id = 'evtd-translate-button';
 translationButtonIFrame.style.background = 'white';
 
+let preTranslate = document.createElement('div');
+preTranslate.id = 'evtd-pretranslate';
+document.documentElement.appendChild(preTranslate);
+
 /**
  * When the user clicks the translation button, the translationButtonIFrame will be mounted at document.documentElement and the load event will be triggered.
  */
@@ -455,6 +492,7 @@ translationButtonIFrame.addEventListener('load', () => {
     border: 'none',
     cursor: 'pointer',
   });
+
   translationButton.appendChild(buttonImage);
   translationButtonIFrame.contentDocument.body.appendChild(translationButton);
   const CleanStyle = {
@@ -479,7 +517,8 @@ const showButton = (event) => {
   let XBias, YBias;
 
   // Current button position setting
-  let ButtonPositionSetting = 'BottomRight';
+  // PROCESS.ENV.BROWSER === "EDGE" ? TopRight : BottomRight
+  let ButtonPositionSetting = 'TopRight';
 
   switch (ButtonPositionSetting) {
     default:
@@ -519,13 +558,10 @@ const showButton = (event) => {
   translationButtonIFrame.style.top = `${YPosition}px`;
   translationButtonIFrame.style.left = `${XPosition}px`;
 
-  // PRETRANSLATE
-  // let selection = window.getSelection();
-  // selection = selection.toString().trim();
-  // if (select.length < 40) {
-  //   console.log('Pretranslate');
-  //   console.log(selection);
-  // }
+  // Create pretranslate follow
+
+  preTranslate.style.top = `${YPosition}px`;
+  preTranslate.style.left = `${XPosition + 40}px`;
 
   isButtonShown = true;
 };
