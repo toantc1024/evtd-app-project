@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import TranslateInput from '../Components/TextInput/TranslateInput';
 import SelectLanguage from '../Components/SelectLanguage/SelectLanguage';
 import MenuModal from '../Components/Menu/Menu';
-import Tomato from '../../assets/img/tomato.svg';
+import { PiClockCountdownFill } from 'react-icons/pi';
 import {
   HiOutlineSwitchHorizontal,
   HiMenu,
@@ -18,7 +18,6 @@ import Example from './Components/Example';
 import Related from './Components/Related';
 import { languageMap } from '../Mapping/DisplayLanguage';
 import { langCode } from '../../libs/translate/google/lang-code';
-import Pomodoro from '../Components/Pomodoro/Pomodoro';
 const Popup = () => {
   const [menuModal, setMenuModal] = useState(false);
   const [isTranslated, setIsTranslated] = useState(false);
@@ -262,6 +261,7 @@ const Popup = () => {
               <button
                 className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-red-600 group  transition-bg ease-in-out duration-100 gap-2 px-4 bg-white "
                 onClick={() => {
+                  setAppDropdown(false);
                   chrome.windows.getAll(
                     { windowTypes: ['popup'] },
                     function (windows) {
@@ -276,6 +276,8 @@ const Popup = () => {
                           {
                             url: optionsUrl,
                             type: 'panel',
+                            width: 400,
+                            height: 600,
                           },
                           (window) => {
                             // setCurrentWindowId(window.id);
@@ -289,19 +291,27 @@ const Popup = () => {
                 <span className="group-hover:text-white font-bold text-red-500">
                   Pomodoro
                 </span>
-                <img
-                  src={Tomato}
-                  className="group-hover:text-white w-6 h-6 text-red-500"
-                />
+                <PiClockCountdownFill className="group-hover:text-white w-6 h-6 text-red-500" />
               </button>
               <button
-                className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-slate-200  transition-bg ease-in-out duration-100 gap-2 px-4 bg-white"
+                className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-amber-500 group transition-bg ease-in-out duration-100 gap-2 px-4 bg-white"
                 onClick={() => {
                   setAppDropdown(false);
+                  let panelTab = chrome.runtime.getURL('panel.html');
+                  // Check if the options page exists, if so focus it, if not open it
+                  chrome.tabs.query({ url: panelTab }, (tabs) => {
+                    if (tabs.length) {
+                      chrome.tabs.update(tabs[0].id, { active: true });
+                    } else {
+                      chrome.tabs.create({ url: panelTab });
+                    }
+                  });
                 }}
               >
-                <span>Sổ tay từ vựng</span>
-                <BsBookmarkStarFill className="text-xl text-gray-500" />
+                <span className="group-hover:text-white text-amber-500 font-bold">
+                  {languageMap[displayLanguage].popup.wordbook.buttonBookmark}
+                </span>
+                <BsBookmarkStarFill className="group-hover:text-white text-xl text-amber-500" />
               </button>
               <button
                 className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-slate-200  transition-bg ease-in-out duration-100 gap-2 px-4 bg-white"
@@ -382,7 +392,7 @@ const Popup = () => {
               </div>
             ) : (
               <div className="w-full h-full flex flex-col gap-2 items-center justify-center text-lg">
-                <div class="lds-ellipsis">
+                <div className="lds-ellipsis">
                   <div className="bg-sky-500"></div>
                   <div className="bg-red-500"></div>
                   <div className="bg-orange-400"></div>

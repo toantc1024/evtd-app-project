@@ -1,10 +1,10 @@
 import React from 'react';
 import { POPUP_HEADER } from '../constants';
 import { ImageData } from '../assets/image';
-import { HiX, HiStar } from 'react-icons/hi';
+import { HiX, HiStar, HiCheck } from 'react-icons/hi';
 import { BsPinAngleFill, BsPinFill } from 'react-icons/bs';
 
-const Toolbar = ({ hideResult, pinResult, unpinResult }) => {
+const Toolbar = ({ hideResult, pinResult, unpinResult, storeToSaved }) => {
   var SNAP_MARGINS = 5;
   var SNAP_FS_MARGINS = 100;
   var RESIZE_MARGIN_INNER = 5;
@@ -84,6 +84,8 @@ const Toolbar = ({ hideResult, pinResult, unpinResult }) => {
     document.onmousemove = null;
   }
 
+  const [isJustSaved, setIsJustSaved] = React.useState(false);
+
   const [resultPin, setResultPin] = React.useState(false);
 
   return (
@@ -92,8 +94,18 @@ const Toolbar = ({ hideResult, pinResult, unpinResult }) => {
         {/* Dropdown */}
 
         {/* Save result button */}
-        <button className={`save`}>
-          <HiStar />
+        <button
+          className={`save ${isJustSaved ? 'saved' : ''}`}
+          onClick={() => {
+            storeToSaved();
+
+            setIsJustSaved(true);
+            setTimeout(() => {
+              setIsJustSaved(false);
+            }, 1000);
+          }}
+        >
+          {isJustSaved ? <HiCheck /> : <HiStar />}
         </button>
         {/* Expand button */}
         {/* Pin button */}

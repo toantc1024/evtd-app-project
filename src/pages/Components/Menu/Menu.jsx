@@ -47,12 +47,30 @@ const MenuModal = ({ menuModal, setMenuModal }) => {
                 <section className=" relative h-full w-full flex items-center justify-center flex-col gap-2 px-4 text-lg ">
                   <div className="w-full px-4  ">
                     <div className="p-2 flex gap-2 flex-col">
-                      <button className="bg-gray-200 w-full py-2  flex p-4 rounded-lg ">
-                        <span>{languageMap[displayLanguage].menu.donate}</span>
+                      <button className="bg-white shadow-lg border-[1px] group hover:bg-slate-100 w-full py-2  flex p-4 rounded-lg flex items-center justify-between">
+                        <span className="group-hover:text-slate-900">
+                          {languageMap[displayLanguage].menu.donate}
+                        </span>
+                        <HiCog className="text-lg group-hover:text-slate-900" />
                       </button>
-                      <button className="bg-gray-200 w-full py-2  flex p-4 rounded-lg flex items-center justify-between">
-                        <span>{languageMap[displayLanguage].menu.setting}</span>
-                        <HiCog className="text-lg" />
+                      <button
+                        className="bg-white shadow-lg border-[1px] group hover:bg-slate-100 w-full py-2  flex p-4 rounded-lg flex items-center justify-between"
+                        onClick={() => {
+                          let optionURL = chrome.runtime.getURL('options.html');
+                          // Check if options.html tab is already exists
+                          chrome.tabs.query({ url: optionURL }, (tabs) => {
+                            if (tabs.length) {
+                              chrome.tabs.update(tabs[0].id, { active: true });
+                            } else {
+                              chrome.tabs.create({ url: optionURL });
+                            }
+                          });
+                        }}
+                      >
+                        <span className="group-hover:text-slate-900">
+                          {languageMap[displayLanguage].menu.setting}
+                        </span>
+                        <HiCog className="text-lg group-hover:text-slate-900" />
                       </button>
                     </div>
                   </div>

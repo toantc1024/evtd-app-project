@@ -36,10 +36,27 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       .catch((error) => {
         sendResponse({ error });
       });
+  } else if (request.type === 'getCommands') {
+    chrome.commands.getAll((commands) => {
+      let missingShortcuts = [];
+
+      for (let { name, shortcut } of commands) {
+        if (shortcut === '') {
+          missingShortcuts.push(name);
+        }
+      }
+
+      if (missingShortcuts.length > 0) {
+        sendResponse({ missingShortcuts });
+      }
+    });
   }
   return true;
 });
 
-function foo() {
-  console.log("I'm defined in background.js");
-}
+chrome.commands.onCommand.addListener((translate) => {
+  console.log(`Command "${translate}" triggered`);
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, { type: 'translate' });
+  });
+});

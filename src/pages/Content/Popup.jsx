@@ -5,10 +5,17 @@ import Meaning from './components/Sections/Meaning';
 import Phonetic from './components/Sections/Phonetic';
 import { HiAnnotation, HiBookmark } from 'react-icons/hi';
 
-const Popup = ({ hideResult, pinResult, unpinResult, playAudio }) => {
+const Popup = ({
+  hideResult,
+  pinResult,
+  unpinResult,
+  playAudio,
+  storeToSaved,
+}) => {
   return (
     <Fragment>
       <Toolbar
+        storeToSaved={storeToSaved}
         hideResult={() => hideResult()}
         pinResult={pinResult}
         unpinResult={unpinResult}
@@ -20,7 +27,7 @@ const Popup = ({ hideResult, pinResult, unpinResult, playAudio }) => {
       {/* Result content */}
       <div className={POPUP_CONTENT}>
         <div id="evtd-loader">
-          <div class="lds-roller">
+          <div className="lds-roller">
             <div></div>
             <div></div>
             <div></div>
