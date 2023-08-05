@@ -1,8 +1,8 @@
 {
-  "description": "Your best friend for exploring beauty of languages. Translate, improve focus and more!",
+  "description": "🐱‍💻 Your best friend for exploring beauty of languages! 📕 Translate, ⏰ improve focus and more!",
   "version": "3.1.2",
   "manifest_version": 3,
-  "name": "EVTD - Browser Dictionary",
+  "name": "EVTD — browser dictionary",
   "options_page": "options.html",
   "background": { "service_worker": "background.bundle.js" },
   "action": { "default_popup": "popup.html", "default_icon": "icon-34.png" },
@@ -26,5 +26,14 @@
       ],
       "matches": ["<all_urls>", "http://*/*", "https://*/*"]
     }
-  ]
+  ],
+  "commands": {
+    "translate": {
+      "suggested_key": {
+        "default": "Ctrl+Y",
+        "mac": "Command+Y"
+      },
+      "description": "Translate selected text."
+    }
+  }
 }

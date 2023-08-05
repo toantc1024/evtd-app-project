@@ -16,6 +16,9 @@ export const languageMap = {
         buttonTranslate: 'Translate',
         placeHolder: 'Your translate result is here',
       },
+      wordbook: {
+        buttonBookmark: 'Saved words',
+      },
       selectlang: {
         placeholder: {
           source: 'Translate from',
@@ -32,6 +35,9 @@ export const languageMap = {
     },
     popup: {
       extension: 'Tiện ích',
+      wordbook: {
+        buttonBookmark: 'Sổ tay từ vựng',
+      },
       translate: {
         buttonTranslate: 'Dịch',
         placeHolder: 'Kết quả dịch của bạn ở đây',

@@ -4,16 +4,24 @@ import { ImageData, POPUP_CONTENT } from './constants';
 import BaseTranslator from '../../libs/translator/index';
 
 // Recevie message from background.js
+if (!window.firstTimeExecuted) {
+  window.firstTimeExecuted = true;
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  if (request.type === 'response') {
-    let content = document.getElementById('evtd-content');
-    content.style.display = 'block';
-    let loader = document.getElementById('evtd-loader');
-    loader.style.display = 'none';
-  }
-});
-
+  chrome.runtime.onMessage.addListener(function (
+    request,
+    sender,
+    sendResponse
+  ) {
+    if (request.type === 'response') {
+      let content = document.getElementById('evtd-content');
+      content.style.display = 'block';
+      let loader = document.getElementById('evtd-loader');
+      loader.style.display = 'none';
+    } else if (request.type === 'translate') {
+      translateSubmit();
+    }
+  });
+}
 // Inject the conttentstyle
 let isButtonShown = false;
 let isResultPin = false;
@@ -195,12 +203,12 @@ const shouldTranslate = () => {
         )
         .then((res) => {
           console.log(e.targetLang, res);
-          if (res.length === 2) {
-            res = res[1];
-          } else if (res.length > 2) {
+          if (res[0].length === 2) {
+            res = res[0][0];
+          } else if (res[0].length > 2) {
             res = res.join(' ');
           } else {
-            res = res[0];
+            res = res[0][0];
           }
           preTranslate.style.display = 'flex';
           preTranslate.innerText = res;

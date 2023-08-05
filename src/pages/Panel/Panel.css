@@ -1,7 +1,9 @@
-body {
-  background-color: #242424;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.container {
-  color: #ffffff;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }

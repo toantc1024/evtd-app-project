@@ -5,7 +5,5 @@
 html,
 body {
   height: 100%;
-  /* Set min-width + height property */
-  min-width: 500px;
-  min-height: 500px;
+  width: 100%;
 }
