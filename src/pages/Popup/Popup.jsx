@@ -245,9 +245,8 @@ const Popup = () => {
             <HiViewGridAdd className="text-xl text-gray-500" />
           </button>
           <div
-            className={`${
-              appDropdown ? '' : 'hidden'
-            } bg-gray-200 absolute top-[40px] p-2 flex flex-col rounded-xl right-0 w-[200px] shadow-lg`}
+            className={`${appDropdown ? '' : 'hidden'
+              } bg-gray-200 absolute top-[40px] p-2 flex flex-col rounded-xl right-0 w-[200px] shadow-lg`}
           >
             <div className="p-2 bg-gray-100 rounded-lg w-full flex gap-1 flex-col ">
               <button
@@ -281,6 +280,8 @@ const Popup = () => {
                             type: 'panel',
                             width: 400,
                             height: 600,
+                            left: window.screen.width / 2 - 200,
+                            top: window.screen.height / 2 - 300,
                           },
                           (window) => {
                             // setCurrentWindowId(window.id);
@@ -398,9 +399,8 @@ const Popup = () => {
             <div className="h-full w-full py-2 pb-0 pt-0 flex  flex-col">
               <div className="bg-gray-100 py-2 flex gap-2 px-2 mb-1">
                 <button
-                  className={`${
-                    currentChoice === 'meaning' ? 'bg-sky-400' : 'border-[1px]'
-                  } p-2 rounded-lg`}
+                  className={`${currentChoice === 'meaning' ? 'bg-sky-400' : 'border-[1px]'
+                    } p-2 rounded-lg`}
                   onClick={() => {
                     setCurrentChoice('meaning');
                   }}
@@ -409,11 +409,10 @@ const Popup = () => {
                 </button>
                 {example && (
                   <button
-                    className={`${
-                      currentChoice === 'example'
+                    className={`${currentChoice === 'example'
                         ? 'bg-orange-400'
                         : 'border-[1px]'
-                    } p-2 rounded-lg`}
+                      } p-2 rounded-lg`}
                     onClick={() => {
                       setCurrentChoice('example');
                     }}
@@ -423,11 +422,10 @@ const Popup = () => {
                 )}
                 {related && (
                   <button
-                    className={`${
-                      currentChoice === 'related'
+                    className={`${currentChoice === 'related'
                         ? 'bg-sky-400'
                         : 'border-[1px]'
-                    } p-2 rounded-lg`}
+                      } p-2 rounded-lg`}
                     onClick={() => {
                       setCurrentChoice('related');
                     }}

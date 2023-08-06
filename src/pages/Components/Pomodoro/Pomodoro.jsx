@@ -84,6 +84,8 @@ const Pomodoro = ({ stopPomodoro }) => {
 
   useEffect(() => {
     if (timer === 0) {
+      let circleBar = document.getElementById('circle-bar');
+      circleBar.style.strokeDashoffset = Math.round(circleBar.style.strokeDashoffset);
       clearInterval(timerId);
       document.getElementById('Alarm').play();
       setPageTitle(DEFAULT_TITLE);
@@ -95,13 +97,12 @@ const Pomodoro = ({ stopPomodoro }) => {
   return (
     <>
       <div
-        className={`${
-          type
+        className={`${type
             ? type === SHORT_BREAK
               ? 'bg-sky-600'
               : 'bg-green-600'
             : 'bg-red-600'
-        } p-t-[50px] left-0 
+          } p-t-[50px] left-0 
              w-full h-full  z-10 transition-colors duration-200  flex flex-col justify-between tall:justify-around tall:rounded-none items-center`}
       >
         <div
@@ -112,11 +113,10 @@ const Pomodoro = ({ stopPomodoro }) => {
           <div className="relative mt-4 flex justify-evenly items-center m-2 tall:w-[450px] tall:p-3 tall:rounded-3xl tall:bg-[rgba(0,0,0,0.2)]">
             {/* Pomodoro */}
             <button
-              className={`${
-                type === POMODORO
+              className={`${type === POMODORO
                   ? 'bg-[rgba(0,0,0,0.3)] font-bold tall:bg-transparent tall:text-sm duration-100'
                   : ''
-              } w-[90px] py-1 font-medium text-white rounded-md rounded-tl-3xl tall:rounded-2xl tall:py-3`}
+                } w-[90px] py-1 font-medium text-white rounded-md rounded-tl-3xl tall:rounded-2xl tall:py-3`}
               onClick={() => {
                 setType(POMODORO);
               }}
@@ -125,11 +125,10 @@ const Pomodoro = ({ stopPomodoro }) => {
             </button>
             {/* Short break */}
             <button
-              className={`${
-                type === SHORT_BREAK
+              className={`${type === SHORT_BREAK
                   ? 'bg-[rgba(0,0,0,0.5)] font-bold tall:bg-transparent tall:text-sm duration-100'
                   : ''
-              } w-[90px] py-1 font-medium text-white rounded-md tall:rounded-2xl tall:py-3`}
+                } w-[90px] py-1 font-medium text-white rounded-md tall:rounded-2xl tall:py-3`}
               onClick={() => {
                 setType(SHORT_BREAK);
               }}
@@ -138,11 +137,10 @@ const Pomodoro = ({ stopPomodoro }) => {
             </button>
             {/* Long break */}
             <button
-              className={`${
-                type === LONG_BREAK
+              className={`${type === LONG_BREAK
                   ? 'bg-[rgba(0,0,0,0.5)] font-bold tall:bg-transparent tall:text-sm duration-100'
                   : ''
-              } w-[90px] py-1 font-medium text-white rounded-md rounded-tr-3xl tall:rounded-2xl tall:py-3`}
+                } w-[90px] py-1 font-medium text-white rounded-md rounded-tr-3xl tall:rounded-2xl tall:py-3`}
               onClick={() => {
                 setType(LONG_BREAK);
               }}
@@ -150,13 +148,12 @@ const Pomodoro = ({ stopPomodoro }) => {
               {languageMap[displayLanguage].pomodoro.longBreak}
             </button>
             <div
-              className={`${
-                type === POMODORO
+              className={`${type === POMODORO
                   ? ''
                   : type === SHORT_BREAK
-                  ? 'translate-x-[129px]'
-                  : 'translate-x-[258px]'
-              }
+                    ? 'translate-x-[129px]'
+                    : 'translate-x-[258px]'
+                }
             hidden tall:inline tall:absolute top-[12px] left-[52px] bg-[rgba(0,0,0,0.5)] w-[90px] h-[44px] rounded-full ease-in-out duration-200 z-[-1]`}
             ></div>
           </div>
@@ -181,8 +178,8 @@ const Pomodoro = ({ stopPomodoro }) => {
                   type === POMODORO
                     ? 'rgb(220,38,38)'
                     : type === SHORT_BREAK
-                    ? 'rgb(2,132,199)'
-                    : 'rgb(22,163,74)'
+                      ? 'rgb(2,132,199)'
+                      : 'rgb(22,163,74)'
                 }
                 strokeWidth="20"
                 fill="none"
