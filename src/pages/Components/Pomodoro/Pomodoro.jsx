@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { HiOutlinePlay, HiPause, HiRefresh } from 'react-icons/hi';
-import { AiOutlinePause } from 'react-icons/ai';
+import { HiPause, HiPlay } from 'react-icons/hi2';
+import { HiRefresh } from 'react-icons/hi';
 import Audio from '../../../assets/audio/alarm';
 import { DEFAULT_TITLE, LONG_BREAK, POMODORO, SHORT_BREAK } from './constants';
+import { DEFAULT_DISPLAY_LANGUAGE } from '../../Popup/constants';
+import { languageMap } from '../../Mapping/DisplayLanguage';
 
 const formatTime = (time) => {
   let minute = Math.floor(time / 60);
@@ -19,6 +21,30 @@ const Pomodoro = ({ stopPomodoro }) => {
   const [timer, setTimer] = useState(1500);
   const [timerId, setTimerId] = useState(0);
   const [type, setType] = useState(0);
+  const [displayLanguage, setDisplayLanguage] = useState(
+    DEFAULT_DISPLAY_LANGUAGE
+  );
+
+  // Fetch displayLang from chrome.storage
+
+  useEffect(() => {
+    chrome.storage.sync.get(['displayLanguage'], (result) => {
+      if (result.displayLanguage) {
+        setDisplayLanguage(result.displayLanguage);
+      }
+    });
+
+    // Listen event from real time chrome.storage update
+    chrome.storage.onChanged.addListener(function (changes, namespace) {
+      if (changes.displayLanguage.newValue) {
+        setDisplayLanguage(changes.displayLanguage.newValue);
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    console.log({ displayLanguage });
+  }, [displayLanguage]);
 
   useEffect(() => {
     type ? (type === 1 ? setTimer(300) : setTimer(900)) : setTimer(1500);
@@ -76,7 +102,7 @@ const Pomodoro = ({ stopPomodoro }) => {
               : 'bg-green-600'
             : 'bg-red-600'
         } p-t-[50px] left-0 
-             w-full h-full  z-10 transition-colors duration-500 rounded-t-3xl flex flex-col justify-between tall:justify-around tall:rounded-none items-center`}
+             w-full h-full  z-10 transition-colors duration-200  flex flex-col justify-between tall:justify-around tall:rounded-none items-center`}
       >
         <div
           className="h-[400px] flex flex-col justify-between items-center
@@ -95,7 +121,7 @@ const Pomodoro = ({ stopPomodoro }) => {
                 setType(POMODORO);
               }}
             >
-              Pomodoro
+              {languageMap[displayLanguage].pomodoro.focus}
             </button>
             {/* Short break */}
             <button
@@ -108,7 +134,7 @@ const Pomodoro = ({ stopPomodoro }) => {
                 setType(SHORT_BREAK);
               }}
             >
-              Nghỉ ngắn
+              {languageMap[displayLanguage].pomodoro.shortBreak}
             </button>
             {/* Long break */}
             <button
@@ -121,7 +147,7 @@ const Pomodoro = ({ stopPomodoro }) => {
                 setType(LONG_BREAK);
               }}
             >
-              Nghỉ dài
+              {languageMap[displayLanguage].pomodoro.longBreak}
             </button>
             <div
               className={`${
@@ -131,7 +157,7 @@ const Pomodoro = ({ stopPomodoro }) => {
                   ? 'translate-x-[129px]'
                   : 'translate-x-[258px]'
               }
-            hidden tall:inline tall:absolute top-[12px] left-[52px] bg-[rgba(0,0,0,0.5)] w-[90px] h-[44px] rounded-full ease-in-out duration-500 z-[-1]`}
+            hidden tall:inline tall:absolute top-[12px] left-[52px] bg-[rgba(0,0,0,0.5)] w-[90px] h-[44px] rounded-full ease-in-out duration-200 z-[-1]`}
             ></div>
           </div>
 
@@ -147,7 +173,7 @@ const Pomodoro = ({ stopPomodoro }) => {
             >
               <circle
                 id="circle-bar"
-                className="duration-1000"
+                className="duration-300"
                 cx={150}
                 cy={150}
                 r={140}
@@ -172,27 +198,21 @@ const Pomodoro = ({ stopPomodoro }) => {
           {/*Pause Button*/}
           <div className="flex justify-evenly gap-4 tall:gap-10 items-center w-full tall:mb-10">
             <button
-              className=" rounded-full bg-white
-               duration-150 hover:scale-110 hover:bg-red-300 tall:bg-[rgba(0,0,0,0.1)] tall:border-4 tall:border-[rgba(255,255,255,0.2)]
-              group
-              p-2
-              active:bg-red-400"
+              className="rounded-full  shadow-lg duration-150 hover:scale-110  group p-2 md:p-4 bg-white hover:bg-red-700 active:bg-red-900"
               onClick={() => setStart(false)}
             >
-              <AiOutlinePause className="text-5xl font-bold text-red-500 group-hover:text-red-700" />
+              <HiPause className="text-6xl font-bold text-red-500  group-hover:text-white " />
             </button>
             {/*Play Button*/}
             <button
-              className="p-2 rounded-full bg-white duration-150 tall:bg-[rgba(0,0,0,0.1)] tall:border-4 tall:border-[rgba(255,255,255,0.2)]
-              group hover:scale-110 hover:bg-green-400 active:bg-green-500"
+              className="rounded-full  shadow-lg duration-150 hover:scale-110  group  p-2 md:p-4 bg-white hover:bg-emerald-500 active:bg-emerald-700"
               onClick={() => setStart(true)}
             >
-              <HiOutlinePlay className="text-5xl text-green-600 group-hover:text-green-600" />
+              <HiPlay className="pl-1 text-6xl font-bold text-emerald-500  group-hover:text-white" />
             </button>
             {/*Refresh Button*/}
             <button
-              className="p-2 rounded-full bg-white duration-150 hover:scale-110 hover:bg-yellow-300 active:bg-yellow-400
-               tall:bg-[rgba(0,0,0,0.1)] tall:border-4 tall:border-[rgba(255,255,255,0.2)]"
+              className="rounded-full  shadow-lg duration-150 hover:scale-110  group p-2 md:p-4  bg-white hover:bg-amber-500 active:bg-amber-700"
               onClick={() => {
                 type
                   ? type === 1
@@ -205,7 +225,7 @@ const Pomodoro = ({ stopPomodoro }) => {
                 setStart(false);
               }}
             >
-              <HiRefresh className="text-5xl text-yellow-500" />
+              <HiRefresh className="text-6xl font-bold text-amber-500  group-hover:text-white" />
             </button>
             <Audio />
           </div>

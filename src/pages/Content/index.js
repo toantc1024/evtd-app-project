@@ -4,24 +4,17 @@ import { ImageData, POPUP_CONTENT } from './constants';
 import BaseTranslator from '../../libs/translator/index';
 
 // Recevie message from background.js
-if (!window.firstTimeExecuted) {
-  window.firstTimeExecuted = true;
 
-  chrome.runtime.onMessage.addListener(function (
-    request,
-    sender,
-    sendResponse
-  ) {
-    if (request.type === 'response') {
-      let content = document.getElementById('evtd-content');
-      content.style.display = 'block';
-      let loader = document.getElementById('evtd-loader');
-      loader.style.display = 'none';
-    } else if (request.type === 'translate') {
-      translateSubmit();
-    }
-  });
-}
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  if (request.type === 'response') {
+    let content = document.getElementById('evtd-content');
+    content.style.display = 'block';
+    let loader = document.getElementById('evtd-loader');
+    loader.style.display = 'none';
+  } else if (request.type === 'translate') {
+    translateSubmit();
+  }
+});
 // Inject the conttentstyle
 let isButtonShown = false;
 let isResultPin = false;

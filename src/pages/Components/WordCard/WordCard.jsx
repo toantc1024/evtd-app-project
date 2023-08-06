@@ -20,7 +20,7 @@ const formatDate = (ms) => {
   return `${day}/${month}/${year}`;
 };
 
-const WordCard = ({ word, date, from, to }) => {
+const WordCard = ({ word, date, from, to, displayLanguage }) => {
   useEffect(() => {
     console.log('Received', { word, date });
   }, []);
@@ -41,12 +41,19 @@ const WordCard = ({ word, date, from, to }) => {
 
       {
         // Check if word has definition
-        word && word.dict && <Dictionary dict={word.dict} />
+        word && word.dict && (
+          <Dictionary displayLanguage={displayLanguage} dict={word.dict} />
+        )
       }
 
       {
         // Check if word has example
-        word && word.example && <ExampleWord example={word.example} />
+        word && word.example && (
+          <ExampleWord
+            displayLanguage={displayLanguage}
+            example={word.example}
+          />
+        )
       }
     </div>
   );

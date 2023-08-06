@@ -1,12 +1,15 @@
 import React from 'react';
 import { HiBookmark } from 'react-icons/hi';
+import { languageMap } from '../../Mapping/DisplayLanguage';
 
-const Dictionary = ({ dict = [] }) => {
+const Dictionary = ({ dict = [], displayLanguage }) => {
   return (
     <div className="rounded-sm shadow-sm bg-white m-[5px] p-[5px] flex flex-col">
       <div className="flex gap-[5px] items-center justify-start">
-        <HiBookmark className="text-pink-600 font-bold" />
-        <span>Dictionary</span>
+        <HiBookmark className="text-pink-600" />
+        <span className="font-bold">
+          {languageMap[displayLanguage].savedWords.dictionary}
+        </span>
       </div>
       <div className="px-2">
         {dict &&

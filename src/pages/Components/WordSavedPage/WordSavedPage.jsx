@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import WordCard from '../WordCard/WordCard';
-import { HiX } from 'react-icons/hi';
+import { languageMap } from '../../Mapping/DisplayLanguage';
 
-const WordSavedPage = () => {
-  const [saved, setSaved] = React.useState(null);
+const WordSavedPage = ({ displayLanguage }) => {
+  const [saved, setSaved] = useState(null);
 
   useEffect(() => {
     chrome.storage.sync.get(['saved'], function (result) {
@@ -29,7 +29,7 @@ const WordSavedPage = () => {
     // Get title of the page
     if (!saved || saved.length === 0) return;
     let title = document.querySelector('title');
-    title.textContent = `Saved words - ${saved.length} words`;
+    title.textContent = `${languageMap[displayLanguage].savedWords.saved} - ${saved.length} ${languageMap[displayLanguage].savedWords.words}`;
   }, [saved]);
 
   return (
@@ -39,6 +39,7 @@ const WordSavedPage = () => {
           <div className="flex flex-wrap gap-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 2xl:grid-cols-6">
             {saved.map(({ data, date }, index) => (
               <WordCard
+                displayLanguage={displayLanguage}
                 key={index}
                 word={data}
                 date={date}

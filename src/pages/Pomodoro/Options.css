@@ -6,3 +6,9 @@
   align-items: center;
   justify-content: center;
 }
+
+*,
+body,
+html {
+  font-family: Fredoka, sans-serif;
+}
