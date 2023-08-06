@@ -325,7 +325,7 @@ const Popup = () => {
       <div className="bg-white px-[10px] py-2 grid grid-cols-3">
         <div className="flex items-center justify-center">
           <button
-            className="bg-orange-200 p-2 rounded-2xl px-4 w-full"
+            className="bg-red-400 text-white hover:bg-red-500 p-2 rounded-full px-4 w-full"
             onClick={() => {
               setSelectMode('source');
               setLanguageModal(true);
@@ -340,15 +340,15 @@ const Popup = () => {
         {/* Swap target and source language */}
         <div className="flex items-center justify-center">
           <button
-            className="hover:bg-orange-500 flex items-center justify-center bg-orange-400 rounded-full p-2"
+            className="bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700  border-[1px] shadow-lg flex items-center justify-center  rounded-full font-bold p-2 "
             onClick={() => swapLanguage()}
           >
-            <HiOutlineSwitchHorizontal className="text-lg text-white" />
+            <HiOutlineSwitchHorizontal className="text-xl font-bold text-white" />
           </button>
         </div>
         <div className="flex items-center justify-center">
           <button
-            className="bg-sky-200 p-2 rounded-2xl px-4 w-full"
+            className="bg-blue-400 text-white hover:bg-blue-500 p-2 rounded-full px-2 w-full "
             onClick={() => {
               setSelectMode('target');
               setLanguageModal(true);

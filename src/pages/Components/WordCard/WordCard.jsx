@@ -1,9 +1,6 @@
-import { data } from 'autoprefixer';
 import React, { useEffect } from 'react';
 import TextContent from './TextContent';
-import { HiBookmark } from 'react-icons/hi';
 import Dictionary from './Dictionary';
-import Example from './Example';
 import ExampleWord from './Example';
 
 const formatDate = (ms) => {
