@@ -1,12 +1,13 @@
 import React from 'react';
 import { BsBookmarkStarFill } from 'react-icons/bs';
 import { HiDotsVertical } from 'react-icons/hi';
-const Navbar = ({ appDropdown, setAppDropdown }) => {
+import { languageMap } from '../../Mapping/DisplayLanguage';
+const Navbar = ({ appDropdown, setAppDropdown, displayLanguage }) => {
   return (
     <div className="flex justify-between p-4 border-b-[1px] z-30">
       <button className="p-2 border-[1px] rounded-full flex justify-between items-center hover:bg-amber-500 group transition-bg ease-in-out duration-100 gap-2 px-4 bg-white">
         <span className="group-hover:text-white text-amber-500 font-bold text-xl">
-          Saved words
+          {languageMap[displayLanguage].savedWords.title}
         </span>
         <BsBookmarkStarFill className="group-hover:text-white text-xl text-amber-500" />
       </button>
@@ -36,7 +37,7 @@ const Navbar = ({ appDropdown, setAppDropdown }) => {
               }}
             >
               <span className="group-hover:text-white font-bold text-amber-500">
-                Saved words
+                {languageMap[displayLanguage].savedWords.title}
               </span>
               <BsBookmarkStarFill className="group-hover:text-white text-xl text-amber-500" />
             </button>

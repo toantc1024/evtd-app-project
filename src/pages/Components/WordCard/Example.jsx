@@ -1,15 +1,18 @@
 import React from 'react';
 import Example from '../../Popup/Components/Example';
 import { HiAnnotation } from 'react-icons/hi';
+import { languageMap } from '../../Mapping/DisplayLanguage';
 
-const ExampleWord = ({ example }) => {
+const ExampleWord = ({ example, displayLanguage }) => {
   return (
     <div className="rounded-sm shadow-sm bg-white m-[5px] p-[5px] flex flex-col">
       <div className="p-[5px] flex gap-[5px] items-center justify-start">
         <span className="font-bold flex items-center justify-center">
           <HiAnnotation className="text-cyan-600" />
         </span>
-        <span className="font-bold">Example</span>
+        <span className="font-bold">
+          {languageMap[displayLanguage].savedWords.example}
+        </span>
       </div>
       <div className="flex flex-col gap-[5px]">
         {example &&

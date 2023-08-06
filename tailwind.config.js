@@ -3,9 +3,6 @@ module.exports = {
   content: ['./src/**/*.{html,js,jsx}'],
   theme: {
     extend: {},
-    fontFamily: {
-      fredoka: ['Fredoka'],
-    },
     screens: {
       sm: '640px',
       md: '768px',

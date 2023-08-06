@@ -49,9 +49,11 @@ const MenuModal = ({ menuModal, setMenuModal }) => {
                     <div className="p-2 flex gap-2 flex-col">
                       <button className="bg-white shadow-lg border-[1px] group hover:bg-slate-100 w-full py-2  flex p-4 rounded-lg flex items-center justify-between">
                         <span className="group-hover:text-slate-900">
-                          {languageMap[displayLanguage].menu.donate}
+                          {languageMap[displayLanguage].menu.introduce}
                         </span>
-                        <HiCog className="text-lg group-hover:text-slate-900" />
+                        <span className="group-hover:text-slate-900 text-2xl">
+                          👋
+                        </span>
                       </button>
                       <button
                         className="bg-white shadow-lg border-[1px] group hover:bg-slate-100 w-full py-2  flex p-4 rounded-lg flex items-center justify-between"
@@ -70,7 +72,7 @@ const MenuModal = ({ menuModal, setMenuModal }) => {
                         <span className="group-hover:text-slate-900">
                           {languageMap[displayLanguage].menu.setting}
                         </span>
-                        <HiCog className="text-lg group-hover:text-slate-900" />
+                        <HiCog className="group-hover:text-slate-900 text-2xl" />
                       </button>
                     </div>
                   </div>

@@ -18,6 +18,7 @@ import Example from './Components/Example';
 import Related from './Components/Related';
 import { languageMap } from '../Mapping/DisplayLanguage';
 import { langCode } from '../../libs/translate/google/lang-code';
+import { DEFAULT_DISPLAY_LANGUAGE } from './constants';
 const Popup = () => {
   const [menuModal, setMenuModal] = useState(false);
   const [isTranslated, setIsTranslated] = useState(false);
@@ -40,7 +41,9 @@ const Popup = () => {
 
   // App dropdown
   const [appDropdown, setAppDropdown] = useState(false);
-  const [displayLanguage, setDisplayLanguage] = useState('en');
+  const [displayLanguage, setDisplayLanguage] = useState(
+    DEFAULT_DISPLAY_LANGUAGE
+  );
   // Generated Audio
 
   const memoize = (fn) => {
@@ -309,18 +312,9 @@ const Popup = () => {
                 }}
               >
                 <span className="group-hover:text-white text-amber-500 font-bold">
-                  {languageMap[displayLanguage].popup.wordbook.buttonBookmark}
+                  {languageMap[displayLanguage].savedWords.title}
                 </span>
                 <BsBookmarkStarFill className="group-hover:text-white text-xl text-amber-500" />
-              </button>
-              <button
-                className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-slate-200  transition-bg ease-in-out duration-100 gap-2 px-4 bg-white"
-                onClick={() => {
-                  setAppDropdown(false);
-                }}
-              >
-                <span>Lịch sử tra cứu</span>
-                <HiOutlineChevronDown className="text-xl text-gray-500" />
               </button>
             </div>
           </div>
