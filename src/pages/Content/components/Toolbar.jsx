@@ -89,13 +89,13 @@ const Toolbar = ({ hideResult, pinResult, unpinResult, storeToSaved }) => {
   const [resultPin, setResultPin] = React.useState(false);
 
   return (
-    <div class={POPUP_HEADER} id={POPUP_HEADER} onMouseDown={dragMouseDown}>
-      <div class={`${POPUP_HEADER}-TOOL`}>
+    <div className={POPUP_HEADER} id={POPUP_HEADER} onMouseDown={dragMouseDown}>
+      <div className={`${POPUP_HEADER}-TOOL`}>
         {/* Dropdown */}
 
         {/* Save result button */}
         <button
-          class={`save ${isJustSaved ? 'saved' : ''}`}
+          className={`save ${isJustSaved ? 'saved' : ''}`}
           onClick={() => {
             storeToSaved();
 
@@ -118,14 +118,14 @@ const Toolbar = ({ hideResult, pinResult, unpinResult, storeToSaved }) => {
             }
             setResultPin(!resultPin);
           }}
-          class={`${resultPin ? 'evtd-pinned' : 'evtd-pin'}`}
+          className={`${resultPin ? 'evtd-pinned' : 'evtd-pin'}`}
           id="EVTD-POPUP-PIN-RESULT"
         >
           {resultPin ? <BsPinFill /> : <BsPinAngleFill />}
         </button>
         {/* Exit button */}
         <button
-          class={`close`}
+          className={`close`}
           onClick={() => {
             hideResult();
             if (resultPin) {

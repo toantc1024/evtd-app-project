@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { HiArrowLeft, HiChevronDown, HiCog, HiGlobeAlt } from 'react-icons/hi';
+import { HiArrowLeft, HiCog } from 'react-icons/hi';
 import { DropdownComponent } from '../Dropdown/DropdownComponent';
 import { languageMap } from '../../Mapping/DisplayLanguage';
+import { DEFAULT_DISPLAY_LANGUAGE } from '../../Popup/constants';
 const MenuModal = ({ menuModal, setMenuModal }) => {
-  const [displayLanguage, setDisplayLanguage] = useState('en');
+  const [displayLanguage, setDisplayLanguage] = useState(
+    DEFAULT_DISPLAY_LANGUAGE
+  );
 
   const updateDisplayLanguage = (language) => {
     setDisplayLanguage(language);
     chrome.storage.sync.set({ displayLanguage: language });
   };
 
-  let defaultLanguage = 'en';
   useEffect(() => {
     chrome.storage.sync.get(['displayLanguage'], (result) => {
       if (result.displayLanguage) {
         setDisplayLanguage(result.displayLanguage);
       } else {
-        updateDisplayLanguage(defaultLanguage);
+        updateDisplayLanguage(DEFAULT_DISPLAY_LANGUAGE);
       }
     });
   }, []);

@@ -4,12 +4,12 @@ import { HiCheck, HiDocumentDuplicate, HiVolumeUp } from 'react-icons/hi';
 const Meaning = ({ playAudio }) => {
   const [justCopied, setJustCopied] = React.useState(false);
   return (
-    <div class="evtd-section meaning">
-      <div class="evtd-wrapper">
-        <div class="source-text" id="evtd-meaning-value"></div>
-        <div class="tools">
+    <div className="evtd-section meaning">
+      <div className="evtd-wrapper">
+        <div className="source-text" id="evtd-meaning-value"></div>
+        <div className="tools">
           <button
-            class={`evtd-copy ${justCopied ? 'copied' : ''}`}
+            className={`evtd-copy ${justCopied ? 'copied' : ''}`}
             onClick={() => {
               const sourceText = document.getElementById('evtd-meaning-value');
               // Copy text from source text to clipboard
@@ -23,7 +23,7 @@ const Meaning = ({ playAudio }) => {
             {justCopied ? <HiCheck /> : <HiDocumentDuplicate />}
           </button>
           <button
-            class="audio-button"
+            className="audio-button"
             onClick={() => {
               playAudio(
                 document.getElementById('evtd-meaning-value').textContent,

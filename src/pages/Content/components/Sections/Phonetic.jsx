@@ -4,12 +4,12 @@ import { HiCheck, HiDocumentDuplicate, HiVolumeUp } from 'react-icons/hi';
 const Phonetic = ({ playAudio }) => {
   const [justCopied, setJustCopied] = React.useState(false);
   return (
-    <div class="evtd-section phonetic">
-      <div class="evtd-wrapper">
-        <div class="source-text" id="evtd-phonetic-source-text"></div>
-        <div class="tools">
+    <div className="evtd-section phonetic">
+      <div className="evtd-wrapper">
+        <div className="source-text" id="evtd-phonetic-source-text"></div>
+        <div className="tools">
           <button
-            class={`evtd-copy ${justCopied ? 'copied' : ''}`}
+            className={`evtd-copy ${justCopied ? 'copied' : ''}`}
             onClick={() => {
               const sourceText = document.getElementById(
                 'evtd-phonetic-source-text'
@@ -26,7 +26,7 @@ const Phonetic = ({ playAudio }) => {
           </button>
           <audio id="evtd-phonetic-audio" />
           <button
-            class={`audio-button`}
+            className={`audio-button`}
             onClick={() => {
               playAudio(
                 document.getElementById('evtd-phonetic-source-text')
