@@ -1,3 +1,5 @@
+![image](https://github.com/toantc1024/evtd-app/assets/60417892/48e48495-a54b-422a-90c6-d69d373e5504)
+
 ## EVTD APP
 This is an extension helps user translate their words in browser!
 
