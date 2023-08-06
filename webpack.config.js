@@ -235,6 +235,11 @@ var options = {
   infrastructureLogging: {
     level: 'info',
   },
+  devServer: {
+    client: {
+      overlay: false,
+    },
+  },
 };
 
 if (env.NODE_ENV === 'development') {

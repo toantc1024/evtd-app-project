@@ -11,15 +11,17 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     content.style.display = 'block';
     let loader = document.getElementById('evtd-loader');
     loader.style.display = 'none';
-  } else if (request.type === 'translate') {
-    translateSubmit();
+  } else if (request.type === 'translateHotkey') {
+    chrome.storage.sync.get(['translateHotkey'], function (e) {
+      if (e.translateHotkey) {
+        translateSubmit();
+      }
+    });
   }
 });
 // Inject the conttentstyle
 let isButtonShown = false;
 let isResultPin = false;
-let pinPositionX = 0,
-  pinPositionY = 0;
 
 let detectedFrom = 'auto';
 let detectTarget = 'vi';
@@ -79,6 +81,12 @@ const hideResult = () => {
   isPlayingAudio = false;
 };
 
+const uid = () =>
+  String(Date.now().toString(32) + Math.random().toString(16)).replace(
+    /\./g,
+    ''
+  );
+
 const storeToSaved = () => {
   if (!currentTranslateResponse) return;
   chrome.storage.sync.get(['saved'], function (e) {
@@ -86,7 +94,11 @@ const storeToSaved = () => {
     if (!saved) {
       saved = [];
     }
-    saved.push({ data: currentTranslateResponse, date: new Date().now });
+    saved.push({
+      data: currentTranslateResponse,
+      date: Date.now(),
+      uid: uid(),
+    });
     chrome.storage.sync.set({ saved: saved });
   });
 };
@@ -94,8 +106,6 @@ const storeToSaved = () => {
 // Process pin result
 const pinResult = () => {
   isResultPin = true;
-  (pinPositionX = resultPanel.style.left),
-    (pinPositionY = resultPanel.style.top);
 };
 
 const unpinResult = () => {
@@ -216,28 +226,31 @@ const shouldTranslate = () => {
   preTranslate.style.display = 'none';
   if (selectedText.length > 0 && selectedText.length < 50) {
     // Call pretranslate show
-    chrome.storage.sync.get(['sourceLang', 'targetLang'], function (e) {
-      BaseTranslator.google
-        .requestTranslate(
-          selectedText,
-          e.sourceLang ? e.sourceLang : 'auto',
-          e.targetLang ? e.targetLang : 'vi'
-        )
-        .then((res) => {
-          console.log(e.targetLang, res);
-          if (!res[0] || !res) {
-            return;
-          }
-          if (res[0].length === 2) {
-            res = res[0][0];
-          } else if (res[0].length > 2) {
-            res = res.join(' ');
-          } else {
-            res = res[0][0];
-          }
-          preTranslate.style.display = 'flex';
-          preTranslate.innerText = res;
+    chrome.storage.sync.get(['ispreTranslate'], (e) => {
+      if (e.ispreTranslate) {
+        chrome.storage.sync.get(['sourceLang', 'targetLang'], function (e) {
+          BaseTranslator.google
+            .requestTranslate(
+              selectedText,
+              e.sourceLang ? e.sourceLang : 'auto',
+              e.targetLang ? e.targetLang : 'vi'
+            )
+            .then((res) => {
+              if (!res[0] || !res) {
+                return;
+              }
+              if (res[0].length === 2) {
+                res = res[0][0];
+              } else if (res[0].length > 2) {
+                res = res.join(' ');
+              } else {
+                res = res[0][0];
+              }
+              preTranslate.style.display = 'flex';
+              preTranslate.innerText = res;
+            });
         });
+      }
     });
   }
   return true;
