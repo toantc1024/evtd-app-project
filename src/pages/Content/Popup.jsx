@@ -28,7 +28,7 @@ const Popup = ({
 
     // Listen event from real time chrome.storage update
     chrome.storage.onChanged.addListener(function (changes, namespace) {
-      if (changes.displayLanguage.newValue) {
+      if (changes.displayLanguage && changes.displayLanguage.newValue) {
         setDisplayLanguage(changes.displayLanguage.newValue);
       }
     });
@@ -47,9 +47,9 @@ const Popup = ({
       {/* Pin */}
 
       {/* Result content */}
-      <div class={POPUP_CONTENT}>
+      <div className={POPUP_CONTENT}>
         <div id="evtd-loader">
-          <div class="lds-roller">
+          <div className="lds-roller">
             <div></div>
             <div></div>
             <div></div>
@@ -64,10 +64,10 @@ const Popup = ({
           {/* Meaning section */}
           <Phonetic playAudio={playAudio} />
           <Meaning playAudio={playAudio} />
-          <div class="evtd-section dictionary">
-            <div class="evtd-wrapper">
-              <div class="evtd-title">
-                <span class="evtd-icon evtd-bookmark">
+          <div className="evtd-section dictionary">
+            <div className="evtd-wrapper">
+              <div className="evtd-title">
+                <span className="evtd-icon evtd-bookmark">
                   <HiBookmark />
                 </span>
                 <span>
@@ -79,10 +79,10 @@ const Popup = ({
           </div>
 
           {/* Example section */}
-          <div class="evtd-section example">
-            <div class="evtd-wrapper">
-              <div class="evtd-title">
-                <span class="evtd-icon evtd-annotation">
+          <div className="evtd-section example">
+            <div className="evtd-wrapper">
+              <div className="evtd-title">
+                <span className="evtd-icon evtd-annotation">
                   <HiAnnotation />
                 </span>
                 <span>{languageMap[displayLanguage].savedWords.example}</span>

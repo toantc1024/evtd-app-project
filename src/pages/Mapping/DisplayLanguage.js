@@ -11,9 +11,35 @@ export const languageMap = {
       dictionary: 'Dictionary',
       saved: 'Saved',
       words: 'words',
+      delete: {
+        yes: 'Yes',
+        no: 'No',
+        title: 'Delete this word?',
+      },
     },
     options: {
       title: 'Options',
+      save: 'Save',
+      settings: [
+        {
+          description:
+            'If enabled you can use your keyboard to translate hover text on screen',
+          title: 'Crtl + Y to translate',
+          key: 'translateHotkey',
+        },
+        {
+          description:
+            'If your hover text is a word or paragraph less than 50 characters you can see the translation in a popup',
+          title: 'Show pretranslated popup',
+          key: 'ispreTranslate',
+        },
+
+        {
+          description: 'If enabled, you can use pomodoro as window popup',
+          title: 'Open Pomodoro in Windowed size',
+          key: 'isPomodoroWindowPopup',
+        },
+      ],
     },
     pomodoro: {
       shortBreak: 'Short break',
@@ -43,6 +69,26 @@ export const languageMap = {
   vi: {
     options: {
       title: 'Cài đặt',
+      save: 'Lưu',
+      settings: [
+        {
+          description:
+            'Nếu được bật, bạn có thể sử dụng bàn phím để dịch văn bản trên màn hình',
+          title: 'Ctrl + Y để dịch',
+          key: 'translateHotkey',
+        },
+        {
+          description: 'Xem trước kết quả dịch khi chọn văn bản < 50 kí tự',
+          title: 'Hiển thị bản dịch trước',
+          key: 'ispreTranslate',
+        },
+        {
+          description:
+            'Nếu được bật, bạn có thể sử dụng pomodoro như một cửa sổ window',
+          title: 'Mở cửa sổ window',
+          key: 'isPomodoroWindowPopup',
+        },
+      ],
     },
     savedWords: {
       title: 'Từ đã lưu',
@@ -50,6 +96,11 @@ export const languageMap = {
       dictionary: 'Từ điển',
       saved: 'Đã lưu',
       words: 'từ',
+      delete: {
+        yes: 'Có',
+        no: 'Không',
+        title: 'Bạn có muốn xóa từ này?',
+      },
     },
     pomodoro: {
       shortBreak: 'Nghỉ ngắn',
