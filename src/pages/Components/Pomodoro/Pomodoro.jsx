@@ -49,18 +49,23 @@ const Pomodoro = ({ stopPomodoro }) => {
   useEffect(() => {
     type ? (type === 1 ? setTimer(300) : setTimer(900)) : setTimer(1500);
     document.getElementById('Alarm').pause();
-    let circleBar = document.getElementById('circle-bar');
-    circleBar.style.strokeDashoffset = 0;
+    let bigCircleBar = document.getElementById('big-circle-bar');
+    let smallCircleBar = document.getElementById('small-circle-bar');
+    bigCircleBar.style.strokeDashoffset = 0;
+    smallCircleBar.style.strokeDashoffset = 0;
     setStart(false);
   }, [type]);
 
   useEffect(() => {
     let intervalId = null;
-    let circleBar = document.getElementById('circle-bar');
+    let bigCircleBar = document.getElementById('big-circle-bar');
+    let smallCircleBar = document.getElementById('small-circle-bar');
     if (start) {
       intervalId = setInterval(() => {
-        circleBar.style.strokeDashoffset = Number(circleBar.style.strokeDashoffset) +
+        bigCircleBar.style.strokeDashoffset = Number(bigCircleBar.style.strokeDashoffset) +
           880 / (type === POMODORO ? 1500 : type === SHORT_BREAK ? 300 : 900);
+        smallCircleBar.style.strokeDashoffset = Number(smallCircleBar.style.strokeDashoffset) +
+          628 / (type === POMODORO ? 1500 : type === SHORT_BREAK ? 300 : 900);
         setTimer((prev) => prev -= 1);
       }, 1000);
       setTimerId(intervalId);
@@ -83,8 +88,10 @@ const Pomodoro = ({ stopPomodoro }) => {
 
   useEffect(() => {
     if (timer === 0) {
-      let circleBar = document.getElementById('circle-bar');
-      circleBar.style.strokeDashoffset = Math.round(circleBar.style.strokeDashoffset);
+      let bigCircleBar = document.getElementById('big-circle-bar');
+      let smallCircleBar = document.getElementById('small-circle-bar');
+      bigCircleBar.style.strokeDashoffset = Math.round(bigCircleBar.style.strokeDashoffset);
+      smallCircleBar.style.strokeDashoffset = Math.round(smallCircleBar.style.strokeDashoffset);
       clearInterval(timerId);
       document.getElementById('Alarm').play();
       setPageTitle(DEFAULT_TITLE);
@@ -165,11 +172,12 @@ const Pomodoro = ({ stopPomodoro }) => {
             <svg
               width={300}
               height={300}
-              className="hidden tall:inline absolute"
+              className="absolute"
             >
+              {/* Big circle */}
               <circle
-                id="circle-bar"
-                className="duration-300"
+                id="big-circle-bar"
+                className="duration-300 hidden tall:inline"
                 cx={150}
                 cy={150}
                 r={140}
@@ -184,6 +192,22 @@ const Pomodoro = ({ stopPomodoro }) => {
                 fill="none"
                 strokeLinecap="round"
                 strokeDasharray={880}
+                style={{ strokeDashoffset: 0 }}
+                strokeMiterlimit={0}
+                transform="rotate(-90 ) translate(-300 0)"
+              />
+              {/* Small circle */}
+              <circle
+                id="small-circle-bar"
+                className="duration-300 tall:hidden inline"
+                cx={150}
+                cy={150}
+                r={100}
+                stroke='rgba(0,0,0,0.1)'
+                strokeWidth={15}
+                fill="none"
+                strokeLinecap="round"
+                strokeDasharray={628}
                 style={{ strokeDashoffset: 0 }}
                 strokeMiterlimit={0}
                 transform="rotate(-90 ) translate(-300 0)"
@@ -216,8 +240,10 @@ const Pomodoro = ({ stopPomodoro }) => {
                     : setTimer(900)
                   : setTimer(1500);
                 document.getElementById('Alarm').pause();
-                let circleBar = document.getElementById('circle-bar');
-                circleBar.style.strokeDashoffset = 0;
+                let bigCircleBar = document.getElementById('big-circle-bar');
+                let smallCircleBar = document.getElementById('small-circle-bar');
+                bigCircleBar.style.strokeDashoffset = 0;
+                smallCircleBar.style.strokeDashoffset = 0;
                 setStart(false);
               }}
             >
