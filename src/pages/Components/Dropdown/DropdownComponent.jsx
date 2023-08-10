@@ -16,7 +16,7 @@ export const DropdownComponent = ({
           setAppDropdown(!appDropdown);
         }}
       >
-        <span>{languageMap[displayLanguage].menu.language}</span>
+        <span>{languageMap[displayLanguage].language}</span>
         <HiGlobeAlt className="text-xl text-gray-500" />
       </button>
       <div

@@ -50,7 +50,22 @@ const MenuModal = ({ menuModal, setMenuModal }) => {
                   <div className="w-full px-4  ">
                     <div className="p-2 flex gap-2 flex-col">
                       <button className="bg-white shadow-lg border-[1px] group hover:bg-slate-100 w-full py-2  flex p-4 rounded-lg flex items-center justify-between">
-                        <span className="group-hover:text-slate-900">
+                        <span
+                          className="group-hover:text-slate-900"
+                          onClick={() => {
+                            let optionURL = 'https://evtd-app.vercel.app/';
+                            // Check if options.html tab is already exists
+                            chrome.tabs.query({ url: optionURL }, (tabs) => {
+                              if (tabs.length) {
+                                chrome.tabs.update(tabs[0].id, {
+                                  active: true,
+                                });
+                              } else {
+                                chrome.tabs.create({ url: optionURL });
+                              }
+                            });
+                          }}
+                        >
                           {languageMap[displayLanguage].menu.introduce}
                         </span>
                         <span className="group-hover:text-slate-900 text-2xl">

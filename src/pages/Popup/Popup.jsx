@@ -144,13 +144,7 @@ const Popup = () => {
       }
       if (!isTranslated) setIsTranslated(true);
       setTranslatedText(sourceText);
-      // const response = await translator.google.requestTranslate(
-      //   sourceText,
-      //   sourceLang,
-      //   targetLang
-      // );
 
-      // Check if first letter of text is capital
       let queryText = sourceText;
       let isCapital = false;
       if (queryText.charAt(0) >= 'A' && queryText.charAt(0) <= 'Z') {
@@ -208,7 +202,7 @@ const Popup = () => {
   };
 
   return (
-    <Fragment>
+    <div className="bg-bgTranslate">
       {/* Modals */}
       <SelectLanguage
         displayLanguage={displayLanguage}
@@ -224,7 +218,7 @@ const Popup = () => {
       />
 
       {/* Navbar */}
-      <div className="flex justify-between py-2 px-2 border-b-[1px] z-30">
+      <div className="bg-white flex justify-between py-2 px-2 border-b-[1px] z-30">
         <button
           className="p-2 active:border-gray-200 focus:bg-gray-200 border-white border-[1px] rounded-full flex justify-center items-center hover:bg-gray-100 transition-bg ease-in-out duration-100"
           onClick={() => {
@@ -251,15 +245,15 @@ const Popup = () => {
           >
             <div className="p-2 bg-gray-100 rounded-lg w-full flex gap-1 flex-col ">
               <button
-                className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-sky-600 group  transition-bg ease-in-out duration-100 gap-2 px-4 bg-white "
+                className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-bgTranslate group  transition-bg ease-in-out duration-100 gap-2 px-4 bg-white "
                 onClick={() => {
                   setAppDropdown(false);
                 }}
               >
-                <span className="group-hover:text-white font-bold text-sky-500">
+                <span className="group-hover:text-white font-bold text-bgTranslate">
                   {languageMap[displayLanguage].popup.translate.buttonTranslate}
                 </span>
-                <HiTranslate className="group-hover:text-white text-xl text-sky-500" />
+                <HiTranslate className="group-hover:text-white text-xl text-bgTranslate" />
               </button>
               <button
                 className="p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-red-600 group  transition-bg ease-in-out duration-100 gap-2 px-4 bg-white "
@@ -322,43 +316,33 @@ const Popup = () => {
       </div>
 
       {/* Language bar */}
-      <div className="bg-white px-[10px] py-2 grid grid-cols-3">
-        <div className="flex items-center justify-center">
-          <button
-            className="bg-red-400 text-white hover:bg-red-500 p-2 rounded-full px-4 w-full"
-            onClick={() => {
-              setSelectMode('source');
-              setLanguageModal(true);
-            }}
-          >
-            {displayLanguage === 'vi'
-              ? langs[sourceLang]
-              : langCode[sourceLang]}
-          </button>
-        </div>
+      <div className="bg-white m-2 mb-0 rounded-xl shadow-lg px-[10px] py-1 flex justify-between items-center gap-2">
+        <button
+          className="bg-white text-gray-500 hover:bg-slate-200 py-2 rounded-xl px-2 w-full text-sm"
+          onClick={() => {
+            setSelectMode('source');
+            setLanguageModal(true);
+          }}
+        >
+          {displayLanguage === 'vi' ? langs[sourceLang] : langCode[sourceLang]}
+        </button>
 
         {/* Swap target and source language */}
-        <div className="flex items-center justify-center">
-          <button
-            className="bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700  border-[1px] shadow-lg flex items-center justify-center  rounded-full font-bold p-2 "
-            onClick={() => swapLanguage()}
-          >
-            <HiOutlineSwitchHorizontal className="text-xl font-bold text-white" />
-          </button>
-        </div>
-        <div className="flex items-center justify-center">
-          <button
-            className="bg-blue-400 text-white hover:bg-blue-500 p-2 rounded-full px-2 w-full "
-            onClick={() => {
-              setSelectMode('target');
-              setLanguageModal(true);
-            }}
-          >
-            {displayLanguage === 'vi'
-              ? langs[targetLang]
-              : langCode[targetLang]}
-          </button>
-        </div>
+        <button
+          className="bg-bgTranslate hover:bg-bgTranslateHover active:bg-bgTranslateHover transition-bg ease-in-out duration-100  border-[1px] shadow-bgTranslate-lg flex items-center justify-center  rounded-2xl font-bold p-2 w-10 h-10 "
+          onClick={() => swapLanguage()}
+        >
+          <HiOutlineSwitchHorizontal className="text-xl font-bold text-white" />
+        </button>
+        <button
+          className="bg-white text-gray-500 hover:bg-slate-200 py-2 rounded-xl px-2 w-full text-sm"
+          onClick={() => {
+            setSelectMode('target');
+            setLanguageModal(true);
+          }}
+        >
+          {displayLanguage === 'vi' ? langs[targetLang] : langCode[targetLang]}
+        </button>
       </div>
 
       {/* Translate Boxes */}
@@ -373,34 +357,36 @@ const Popup = () => {
             doTranslate={() => doTranslate()}
           />
         </div>
-        <div className="h-[250px] bg-gray-100">
+        <div className="h-[250px] bg-white rounded-t-2xl">
           {isTranslating ? (
             isTranslated === false ? (
               <div className="w-full h-full flex flex-col gap-2 items-center justify-center text-lg">
-                <p className="bg-white w-[40px] h-[40px] rounded-full flex items-center justify-center">
-                  <HiTranslate className="text-sky-400" />
-                </p>
-                <h1 className="text-gray-600">
+                <div className="bg-white w-[40px] h-[40px] rounded-full flex items-center justify-center shadow-bgTranslate-lg">
+                  <HiTranslate className="text-bgTranslate text-4xl " />
+                </div>
+                <h1 className="text-gray-400">
                   {languageMap[displayLanguage].popup.translate.placeHolder}
                 </h1>
               </div>
             ) : (
               <div className="w-full h-full flex flex-col gap-2 items-center justify-center text-lg">
                 <div className="lds-ellipsis">
-                  <div className="bg-sky-500"></div>
-                  <div className="bg-red-500"></div>
-                  <div className="bg-orange-400"></div>
-                  <div className="bg-sky-500"></div>
+                  <div className="bg-blue-400"></div>
+                  <div className="bg-blue-500"></div>
+                  <div className="bg-blue-600"></div>
+                  <div className="bg-blue-400"></div>
                 </div>
               </div>
             )
           ) : (
             <div className="h-full w-full py-2 pb-0 pt-0 flex  flex-col">
-              <div className="bg-gray-100 py-2 flex gap-2 px-2 mb-1">
+              <div className="bg-white rounded-t-2xl p-2 flex gap-2  border-b-[1px]">
                 <button
                   className={`${
-                    currentChoice === 'meaning' ? 'bg-sky-400' : 'border-[1px]'
-                  } p-2 rounded-lg`}
+                    currentChoice === 'meaning'
+                      ? 'bg-bgTranslate text-white '
+                      : 'border-[1px] text-gray-400'
+                  } p-2 rounded-xl font-bold`}
                   onClick={() => {
                     setCurrentChoice('meaning');
                   }}
@@ -411,9 +397,9 @@ const Popup = () => {
                   <button
                     className={`${
                       currentChoice === 'example'
-                        ? 'bg-orange-400'
-                        : 'border-[1px]'
-                    } p-2 rounded-lg`}
+                        ? 'bg-bgTranslate text-white '
+                        : 'border-[1px] text-gray-400'
+                    } p-2 rounded-xl font-bold`}
                     onClick={() => {
                       setCurrentChoice('example');
                     }}
@@ -425,9 +411,9 @@ const Popup = () => {
                   <button
                     className={`${
                       currentChoice === 'related'
-                        ? 'bg-sky-400'
-                        : 'border-[1px]'
-                    } p-2 rounded-lg`}
+                        ? 'bg-bgTranslate text-white '
+                        : 'border-[1px] text-gray-400'
+                    } p-2 rounded-xl font-bold`}
                     onClick={() => {
                       setCurrentChoice('related');
                     }}
@@ -436,8 +422,8 @@ const Popup = () => {
                   </button>
                 )}
               </div>
-              <div className="p-2 pb-0 pt-0 bg-white w-full h-full max-h-[250px] overflow-auto">
-                <div className="flex flex-col ">
+              <div className="bg-white w-full h-[450px] p-1 overflow-auto">
+                <div className="flex flex-col gap-1 ">
                   {isTranslated && currentChoice === 'meaning' ? (
                     <Meaning
                       generateAudio={generateAudio}
@@ -459,7 +445,7 @@ const Popup = () => {
           )}
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 

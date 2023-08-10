@@ -7,7 +7,7 @@ const Example = ({ example }) => {
         example.map((item, index) => {
           return (
             <div className="flex w-full">
-              <div className="rounded-l-lg w-[30px] block h-auto bg-orange-200 px-3 flex items-center justify-center text-xl">
+              <div className="rounded-l-lg w-[30px] block h-auto bg-blue-400 px-3 flex items-center justify-center text-xl">
                 {index + 1}
               </div>
               <div

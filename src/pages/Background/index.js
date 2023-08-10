@@ -1,4 +1,5 @@
 import google from '../../libs/translate/google';
+import { languageMap } from '../Mapping/DisplayLanguage';
 import { DEFAULT_DISPLAY_LANGUAGE, DEFAULT_SETTINGS } from '../Popup/constants';
 
 const getAudioFromText = async (text, from) => {
@@ -7,7 +8,7 @@ const getAudioFromText = async (text, from) => {
     const audio = await google.audio({ text, from: sourceAudio });
     return audio;
   } catch (error) {
-    throw error;
+    return { error: 'ERROR AUDIO GENERATE' };
   }
 };
 
@@ -52,6 +53,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       }
     });
   }
+
   return true;
 });
 
@@ -62,12 +64,107 @@ chrome.commands.onCommand.addListener((translate) => {
   });
 });
 
+// Listen to event chrome.storage
+chrome.storage.onChanged.addListener(function (changes, namespace) {
+  if (changes.displayLanguage) {
+    let newDisplayLang = changes.displayLanguage.newValue;
+    // chrome.contextMenus.update('#resume', {
+    //   title: languageMap[newDisplayLang].context.resume,
+    // });
+    // chrome.contextMenus.update('#pause', {
+    //   title: languageMap[newDisplayLang].context.pause,
+    // });
+    chrome.contextMenus.update('#options', {
+      title: languageMap[newDisplayLang].options.title,
+    });
+
+    chrome.contextMenus.update('#translate-selection', {
+      title: languageMap[newDisplayLang].context.selection,
+    });
+  }
+});
+
 chrome.runtime.onInstalled.addListener(() => {
+  var parent = chrome.contextMenus.create({
+    id: 'translate',
+    title: 'EVTD — browser dictionary',
+    contexts: ['page'],
+  });
+
+  // var child1 = chrome.contextMenus.create({
+  //   id: '#pause',
+  //   title: 'Pause on this page',
+  //   parentId: parent,
+  //   contexts: ['page'],
+  // });
+
+  // var child2 = chrome.contextMenus.create({
+  //   id: '#resume',
+  //   title: 'Resume on this page',
+  //   parentId: parent,
+  //   contexts: ['page'],
+  // });
+
+  var child3 = chrome.contextMenus.create({
+    id: '#options',
+    title: 'Settings',
+    parentId: parent,
+    contexts: ['page'],
+  });
+
+  // Create selection context
+  chrome.contextMenus.create({
+    id: '#translate-selection',
+    title: 'Translate "%s with EVTD"',
+    contexts: ['selection'],
+  });
+
+  chrome.contextMenus.onClicked.addListener(function (info, tab) {
+    if (info.menuItemId === '#pause') {
+      chrome.tabs.sendMessage(tab.id, { type: '#pause' });
+    } else if (info.menuItemId === '#resume') {
+      chrome.tabs.sendMessage(tab.id, { type: '#resume' });
+    } else if (info.menuItemId === '#options') {
+      // Open options page
+      // Check if options.html is already opened
+      let optionTab = chrome.runtime.getURL('options.html');
+      // Check if the options page exists, if so focus it, if not open it
+      chrome.tabs.query({ url: optionTab }, (tabs) => {
+        if (tabs.length) {
+          chrome.tabs.update(tabs[0].id, { active: true });
+        } else {
+          chrome.tabs.create({ url: optionTab });
+        }
+      });
+    } else if (info.menuItemId === '#translate-selection') {
+      chrome.tabs.sendMessage(tab.id, {
+        type: '#translate-selection',
+        data: info.selectionText,
+      });
+    }
+  });
+
   // Set default value for settings
   chrome.storage.sync.set({
     displayLanguage: DEFAULT_DISPLAY_LANGUAGE,
     translateHotkey: DEFAULT_SETTINGS.translateHotkey,
     ispreTranslate: DEFAULT_SETTINGS.ispreTranslate,
     isPomodoroWindowPopup: DEFAULT_SETTINGS.isPomodoroWindowPopup,
+    hideTranslateButton: DEFAULT_SETTINGS.hideTranslateButton,
   });
+});
+
+chrome.runtime.onInstalled.addListener(function (object) {
+  let externalUrl = 'https://evtd-app.vercel.app/';
+
+  if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+    // Check if the options page exists, if so focus it, if not open it
+    chrome.tabs.query({ url: externalUrl }, (tabs) => {
+      if (tabs.length) {
+        chrome.tabs.update(tabs[0].id, { active: true });
+      } else {
+        chrome.tabs.create({ url: externalUrl });
+      }
+    });
+  }
 });
