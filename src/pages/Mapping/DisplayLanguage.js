@@ -20,11 +20,18 @@ export const languageMap = {
     options: {
       title: 'Options',
       save: 'Save',
+      saved: 'Saved',
       settings: [
         {
           description:
+            'Hide EVTD icon for translate and use context menu instead',
+          title: 'Hide Translate Button',
+          key: 'hideTranslateButton',
+        },
+        {
+          description:
             'If enabled you can use your keyboard to translate hover text on screen',
-          title: 'Crtl + Y to translate',
+          title: 'Crtl + Shift + X to translate',
           key: 'translateHotkey',
         },
         {
@@ -52,6 +59,12 @@ export const languageMap = {
       setting: 'Setting',
       language: 'Language',
     },
+    context: {
+      selection: 'Translate "%s with EVTD"',
+      resume: 'Resume EVTD popup on this page',
+      pause: 'Pause EVTD popup on this page',
+    },
+
     popup: {
       extension: 'Extension',
       translate: {
@@ -60,21 +73,31 @@ export const languageMap = {
       },
       selectlang: {
         placeholder: {
+          search: 'Search',
           source: 'Translate from',
           target: 'Translate to',
         },
       },
     },
+    language: 'English',
   },
   vi: {
+    language: 'Tiếng Việt',
     options: {
       title: 'Cài đặt',
       save: 'Lưu',
+      saved: 'Đã lưu',
       settings: [
         {
           description:
+            'Ẩn biểu tượng EVTD để dịch và use thay vào đó dùng menu khi ấn chuột phải',
+          title: 'Ẩn nút dịch EVTD',
+          key: 'hideTranslateButton',
+        },
+        {
+          description:
             'Nếu được bật, bạn có thể sử dụng bàn phím để dịch văn bản trên màn hình',
-          title: 'Ctrl + Y để dịch',
+          title: 'Ấn Crtl + Shift + X để dịch',
           key: 'translateHotkey',
         },
         {
@@ -113,6 +136,12 @@ export const languageMap = {
       setting: 'Cài đặt',
       language: 'Ngôn ngữ',
     },
+    context: {
+      selection: 'Dịch "%s với EVTD"',
+      resume: 'Bật EVTD trên trang này',
+      pause: 'Dừng EVTD trên trang này',
+    },
+
     popup: {
       extension: 'Tiện ích',
       translate: {
@@ -121,6 +150,7 @@ export const languageMap = {
       },
       selectlang: {
         placeholder: {
+          search: 'Tìm kiếm',
           source: 'Dịch từ',
           target: 'Dịch sang',
         },
