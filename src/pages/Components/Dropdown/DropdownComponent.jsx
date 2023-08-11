@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HiChevronDoubleDown, HiGlobeAlt } from 'react-icons/hi';
+import { HiGlobeAlt } from 'react-icons/hi';
 import { languageMap, supportLanguages } from '../../Mapping/DisplayLanguage';
 
 export const DropdownComponent = ({

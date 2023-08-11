@@ -80,7 +80,6 @@ const Pomodoro = ({ stopPomodoro }) => {
 
   const setPageTitle = (type, value = DEFAULT_TITLE) => {
     let titleBlock = document.querySelector('title');
-    console.log(titleBlock);
 
     if (type === DEFAULT_TITLE) {
       titleBlock.textContent = DEFAULT_TITLE;
@@ -103,7 +102,7 @@ const Pomodoro = ({ stopPomodoro }) => {
       document.getElementById('Alarm').play();
       setPageTitle(DEFAULT_TITLE);
 
-      if ((type = POMODORO)) {
+      if (type === POMODORO) {
         setType(SHORT_BREAK);
       } else {
         setType(POMODORO);
