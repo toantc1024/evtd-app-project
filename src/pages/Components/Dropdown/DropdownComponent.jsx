@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HiChevronDoubleDown, HiGlobeAlt } from 'react-icons/hi';
+import { HiGlobeAlt } from 'react-icons/hi';
 import { languageMap, supportLanguages } from '../../Mapping/DisplayLanguage';
 
 export const DropdownComponent = ({
@@ -16,7 +16,7 @@ export const DropdownComponent = ({
           setAppDropdown(!appDropdown);
         }}
       >
-        <span>{languageMap[displayLanguage].menu.language}</span>
+        <span>{languageMap[displayLanguage].language}</span>
         <HiGlobeAlt className="text-xl text-gray-500" />
       </button>
       <div
