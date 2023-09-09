@@ -22,7 +22,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     });
   } else if (request.type === '#translate-selection') {
     if (request.data) {
-      // console.log('#translate-selection Selection');
+      console.log('#translate-selection Selection');
       translateSubmit(request.data);
     }
   }
@@ -223,6 +223,7 @@ document.addEventListener('mousedown', (event) => {
 
   // whether user take a select action
   detectSelect(document, (event) => {
+    console.log('Clicked', event.target);
     selectTranslate(event);
   });
 });
@@ -595,7 +596,7 @@ const showButton = (event) => {
 
   // Current button position setting
   // PROCESS.ENV.BROWSER === "EDGE" ? TopRight : BottomRight
-  let ButtonPositionSetting = 'TopRight';
+  let ButtonPositionSetting = 'BottomRight';
 
   switch (ButtonPositionSetting) {
     default:
@@ -635,10 +636,10 @@ const showButton = (event) => {
 
   // Create pretranslate follow
 
-  preTranslate.style.top = `${YPosition - 15}px`;
+  preTranslate.style.top = `${YPosition}px`;
   preTranslate.style.left = `${XPosition + 40}px`;
 
-  translationButtonIFrame.style.top = `${YPosition - 10}px`;
+  translationButtonIFrame.style.top = `${YPosition}px`;
   translationButtonIFrame.style.left = `${XPosition}px`;
   isButtonShown = true;
 };

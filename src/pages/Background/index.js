@@ -84,6 +84,7 @@ chrome.storage.onChanged.addListener(function (changes, namespace) {
   }
 });
 
+
 chrome.runtime.onInstalled.addListener(() => {
   var parent = chrome.contextMenus.create({
     id: 'translate',
@@ -91,19 +92,6 @@ chrome.runtime.onInstalled.addListener(() => {
     contexts: ['page'],
   });
 
-  // var child1 = chrome.contextMenus.create({
-  //   id: '#pause',
-  //   title: 'Pause on this page',
-  //   parentId: parent,
-  //   contexts: ['page'],
-  // });
-
-  // var child2 = chrome.contextMenus.create({
-  //   id: '#resume',
-  //   title: 'Resume on this page',
-  //   parentId: parent,
-  //   contexts: ['page'],
-  // });
 
   var child3 = chrome.contextMenus.create({
     id: '#options',

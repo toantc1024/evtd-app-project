@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HiClipboardCopy, HiVolumeUp, HiStop } from 'react-icons/hi';
 import { languageMap } from '../../Mapping/DisplayLanguage';
 
@@ -10,6 +10,14 @@ const TranslateInput = ({
   sourceLang,
   getAudioURL,
 }) => {
+  useEffect(() => {
+    const delayFn = setTimeout(() => {
+      doTranslate();
+    }, 600);
+
+    return () => clearTimeout(delayFn);
+  }, [text])
+
   const [audio, setAudio] = useState(new Audio());
   const [audioGenerating, setAudioGenerating] = useState(false);
   return (
