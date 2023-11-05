@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import TranslateInput from '../Components/TextInput/TranslateInput';
 import SelectLanguage from '../Components/SelectLanguage/SelectLanguage';
 import MenuModal from '../Components/Menu/Menu';
+import { RiCharacterRecognitionLine } from 'react-icons/ri'
 import { PiClockCountdownFill } from 'react-icons/pi';
 import {
   HiOutlineSwitchHorizontal,
@@ -44,6 +45,10 @@ const Popup = () => {
   const [displayLanguage, setDisplayLanguage] = useState(
     DEFAULT_DISPLAY_LANGUAGE
   );
+
+  // Windows id
+  const [pomodoroWindowID, setPomodoroWindowID] = useState(0);
+  const [ORCWindowID, setORCWindowID] = useState(0);
   // Generated Audio
 
   const memoize = (fn) => {
@@ -89,7 +94,7 @@ const Popup = () => {
     });
 
     chrome.storage.sync.get(
-      ['sourceLang', 'targetLang', 'displayLanguage'],
+      ['sourceLang', 'targetLang', 'displayLanguage', 'pomodoroWindowId', 'ORCWindowId'],
       (result) => {
         if (result.sourceLang) {
           setSourceLang(result.sourceLang);
@@ -104,6 +109,12 @@ const Popup = () => {
           setTargetLang('vi');
         }
 
+        if (result.pomodoroWindowId) {
+          setPomodoroWindowID(result.pomodoroWindowId);
+        }
+        if (result.ORCWindowId) {
+          setORCWindowID(result.ORCWindowId);
+        }
         if (result.displayLanguage) {
           setDisplayLanguage(result.displayLanguage);
         }
@@ -267,9 +278,8 @@ const Popup = () => {
                   chrome.windows.getAll(
                     { windowTypes: ['popup'] },
                     function (windows) {
-                      console.log(windows);
-                      if (windows.length) {
-                        chrome.windows.update(windows[0].id, {
+                      if (windows.length >= 1 && (windows[0].id === pomodoroWindowID || (windows.length > 1 && windows[1].id === pomodoroWindowID))) {
+                        chrome.windows.update(windows[0].id === pomodoroWindowID ? windows[0].id : windows[1].id, {
                           focused: true,
                         });
                       } else {
@@ -284,7 +294,8 @@ const Popup = () => {
                             top: window.screen.height / 2 - 300,
                           },
                           (window) => {
-                            // setCurrentWindowId(window.id);
+                            setPomodoroWindowID(window.id);
+                            chrome.storage.sync.set({ pomodoroWindowId: window.id })
                           }
                         );
                       }
@@ -316,6 +327,40 @@ const Popup = () => {
                   {languageMap[displayLanguage].savedWords.title}
                 </span>
                 <BsBookmarkStarFill className="group-hover:text-white text-xl text-amber-500" />
+              </button>
+              <button
+                className='p-2 border-[1px] rounded-lg flex justify-between items-center hover:bg-violet-500 group transition-bg ease-in-out duration-100 gap-2 px-4 bg-white'
+                onClick={() => {
+                  setAppDropdown(false);
+                  chrome.windows.getAll(
+                    { windowTypes: ['popup'] },
+                    function (windows) {
+                      if (windows.length >= 1 && (windows[0].id === ORCWindowID || (windows.length > 1 && windows[1].id === ORCWindowID))) {
+                        chrome.windows.update(windows[0].id === ORCWindowID ? windows[0].id : windows[1].id, {
+                          focused: true,
+                        });
+                      } else {
+                        var optionsUrl = chrome.runtime.getURL('ocr.html');
+                        chrome.windows.create(
+                          {
+                            url: optionsUrl,
+                            type: 'panel',
+                            state: 'maximized',
+                          },
+                          (window) => {
+                            setORCWindowID(window.id);
+                            chrome.storage.sync.set({ ORCWindowId: window.id })
+                          }
+                        );
+                      }
+                    }
+                  )
+                }}
+              >
+                <span className="group-hover:text-white text-violet-500 font-bold">
+                  OCR
+                </span>
+                <RiCharacterRecognitionLine className="group-hover:text-white text-2xl text-violet-500" />
               </button>
             </div>
           </div>
@@ -410,8 +455,8 @@ const Popup = () => {
                 {example && (
                   <button
                     className={`${currentChoice === 'example'
-                        ? 'bg-orange-400'
-                        : 'border-[1px]'
+                      ? 'bg-orange-400'
+                      : 'border-[1px]'
                       } p-2 rounded-lg`}
                     onClick={() => {
                       setCurrentChoice('example');
@@ -423,8 +468,8 @@ const Popup = () => {
                 {related && (
                   <button
                     className={`${currentChoice === 'related'
-                        ? 'bg-sky-400'
-                        : 'border-[1px]'
+                      ? 'bg-sky-400'
+                      : 'border-[1px]'
                       } p-2 rounded-lg`}
                     onClick={() => {
                       setCurrentChoice('related');

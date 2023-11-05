@@ -47,6 +47,7 @@ var options = {
     contentScript: path.join(__dirname, 'src', 'pages', 'Content', 'index.js'),
     pomodoro: path.join(__dirname, 'src', 'pages', 'Pomodoro', 'index.jsx'),
     panel: path.join(__dirname, 'src', 'pages', 'Panel', 'index.jsx'),
+    ocr: path.join(__dirname,'src', 'pages', 'OCR', 'index.jsx'),
   },
   chromeExtensionBoilerplate: {
     notHotReload: ['background', 'contentScript'],
@@ -171,6 +172,24 @@ var options = {
     new CopyWebpackPlugin({
       patterns: [
         {
+          from: 'node_modules/tesseract.js/dist/worker.min.js',
+          to: path.join(__dirname, 'build'),
+          force: true,
+        },
+      ],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'node_modules/tesseract.js-core/tesseract-core-simd.wasm.js',
+          to: path.join(__dirname, 'build'),
+          force: true,
+        },
+      ],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
           from: 'src/pages/Content/content.styles.css',
           to: path.join(__dirname, 'build'),
           force: true,
@@ -217,6 +236,12 @@ var options = {
       template: path.join(__dirname, 'src', 'pages', 'Pomodoro', 'index.html'),
       filename: 'pomodoro.html',
       chunks: ['pomodoro'],
+      cache: false,
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'pages', 'OCR', 'index.html'),
+      filename: 'ocr.html',
+      chunks: ['ocr'],
       cache: false,
     }),
     // new HtmlWebpackPlugin({
