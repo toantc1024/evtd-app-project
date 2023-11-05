@@ -3,9 +3,19 @@ module.exports = {
   content: ['./src/**/*.{html,js,jsx}'],
   theme: {
     extend: {
-      boxShadow:{
-        'end-inset':'inset 0 2px 4px 0 rgb(0 0 0 / 0.05),inset 0 -4px 4px -1px rgb(0 0 0 / 0.2)',
-      }
+      colors: {
+        bgTranslate: '#0975F4',
+        bgTranslateHover: '#0463d4',
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      },
     },
     screens: {
       sm: '640px',

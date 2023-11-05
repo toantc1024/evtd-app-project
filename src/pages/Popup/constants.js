@@ -3,4 +3,5 @@ export const DEFAULT_SETTINGS = {
   translateHotkey: true,
   ispreTranslate: true,
   isPomodoroWindowPopup: true,
+  hideTranslateButton: false,
 };

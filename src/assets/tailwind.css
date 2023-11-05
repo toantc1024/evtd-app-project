@@ -11,13 +11,12 @@ body {
 *::-webkit-scrollbar,
 body::-webkit-scrollbar {
   cursor: pointer;
-  width: 8px; /* width of the entire scrollbar */
+  width: 10px; /* width of the entire scrollbar */
 }
 
 *::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track {
   cursor: pointer;
-
   background: rgb(209, 209, 209); /* color of the tracking area */
 }
 
@@ -25,7 +24,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   cursor: pointer;
   background-color: rgb(141, 141, 141); /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
+  border-radius: 10px; /* roundness of the scroll thumb */
 }
 
 *::-webkit-scrollbar-thumb:hover {
@@ -90,5 +89,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .example_dictionary_HTML b {
-  background-color: rgba(204, 204, 204, 0.706);
+  background-color: rgb(18, 137, 242);
+  padding: 2px;
+  color: white;
+  border-radius: 5px;
 }

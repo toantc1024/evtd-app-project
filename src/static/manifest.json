@@ -1,6 +1,6 @@
 {
-  "description": "🐱‍💻 Your best friend for exploring beauty of languages! 📕 Translate, ⏰ improve focus and more!",
-  "version": "3.1.2",
+  "description": "🐱‍💻 I am your best friend for exploring beauty of languages in every page you go! 📕 Translate, ⏰ improve focus and more!",
+  "version": "3.1.1",
   "manifest_version": 3,
   "name": "EVTD — browser dictionary",
   "options_page": "options.html",
@@ -18,7 +18,7 @@
   "content_security_policy": {
     "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
   },
-  "permissions": ["tts", "ttsEngine", "storage", "tabs"],
+  "permissions": ["tts", "ttsEngine", "storage", "tabs", "contextMenus"],
   "web_accessible_resources": [
     {
       "resources": [
@@ -35,8 +35,8 @@
   "commands": {
     "translate": {
       "suggested_key": {
-        "default": "Ctrl+Y",
-        "mac": "Command+Y"
+        "default": "Ctrl+Shift+X",
+        "mac": "Command+Shift+X"
       },
       "description": "Translate selected text."
     }

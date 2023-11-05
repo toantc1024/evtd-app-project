@@ -36,7 +36,7 @@ const Pomodoro = ({ stopPomodoro }) => {
 
     // Listen event from real time chrome.storage update
     chrome.storage.onChanged.addListener(function (changes, namespace) {
-      if (changes.displayLanguage.newValue) {
+      if (changes.displayLanguage) {
         setDisplayLanguage(changes.displayLanguage.newValue);
       }
     });
@@ -61,12 +61,15 @@ const Pomodoro = ({ stopPomodoro }) => {
     let bigCircleBar = document.getElementById('big-circle-bar');
     let smallCircleBar = document.getElementById('small-circle-bar');
     if (start) {
+      document.getElementById('audioButton').play();
       intervalId = setInterval(() => {
-        bigCircleBar.style.strokeDashoffset = Number(bigCircleBar.style.strokeDashoffset) +
+        bigCircleBar.style.strokeDashoffset =
+          Number(bigCircleBar.style.strokeDashoffset) +
           880 / (type === POMODORO ? 1500 : type === SHORT_BREAK ? 300 : 900);
-        smallCircleBar.style.strokeDashoffset = Number(smallCircleBar.style.strokeDashoffset) +
+        smallCircleBar.style.strokeDashoffset =
+          Number(smallCircleBar.style.strokeDashoffset) +
           628 / (type === POMODORO ? 1500 : type === SHORT_BREAK ? 300 : 900);
-        setTimer((prev) => prev -= 1);
+        setTimer((prev) => (prev -= 1));
       }, 1000);
       setTimerId(intervalId);
     } else {
@@ -77,7 +80,6 @@ const Pomodoro = ({ stopPomodoro }) => {
 
   const setPageTitle = (type, value = DEFAULT_TITLE) => {
     let titleBlock = document.querySelector('title');
-    console.log(titleBlock);
 
     if (type === DEFAULT_TITLE) {
       titleBlock.textContent = DEFAULT_TITLE;
@@ -90,11 +92,21 @@ const Pomodoro = ({ stopPomodoro }) => {
     if (timer === 0) {
       let bigCircleBar = document.getElementById('big-circle-bar');
       let smallCircleBar = document.getElementById('small-circle-bar');
-      bigCircleBar.style.strokeDashoffset = Math.round(bigCircleBar.style.strokeDashoffset);
-      smallCircleBar.style.strokeDashoffset = Math.round(smallCircleBar.style.strokeDashoffset);
+      bigCircleBar.style.strokeDashoffset = Math.round(
+        bigCircleBar.style.strokeDashoffset
+      );
+      smallCircleBar.style.strokeDashoffset = Math.round(
+        smallCircleBar.style.strokeDashoffset
+      );
       clearInterval(timerId);
       document.getElementById('Alarm').play();
       setPageTitle(DEFAULT_TITLE);
+
+      if (type === POMODORO) {
+        setType(SHORT_BREAK);
+      } else {
+        setType(POMODORO);
+      }
     } else {
       setPageTitle(POMODORO, formatTime(timer));
     }
@@ -169,11 +181,7 @@ const Pomodoro = ({ stopPomodoro }) => {
             <div className="text-6xl text-white font-fredoka font-semibold">
               {formatTime(timer)}
             </div>
-            <svg
-              width={300}
-              height={300}
-              className="absolute"
-            >
+            <svg width={300} height={300} className="absolute">
               {/* Big circle */}
               <circle
                 id="big-circle-bar"
@@ -203,7 +211,7 @@ const Pomodoro = ({ stopPomodoro }) => {
                 cx={150}
                 cy={150}
                 r={100}
-                stroke='rgba(0,0,0,0.1)'
+                stroke="rgba(0,0,0,0.1)"
                 strokeWidth={15}
                 fill="none"
                 strokeLinecap="round"
@@ -221,14 +229,14 @@ const Pomodoro = ({ stopPomodoro }) => {
               className="rounded-full  shadow-lg duration-150 hover:scale-110  group p-2 md:p-4 bg-white hover:bg-red-700 active:bg-red-900"
               onClick={() => setStart(false)}
             >
-              <HiPause className="text-6xl font-bold text-red-500  group-hover:text-white " />
+              <HiPause className="text-4xl font-bold text-red-500  group-hover:text-white " />
             </button>
             {/*Play Button*/}
             <button
               className="rounded-full  shadow-lg duration-150 hover:scale-110  group  p-2 md:p-4 bg-white hover:bg-emerald-500 active:bg-emerald-700"
               onClick={() => setStart(true)}
             >
-              <HiPlay className="pl-1 text-6xl font-bold text-emerald-500  group-hover:text-white" />
+              <HiPlay className="pl-1 text-4xl font-bold text-emerald-500  group-hover:text-white" />
             </button>
             {/*Refresh Button*/}
             <button
@@ -241,13 +249,14 @@ const Pomodoro = ({ stopPomodoro }) => {
                   : setTimer(1500);
                 document.getElementById('Alarm').pause();
                 let bigCircleBar = document.getElementById('big-circle-bar');
-                let smallCircleBar = document.getElementById('small-circle-bar');
+                let smallCircleBar =
+                  document.getElementById('small-circle-bar');
                 bigCircleBar.style.strokeDashoffset = 0;
                 smallCircleBar.style.strokeDashoffset = 0;
                 setStart(false);
               }}
             >
-              <HiRefresh className="text-6xl font-bold text-amber-500  group-hover:text-white" />
+              <HiRefresh className="text-4xl font-bold text-amber-500  group-hover:text-white" />
             </button>
             <Audio />
           </div>
